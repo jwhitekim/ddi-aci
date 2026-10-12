@@ -136,6 +136,8 @@ def judge(claim, q):
         causes.append('해석 불가')
     if 'induct' in str(claim.get('model_used', '')).lower() and gt_all[order]['model'] == 'transductive':
         causes.append('모델 선택 오류')
+    if rel is not None and parsed is not None and rel == top['relation'] and parsed[0] == rel:
+        causes.append('번호→문장 대응 오류(한 칸 밀림)')
     if parsed is not None and parsed[0] == top['relation'] + 1 and (parsed[1], parsed[2]) != (top['drug1'], top['drug2']):
         causes.append('방향 오류')
     if parsed is not None and parsed[0] - 1 == q['label'] and top['relation'] != q['label']:

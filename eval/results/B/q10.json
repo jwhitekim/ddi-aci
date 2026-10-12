@@ -1,0 +1,37 @@
+{
+  "qid": "q10",
+  "result": "success",
+  "relation_match": true,
+  "causes": [],
+  "claims": [
+    {
+      "order": "DB11268|DB01357",
+      "relation": 11,
+      "prob": 0.9994,
+      "model_used": "transductive_drugbank.pkl",
+      "description": "Mestranol may decrease the anticoagulant activities of Protocatechualdehyde.",
+      "parsed": [
+        12,
+        "DB01357",
+        "DB11268"
+      ],
+      "checks": {
+        "order": "DB11268|DB01357",
+        "model_top_relation": true,
+        "effect": true,
+        "direction": true
+      },
+      "correct": true,
+      "causes": [],
+      "notes": []
+    }
+  ],
+  "efficiency": {
+    "turns": 12,
+    "seconds": 167.7,
+    "status": "finished",
+    "prompt_tokens": 451073,
+    "cache_read_tokens": 424516,
+    "completion_tokens": 12293
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "qid": "q09",
+  "result": "fail",
+  "relation_match": null,
+  "causes": [
+    "기타 오답"
+  ],
+  "claims": [
+    {
+      "order": null,
+      "relation": null,
+      "prob": null,
+      "model_used": "",
+      "description": "",
+      "parsed": [
+        4,
+        "DB08909",
+        "DB00655"
+      ],
+      "checks": {
+        "order": "DB00655|DB08909",
+        "model_top_relation": null,
+        "effect": false,
+        "direction": false
+      },
+      "correct": false,
+      "causes": [
+        "기타 오답"
+      ],
+      "notes": []
+    }
+  ],
+  "needs_human": false
+}

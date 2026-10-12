@@ -1,0 +1,41 @@
+{
+  "qid": "q02",
+  "result": "fail",
+  "relation_match": true,
+  "causes": [
+    "번호→문장 대응 오류(한 칸 밀림)"
+  ],
+  "claims": [
+    {
+      "order": "DB00531|DB00441",
+      "relation": 14,
+      "prob": 0.999944,
+      "model_used": "DSN-DDI transductive (drugbank_test/transductive_drugbank.pkl)",
+      "description": "Cyclophosphamide may decrease the bronchodilatory activities of Gemcitabine.",
+      "parsed": [
+        14,
+        "DB00531",
+        "DB00441"
+      ],
+      "checks": {
+        "order": "DB00531|DB00441",
+        "model_top_relation": true,
+        "effect": false,
+        "direction": true
+      },
+      "correct": false,
+      "causes": [
+        "번호→문장 대응 오류(한 칸 밀림)"
+      ],
+      "notes": []
+    }
+  ],
+  "efficiency": {
+    "turns": 9,
+    "seconds": 98.9,
+    "status": "finished",
+    "prompt_tokens": 204386,
+    "cache_read_tokens": 172356,
+    "completion_tokens": 3200
+  }
+}

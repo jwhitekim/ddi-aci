@@ -1,0 +1,41 @@
+{
+  "qid": "q01",
+  "result": "fail",
+  "relation_match": true,
+  "causes": [
+    "번호→문장 대응 오류(한 칸 밀림)"
+  ],
+  "claims": [
+    {
+      "order": "DB01232|DB01244",
+      "relation": 69,
+      "prob": 0.9685,
+      "model_used": "transductive_drugbank.pkl",
+      "description": "Saquinavir may increase the analgesic activities of Bepridil.",
+      "parsed": [
+        69,
+        "DB01232",
+        "DB01244"
+      ],
+      "checks": {
+        "order": "DB01232|DB01244",
+        "model_top_relation": true,
+        "effect": false,
+        "direction": true
+      },
+      "correct": false,
+      "causes": [
+        "번호→문장 대응 오류(한 칸 밀림)"
+      ],
+      "notes": []
+    }
+  ],
+  "efficiency": {
+    "turns": 12,
+    "seconds": 209.3,
+    "status": "finished",
+    "prompt_tokens": 538353,
+    "cache_read_tokens": 502373,
+    "completion_tokens": 14553
+  }
+}

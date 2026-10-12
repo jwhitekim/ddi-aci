@@ -1,0 +1,10 @@
+{
+  "qid": "q07",
+  "result": "fail",
+  "relation_match": null,
+  "causes": [
+    "약물 식별 실패 또는 해석 불가"
+  ],
+  "claims": [],
+  "needs_human": false
+}

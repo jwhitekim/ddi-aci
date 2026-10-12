@@ -1,0 +1,39 @@
+{
+  "qid": "q01",
+  "result": "partial",
+  "dataset_order_correct": true,
+  "causes": [
+    "한 방향만 보고"
+  ],
+  "claims": [
+    {
+      "order": "DB01232|DB01244",
+      "relation": 69,
+      "prob": 0.9684659242630005,
+      "model_used": "transductive",
+      "description": "The therapeutic efficacy of Bepridil can be decreased when used in combination with Saquinavir.",
+      "parsed": [
+        70,
+        "DB01232",
+        "DB01244"
+      ],
+      "checks": {
+        "order": "DB01232|DB01244",
+        "model_top_relation": true,
+        "effect": true,
+        "direction": true
+      },
+      "correct": true,
+      "causes": [],
+      "notes": []
+    }
+  ],
+  "efficiency": {
+    "turns": 2,
+    "seconds": 89.8,
+    "status": "finished",
+    "prompt_tokens": 35489,
+    "cache_read_tokens": 33691,
+    "completion_tokens": 1050
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "qid": "q02",
+  "result": "partial",
+  "dataset_order_correct": true,
+  "causes": [
+    "한 방향만 보고"
+  ],
+  "claims": [
+    {
+      "order": "DB00531|DB00441",
+      "relation": 14,
+      "prob": 0.9999493360519409,
+      "model_used": "transductive",
+      "description": "Cyclophosphamide may increase the cardiotoxic activities of Gemcitabine.",
+      "parsed": [
+        15,
+        "DB00531",
+        "DB00441"
+      ],
+      "checks": {
+        "order": "DB00531|DB00441",
+        "model_top_relation": true,
+        "effect": true,
+        "direction": true
+      },
+      "correct": true,
+      "causes": [],
+      "notes": []
+    }
+  ],
+  "efficiency": {
+    "turns": 2,
+    "seconds": 60.7,
+    "status": "finished",
+    "prompt_tokens": 35540,
+    "cache_read_tokens": 33724,
+    "completion_tokens": 1065
+  }
+}

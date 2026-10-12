@@ -1,0 +1,66 @@
+{
+  "qid": "q07",
+  "result": "fail",
+  "dataset_order_correct": false,
+  "causes": [
+    "방향 오류",
+    "번호 체계 오류"
+  ],
+  "claims": [
+    {
+      "order": "DB00213|DB00422",
+      "relation": 18,
+      "prob": 1.0,
+      "model_used": "DSN-DDI transductive (DrugBank)",
+      "description": "Pantoprazole can cause an increase in the absorption of Methylphenidate resulting in an increased serum concentration and potentially a worsening of adverse effects.",
+      "parsed": [
+        18,
+        "DB00213",
+        "DB00422"
+      ],
+      "checks": {
+        "order": "DB00213|DB00422",
+        "model_top_relation": false,
+        "effect": true,
+        "direction": true
+      },
+      "correct": false,
+      "causes": [
+        "번호 체계 오류"
+      ],
+      "notes": []
+    },
+    {
+      "order": "DB00422|DB00213",
+      "relation": 47,
+      "prob": 0.9536,
+      "model_used": "DSN-DDI transductive (DrugBank)",
+      "description": "The metabolism of Pantoprazole can be decreased when combined with Methylphenidate.",
+      "parsed": [
+        47,
+        "DB00422",
+        "DB00213"
+      ],
+      "checks": {
+        "order": "DB00422|DB00213",
+        "model_top_relation": false,
+        "effect": true,
+        "direction": false
+      },
+      "correct": false,
+      "causes": [
+        "번호 체계 오류",
+        "방향 오류"
+      ],
+      "notes": []
+    }
+  ],
+  "efficiency": {
+    "turns": 13,
+    "seconds": 232.4,
+    "status": "finished",
+    "prompt_tokens": 587030,
+    "cache_read_tokens": 549055,
+    "completion_tokens": 15516
+  }
+}

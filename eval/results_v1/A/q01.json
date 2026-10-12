@@ -1,0 +1,10 @@
+{
+  "qid": "q01",
+  "result": "fail",
+  "dataset_order_correct": false,
+  "causes": [
+    "약물 식별 실패 또는 해석 불가"
+  ],
+  "claims": [],
+  "needs_human": true
+}

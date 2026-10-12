@@ -1,0 +1,58 @@
+{
+  "qid": "q02",
+  "result": "success",
+  "dataset_order_correct": true,
+  "causes": [],
+  "claims": [
+    {
+      "order": "DB00531|DB00441",
+      "relation": 14,
+      "prob": 0.9999,
+      "model_used": "DSN-DDI DrugBank transductive (transductive_drugbank.pkl)",
+      "description": "Cyclophosphamide may increase the cardiotoxic activities of Gemcitabine.",
+      "parsed": [
+        15,
+        "DB00531",
+        "DB00441"
+      ],
+      "checks": {
+        "order": "DB00531|DB00441",
+        "model_top_relation": true,
+        "effect": true,
+        "direction": true
+      },
+      "correct": true,
+      "causes": [],
+      "notes": []
+    },
+    {
+      "order": "DB00441|DB00531",
+      "relation": 48,
+      "prob": 0.9603,
+      "model_used": "DSN-DDI DrugBank transductive (transductive_drugbank.pkl)",
+      "description": "The risk or severity of adverse effects can be increased when Gemcitabine is combined with Cyclophosphamide.",
+      "parsed": [
+        49,
+        "DB00441",
+        "DB00531"
+      ],
+      "checks": {
+        "order": "DB00441|DB00531",
+        "model_top_relation": true,
+        "effect": true,
+        "direction": true
+      },
+      "correct": true,
+      "causes": [],
+      "notes": []
+    }
+  ],
+  "efficiency": {
+    "turns": 14,
+    "seconds": 381.7,
+    "status": "max_iterations",
+    "prompt_tokens": 978327,
+    "cache_read_tokens": 938201,
+    "completion_tokens": 34311
+  }
+}

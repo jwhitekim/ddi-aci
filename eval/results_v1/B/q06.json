@@ -1,0 +1,41 @@
+{
+  "qid": "q06",
+  "result": "fail",
+  "dataset_order_correct": false,
+  "causes": [
+    "번호 체계 오류"
+  ],
+  "claims": [
+    {
+      "order": "DB00972|DB00214",
+      "relation": 29,
+      "prob": 0.9997,
+      "model_used": "transductive",
+      "description": "Azelastine may decrease the diuretic activities of Torasemide.",
+      "parsed": [
+        29,
+        "DB00972",
+        "DB00214"
+      ],
+      "checks": {
+        "order": "DB00972|DB00214",
+        "model_top_relation": false,
+        "effect": true,
+        "direction": true
+      },
+      "correct": false,
+      "causes": [
+        "번호 체계 오류"
+      ],
+      "notes": []
+    }
+  ],
+  "efficiency": {
+    "turns": 14,
+    "seconds": 349.9,
+    "status": "max_iterations",
+    "prompt_tokens": 1039151,
+    "cache_read_tokens": 997963,
+    "completion_tokens": 28563
+  }
+}

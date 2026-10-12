@@ -1,0 +1,43 @@
+{
+  "qid": "q10",
+  "result": "fail",
+  "dataset_order_correct": false,
+  "causes": [
+    "모델 선택 오류",
+    "방향 오류"
+  ],
+  "claims": [
+    {
+      "order": "DB11268|DB01357",
+      "relation": 11,
+      "prob": 1.0,
+      "model_used": "DSN-DDI inductive (drugbank)",
+      "description": "Protocatechualdehyde may decrease the anticoagulant activities of Mestranol.",
+      "parsed": [
+        12,
+        "DB11268",
+        "DB01357"
+      ],
+      "checks": {
+        "order": "DB11268|DB01357",
+        "model_top_relation": true,
+        "effect": true,
+        "direction": false
+      },
+      "correct": false,
+      "causes": [
+        "모델 선택 오류",
+        "방향 오류"
+      ],
+      "notes": []
+    }
+  ],
+  "efficiency": {
+    "turns": 12,
+    "seconds": 400.9,
+    "status": "max_iterations",
+    "prompt_tokens": 1053530,
+    "cache_read_tokens": 1011957,
+    "completion_tokens": 39165
+  }
+}

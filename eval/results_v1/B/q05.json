@@ -1,0 +1,41 @@
+{
+  "qid": "q05",
+  "result": "fail",
+  "dataset_order_correct": false,
+  "causes": [
+    "번호 체계 오류"
+  ],
+  "claims": [
+    {
+      "order": "DB00527|DB00413",
+      "relation": 32,
+      "prob": 1.0,
+      "model_used": "DSN-DDI transductive (drugbank)",
+      "description": "Cinchocaine may increase the sedative activities of Pramipexole.",
+      "parsed": [
+        32,
+        "DB00527",
+        "DB00413"
+      ],
+      "checks": {
+        "order": "DB00527|DB00413",
+        "model_top_relation": false,
+        "effect": true,
+        "direction": true
+      },
+      "correct": false,
+      "causes": [
+        "번호 체계 오류"
+      ],
+      "notes": []
+    }
+  ],
+  "efficiency": {
+    "turns": 14,
+    "seconds": 344.1,
+    "status": "max_iterations",
+    "prompt_tokens": 883555,
+    "cache_read_tokens": 848683,
+    "completion_tokens": 27163
+  }
+}

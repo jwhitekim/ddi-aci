@@ -1,0 +1,41 @@
+{
+  "qid": "q09",
+  "result": "fail",
+  "dataset_order_correct": false,
+  "causes": [
+    "번호 체계 오류"
+  ],
+  "claims": [
+    {
+      "order": "DB00655|DB08909",
+      "relation": 70,
+      "prob": 0.9956,
+      "model_used": "DSN-DDI transductive (drugbank_test/transductive_drugbank.pkl)",
+      "description": "The therapeutic efficacy of Glycerol phenylbutyrate can be decreased when used in combination with Estrone.",
+      "parsed": [
+        70,
+        "DB00655",
+        "DB08909"
+      ],
+      "checks": {
+        "order": "DB00655|DB08909",
+        "model_top_relation": false,
+        "effect": true,
+        "direction": true
+      },
+      "correct": false,
+      "causes": [
+        "번호 체계 오류"
+      ],
+      "notes": []
+    }
+  ],
+  "efficiency": {
+    "turns": 15,
+    "seconds": 248.3,
+    "status": "finished",
+    "prompt_tokens": 660038,
+    "cache_read_tokens": 621549,
+    "completion_tokens": 17291
+  }
+}

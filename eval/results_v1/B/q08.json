@@ -1,0 +1,41 @@
+{
+  "qid": "q08",
+  "result": "fail",
+  "dataset_order_correct": false,
+  "causes": [
+    "번호 체계 오류"
+  ],
+  "claims": [
+    {
+      "order": "DB08808|DB09082",
+      "relation": 14,
+      "prob": 1.0,
+      "model_used": "DSN-DDI transductive (drugbank_test/transductive_drugbank.pkl)",
+      "description": "Bupranolol may decrease the bronchodilatory activities of Vilanterol.",
+      "parsed": [
+        14,
+        "DB08808",
+        "DB09082"
+      ],
+      "checks": {
+        "order": "DB08808|DB09082",
+        "model_top_relation": false,
+        "effect": true,
+        "direction": true
+      },
+      "correct": false,
+      "causes": [
+        "번호 체계 오류"
+      ],
+      "notes": []
+    }
+  ],
+  "efficiency": {
+    "turns": 12,
+    "seconds": 132.7,
+    "status": "finished",
+    "prompt_tokens": 342296,
+    "cache_read_tokens": 307775,
+    "completion_tokens": 7213
+  }
+}

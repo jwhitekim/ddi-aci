@@ -1,0 +1,41 @@
+{
+  "qid": "q04",
+  "result": "fail",
+  "dataset_order_correct": false,
+  "causes": [
+    "방향 오류"
+  ],
+  "claims": [
+    {
+      "order": "DB00391|DB00875",
+      "relation": 35,
+      "prob": 1.0,
+      "model_used": "DSN-DDI DrugBank transductive (transductive_drugbank.pkl)",
+      "description": "Sulpiride may increase the antipsychotic activities of Flupentixol.",
+      "parsed": [
+        36,
+        "DB00391",
+        "DB00875"
+      ],
+      "checks": {
+        "order": "DB00391|DB00875",
+        "model_top_relation": true,
+        "effect": true,
+        "direction": false
+      },
+      "correct": false,
+      "causes": [
+        "방향 오류"
+      ],
+      "notes": []
+    }
+  ],
+  "efficiency": {
+    "turns": 10,
+    "seconds": 269.5,
+    "status": "finished",
+    "prompt_tokens": 811556,
+    "cache_read_tokens": 775826,
+    "completion_tokens": 24536
+  }
+}

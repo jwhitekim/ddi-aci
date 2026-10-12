@@ -39,7 +39,7 @@ check('2.2 관계 5', ddi.explain(5, 'Warfarin', 'Acetylsalicylic acid') == 'Ace
 check('2.2 관계 72', ddi.explain(72, 'Simvastatin', 'Clarithromycin') == 'The serum concentration of Simvastatin can be increased when it is combined with Clarithromycin.')
 check('2.2 관계 3', ddi.explain(3, 'Carbamazepine', 'Simvastatin') == 'The metabolism of Simvastatin can be increased when combined with Carbamazepine.')
 sents = [ddi.explain(t, 'AAA', 'BBB') for t in range(86)]
-swapped = sum(s == ddi._RELATIONS[t + 1][0].replace('#Drug1', 'BBB').replace('#Drug2', 'AAA') for t, s in enumerate(sents))
+swapped = sum(s == ddi.relations._RELATIONS[t + 1][0].replace('#Drug1', 'BBB').replace('#Drug2', 'AAA') for t, s in enumerate(sents))
 check('2.2 86종 문장, 뒤집힌 관계 42개', len(sents) == 86 and swapped == 42, 'swapped=%d' % swapped)
 
 # 2.3 predict / predict_many

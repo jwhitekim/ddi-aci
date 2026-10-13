@@ -1,7 +1,7 @@
 """평가 채점기 (eval_spec.md 4·5장). A·B·C 모두 같은 기준.
 
-    python3 eval/score.py                 # runs/eval/B, runs/eval/C, eval/a_claims.jsonl 채점
-    python3 eval/score.py --questions eval/smoke_question.jsonl --run X=runs/sonnet_B30   # 임의 실행 채점
+    python3 eval/scripts/score.py         # runs/eval/B, runs/eval/C, eval/baseline_a/a_claims.jsonl 채점
+    python3 eval/scripts/score.py --questions eval/questions/smoke_question.jsonl --run X=runs/sonnet_B30   # 임의 실행 채점
 
 정규화: 약물 이름 -> DrugBank ID, 문장 -> (관계 종류 T, #Drug1, #Drug2).
 판정(eval_spec.md 0장, v2): 질문 순서(데이터 저장 순서) 한 방향만 본다.
@@ -15,7 +15,7 @@ import json
 import re
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parent.parent
+REPO = Path(__file__).resolve().parents[2]
 DATA = REPO / 'ddi' / 'data'
 ID_RE = re.compile(r'^DB\d{5}$', re.I)
 
@@ -208,9 +208,9 @@ def summarize(name, results):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument('--questions', default=str(REPO / 'eval' / 'questions.jsonl'))
+    p.add_argument('--questions', default=str(REPO / 'eval' / 'questions' / 'questions.jsonl'))
     p.add_argument('--run', action='append', default=[], help='이름=실행폴더 (한 문항 질문 파일과 함께 사용)')
-    p.add_argument('--out', default=str(REPO / 'eval' / 'results'))
+    p.add_argument('--out', default=str(REPO / 'eval' / 'results' / 'v2'))
     args = p.parse_args()
     questions = [json.loads(l) for l in open(args.questions, encoding='utf-8')]
     out = Path(args.out)
@@ -243,7 +243,7 @@ def main():
                 (out / cond / ('%s.json' % r['qid'])).write_text(json.dumps(r, ensure_ascii=False, indent=2))
             summaries.append(summarize(cond, results))
 
-    a_path = REPO / 'eval' / 'a_claims.jsonl'
+    a_path = REPO / 'eval' / 'baseline_a' / 'a_claims.jsonl'
     if a_path.exists():
         results = []
         by_q = {json.loads(l)['qid']: json.loads(l) for l in open(a_path, encoding='utf-8')}

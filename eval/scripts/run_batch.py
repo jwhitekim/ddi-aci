@@ -1,6 +1,6 @@
 """평가 질문을 B 또는 C 조건으로 실행한다 (문항마다 agent/run_agent.py 호출).
 
-    .venv-openhands/bin/python eval/run_batch.py --condition B --workers 2
+    .venv-openhands/bin/python eval/scripts/run_batch.py --condition B --workers 2
 
 결과: runs/eval/<조건>/<qid>/ (이미 있는 문항은 건너뜀)
 """
@@ -13,7 +13,7 @@ import sys
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parent.parent
+REPO = Path(__file__).resolve().parents[2]
 TIMEOUT_SECONDS = 20 * 60
 
 
@@ -45,7 +45,7 @@ def main():
     p.add_argument('--condition', choices=['B', 'C'], required=True)
     p.add_argument('--workers', type=int, default=1)
     args = p.parse_args()
-    questions = [json.loads(l) for l in open(REPO / 'eval' / 'questions.jsonl', encoding='utf-8')]
+    questions = [json.loads(l) for l in open(REPO / 'eval' / 'questions' / 'questions.jsonl', encoding='utf-8')]
     with ThreadPoolExecutor(args.workers) as pool:
         for qid, status in pool.map(lambda q: run_one(args.condition, q), questions):
             print(args.condition, qid, status, flush=True)

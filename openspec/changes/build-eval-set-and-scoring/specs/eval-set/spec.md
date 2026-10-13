@@ -25,7 +25,7 @@
 - **THEN** 관계별 확률 차이가 1e-4 이하다
 
 ### Requirement: 질문과 정답은 한 파일에 저장한다
-질문과 정답은 `eval/questions.jsonl`에 한 줄에 한 문항으로 저장해야 한다(SHALL). 각 줄에는 `qid`, `question`, `drugs`(데이터 저장 순서의 DrugBank ID 두 개), 두 순서의 `ground_truth`(모델, 상위 관계·확률·문장), `label`(테스트셋의 실제 관계)이 있어야 한다(SHALL).
+질문과 정답은 `eval/questions/questions.jsonl`에 한 줄에 한 문항으로 저장해야 한다(SHALL). 각 줄에는 `qid`, `question`, `drugs`(데이터 저장 순서의 DrugBank ID 두 개), 두 순서의 `ground_truth`(모델, 상위 관계·확률·문장), `label`(테스트셋의 실제 관계)이 있어야 한다(SHALL).
 
 #### Scenario: 두 순서의 정답
 - **WHEN** 문항 하나를 보면

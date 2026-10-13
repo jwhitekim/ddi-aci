@@ -1,8 +1,8 @@
 """평가 질문 10문항 생성 (eval_spec.md 2장). ddi-runtime 컨테이너의 /opt/DSN-DDI 에서 실행:
 
-    docker run --rm -v $PWD/eval:/w/eval -v $PWD/agent:/w/agent:ro ddi-runtime python /w/eval/make_questions.py
+    docker run --rm -v $PWD/eval:/w/eval -v $PWD/agent:/w/agent:ro ddi-runtime python /w/eval/scripts/make_questions.py
 
-출력: eval/questions_base.jsonl (정답 없이 질문만)
+출력: eval/questions/questions_base.jsonl (정답 없이 질문만)
 """
 import csv
 import json
@@ -33,7 +33,7 @@ def main():
     rng = random.Random(SEED)
     relations = rng.sample(sorted(by_rel), N_QUESTIONS)  # 서로 다른 관계 10개
     suffix = open('/w/agent/task_suffix.txt', encoding='utf-8').read()
-    with open('/w/eval/questions_base.jsonl', 'w', encoding='utf-8') as out:
+    with open('/w/eval/questions/questions_base.jsonl', 'w', encoding='utf-8') as out:
         for i, rel in enumerate(relations, 1):
             a, b = rng.choice(sorted(by_rel[rel]))
             question = TEMPLATE.format(a=names[a], b=names[b])  # 데이터 저장 순서대로

@@ -4,9 +4,9 @@
 ddi-runtime 컨테이너(GPU)의 /opt/DSN-DDI 에서 실행:
 
     docker run --rm --gpus all -v $PWD/eval:/w/eval -v $PWD/server:/w/server:ro ddi-runtime \
-        python /w/eval/make_ground_truth.py
+        python /w/eval/scripts/make_ground_truth.py
 
-출력: eval/questions.jsonl. --check-server 를 주면 예측 서버 값과 비교한다.
+출력: eval/questions/questions.jsonl. --check-server 를 주면 예측 서버 값과 비교한다.
 """
 import csv
 import json
@@ -71,8 +71,8 @@ def answer(a, b):
 
 
 def main():
-    rows = [json.loads(l) for l in open('/w/eval/questions_base.jsonl', encoding='utf-8')]
-    with open('/w/eval/questions.jsonl', 'w', encoding='utf-8') as out:
+    rows = [json.loads(l) for l in open('/w/eval/questions/questions_base.jsonl', encoding='utf-8')]
+    with open('/w/eval/questions/questions.jsonl', 'w', encoding='utf-8') as out:
         for q in rows:
             a, b = q['drugs']
             q['ground_truth'] = {'%s|%s' % (a, b): answer(a, b), '%s|%s' % (b, a): answer(b, a)}

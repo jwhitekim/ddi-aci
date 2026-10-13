@@ -1,8 +1,8 @@
 """A 조건(LLM 단독): 도구 없이 질문만 보내고, 답에서 효과·방향 주장을 채점기 모델 두 개로 뽑는다.
 
-    .venv-openhands/bin/python eval/run_baseline_a.py
+    .venv-openhands/bin/python eval/scripts/run_baseline_a.py
 
-출력: eval/a_answers.jsonl (답), eval/a_claims.jsonl (채점기 추출 결과. 채택은 ADOPTED_GRADER, 다른 채점기는 일치율 참고용)
+출력: eval/baseline_a/a_answers.jsonl (답), eval/baseline_a/a_claims.jsonl (채점기 추출 결과. 채택은 ADOPTED_GRADER, 다른 채점기는 일치율 참고용)
 """
 import csv
 import json
@@ -14,9 +14,9 @@ from pathlib import Path
 import litellm
 from dotenv import load_dotenv
 
-REPO = Path(__file__).resolve().parent.parent
+REPO = Path(__file__).resolve().parents[2]
 load_dotenv(REPO / '.env')
-sys.path.insert(0, str(REPO / 'eval'))
+sys.path.insert(0, str(REPO / 'eval' / 'scripts'))
 from score import resolve  # noqa: E402
 
 ANSWER_MODEL = dict(model='openai/anthropic/claude-sonnet-5.5', base_url='https://ai-gateway.vercel.sh/v1',
@@ -62,8 +62,8 @@ def extract(cfg, q, answer):
 
 
 def main():
-    questions = [json.loads(l) for l in open(REPO / 'eval' / 'questions.jsonl', encoding='utf-8')]
-    ans_path, claims_path = REPO / 'eval' / 'a_answers.jsonl', REPO / 'eval' / 'a_claims.jsonl'
+    questions = [json.loads(l) for l in open(REPO / 'eval' / 'questions' / 'questions.jsonl', encoding='utf-8')]
+    ans_path, claims_path = REPO / 'eval' / 'baseline_a' / 'a_answers.jsonl', REPO / 'eval' / 'baseline_a' / 'a_claims.jsonl'
     answers = {}
     if ans_path.exists():
         answers = {json.loads(l)['qid']: json.loads(l) for l in open(ans_path, encoding='utf-8')}

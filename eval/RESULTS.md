@@ -1,6 +1,6 @@
 # 평가 결과 v2 (10문항)
 
-실행: 2026-10-12 13:41–13:55 · LLM: Claude Sonnet 5.5 · 기준: `eval_spec.md` 0장 (실행 전 확정, 커밋 1afe91c) · 채점: `eval/score.py` · 원자료: `eval/results/`, `runs/eval/` · v1(지시 수정 전): `eval/RESULTS_v1.md`
+실행: 2026-10-12 13:41–13:55 · LLM: Claude Sonnet 5.5 · 기준: `eval_spec.md` 0장 (실행 전 확정, 커밋 1afe91c) · 채점: `eval/scripts/score.py` · 원자료: `eval/results/v2/`, `runs/eval/` · v1(지시 수정 전): `eval/RESULTS_v1.md`
 
 ## 1. 요약
 
@@ -44,4 +44,4 @@
 
 ## 5. 확인할 점
 
-- (선택) A 10문항 사람 확인: `eval/a_grading_check.md`
+- (선택) A 10문항 사람 확인: `eval/baseline_a/a_grading_check.md`

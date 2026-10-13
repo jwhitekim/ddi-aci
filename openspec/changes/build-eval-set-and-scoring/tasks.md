@@ -16,10 +16,10 @@
 
 ## 4. 실행
 
-- [ ] 4.1 `eval_spec.md`와 `eval/` 코드를 커밋한다(결과 보기 전 기준 고정). 확인: `git log`에 커밋이 있다
-- [ ] 4.2 `eval/run_batch.py`로 10문항을 B·C로 실행하고, A도 10문항을 실행한다. 확인: B·C 실행 폴더 20개와 A 답 10개가 생기고 각 실행의 종료 상태·턴·토큰이 기록된다
+- [x] 4.1 `eval_spec.md`와 `eval/` 코드를 커밋한다(결과 보기 전 기준 고정). 확인: `git log`에 커밋이 있다
+- [x] 4.2 `eval/run_batch.py`로 10문항을 B·C로 실행하고, A도 10문항을 실행한다. 확인: B·C 실행 폴더 20개와 A 답 10개가 생기고 각 실행의 종료 상태·턴·토큰이 기록된다
 
 ## 5. 결과
 
 - [ ] 5.1 세 조건을 채점하고, 10문항 전부를 사람이 직접 보고 채점기 판정과 비교한다. 확인: `eval/RESULTS.md`에 조건별 지표 표, 실패 원인, 사람 판정과의 일치 여부, 실제 비용(게이트웨이 대시보드)이 적혀 있다
-- [ ] 5.2 `ddi-draft.md` 6장(질문, 정답, 지표)을 `eval_spec.md`와 맞추고, 9장에 참고 벤치마크(ScienceAgentBench, CORE-Bench, SUPER)를 추가한다. 확인: 6장의 질문 개수와 지표가 `eval_spec.md`와 같다
+- [x] 5.2 `ddi-draft.md` 6장(질문, 정답, 지표)을 `eval_spec.md`와 맞추고, 9장에 참고 벤치마크(ScienceAgentBench, CORE-Bench, SUPER)를 추가한다. 확인: 6장의 질문 개수와 지표가 `eval_spec.md`와 같다

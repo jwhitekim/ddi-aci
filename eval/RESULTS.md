@@ -44,4 +44,4 @@
 
 ## 5. 확인할 점
 
-- (선택) A 10문항 사람 확인: `eval/a_review.md`
+- (선택) A 10문항 사람 확인: `eval/a_grading_check.md`

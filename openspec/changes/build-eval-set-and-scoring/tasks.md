@@ -22,4 +22,4 @@
 ## 5. 결과
 
 - [x] 5.1 세 조건을 채점하고 결과와 실제 비용을 정리한다 (사람 확인은 선택 사항으로 변경, `eval_spec.md` 4장). 확인: `eval/RESULTS.md`에 조건별 지표 표, 실패 원인, 실제 비용이 적혀 있다
-- [x] 5.2 `ddi-draft.md` 6장(질문, 정답, 지표)을 `eval_spec.md`와 맞추고, 9장에 참고 벤치마크(ScienceAgentBench, CORE-Bench, SUPER)를 추가한다. 확인: 6장의 질문 개수와 지표가 `eval_spec.md`와 같다
+- [x] 5.2 `ddi_draft.md` 6장(질문, 정답, 지표)을 `eval_spec.md`와 맞추고, 9장에 참고 벤치마크(ScienceAgentBench, CORE-Bench, SUPER)를 추가한다. 확인: 6장의 질문 개수와 지표가 `eval_spec.md`와 같다

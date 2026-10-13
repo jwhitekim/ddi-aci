@@ -25,5 +25,5 @@ B·C 실행 환경과 실행기는 준비됐지만, 무엇을 물어보고 어�
 ## Impact
 
 - 새 코드: `eval/` (질문·정답 생성, 채점, A 실행기, 배치 실행), `eval/questions/questions.jsonl`, 결과 기록 `eval/RESULTS.md`
-- 문서: `eval_spec.md`(평가 명세, 근거), `ddi-draft.md` 6장
+- 문서: `eval_spec.md`(평가 명세, 근거), `ddi_draft.md` 6장
 - 비용: 약 5~6달러 (Vercel AI Gateway)

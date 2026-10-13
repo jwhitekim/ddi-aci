@@ -2,3 +2,6 @@ docs.txt
 .venv-openhands/
 .env
 runs/
+
+__pycache__
+/**/__pycache__

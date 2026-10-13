@@ -1,14 +1,16 @@
-# A 채점 사람 확인표
+# A 채점 확인표 (선택)
 
-각 문항에서 A의 답을 읽고, 아래 "정답 문장"과 같은 효과·방향을 A가 말했는지 표시한다. 채점기 두 개의 추출 결과는 참고용이다.
+A의 채점기는 Gemini 3.5 Flash 하나다 (`eval_spec.md` 0장). 아래는 Flash 추출 결과와 자동 판정이고, 사람이 다시 볼 때 쓴다.
+Sonnet 5.5 추출 결과는 일치율 참고용이다 (추출 일치 3/10, 성공 여부 판정 10/10 일치).
 
-판정 칸: O(정답과 같은 효과·방향을 말함) / X(말하지 않음 또는 다르게 말함)
+사람 판정 칸: O(정답과 같은 효과·방향을 말함) / X(말하지 않음 또는 다르게 말함)
 
-## q01 — Saquinavir이랑 Bepridil 상호작용 예측해줘  ⚠️ 채점기 불일치
+## q01 — Saquinavir이랑 Bepridil 상호작용 예측해줘
 
 - **정답 문장 (질문 순서, 모델 1위 관계 69):** The therapeutic efficacy of Bepridil can be decreased when used in combination with Saquinavir.
-- **채점기 sonnet-5.5:** Saquinavir may increase the QTc-prolonging activities of Bepridil.; Saquinavir may increase the atrioventricular blocking (AV block) activities of Bepridil.; The metabolism of Bepridil can be decreased when combined with Saquinavir.; Saquinavir may increase the bradycardic activities of Bepridil.; The serum concentration of Bepridil can be increased when it is combined with Saquinavir.
-- **채점기 gemini-3.5-flash:** The risk or severity of QTc prolongation can be increased when Saquinavir is combined with Bepridil.; The metabolism of Bepridil can be decreased when combined with Saquinavir.; The serum concentration of Bepridil can be increased when it is combined with Saquinavir.
+- **Flash 추출 (채택):** The risk or severity of QTc prolongation can be increased when Saquinavir is combined with Bepridil.; The metabolism of Bepridil can be decreased when combined with Saquinavir.; The serum concentration of Bepridil can be increased when it is combined with Saquinavir.
+- **자동 판정:** 실패
+- 참고 — Sonnet 추출: Saquinavir may increase the QTc-prolonging activities of Bepridil.; Saquinavir may increase the atrioventricular blocking (AV block) activities of Bepridil.; The metabolism of Bepridil can be decreased when combined with Saquinavir.; Saquinavir may increase the bradycardic activities of Bepridil.; The serum concentration of Bepridil can be increased when it is combined with Saquinavir. (Flash와 다름)
 - **사람 판정:** [ ]
 
 <details><summary>A의 답 전문</summary>
@@ -60,11 +62,12 @@
 
 </details>
 
-## q02 — Cyclophosphamide이랑 Gemcitabine 상호작용 예측해줘  ⚠️ 채점기 불일치
+## q02 — Cyclophosphamide이랑 Gemcitabine 상호작용 예측해줘
 
 - **정답 문장 (질문 순서, 모델 1위 관계 14):** Cyclophosphamide may increase the cardiotoxic activities of Gemcitabine.
-- **채점기 sonnet-5.5:** The therapeutic efficacy of Cyclophosphamide can be increased when used in combination with Gemcitabine.; The therapeutic efficacy of Gemcitabine can be increased when used in combination with Cyclophosphamide.; Gemcitabine may increase the myelosuppressive activities of Cyclophosphamide.; Cyclophosphamide may increase the myelosuppressive activities of Gemcitabine.; Gemcitabine may increase the hepatotoxic activities of Cyclophosphamide.; Cyclophosphamide may increase the hepatotoxic activities of Gemcitabine.
-- **채점기 gemini-3.5-flash:** The therapeutic efficacy of Cyclophosphamide can be increased when used in combination with Gemcitabine.; Cyclophosphamide may increase the immunosuppressive activities of Gemcitabine.; Cyclophosphamide may increase the myelosuppressive activities of Gemcitabine.; Cyclophosphamide may increase the hepatotoxic activities of Gemcitabine.
+- **Flash 추출 (채택):** The therapeutic efficacy of Cyclophosphamide can be increased when used in combination with Gemcitabine.; Cyclophosphamide may increase the immunosuppressive activities of Gemcitabine.; Cyclophosphamide may increase the myelosuppressive activities of Gemcitabine.; Cyclophosphamide may increase the hepatotoxic activities of Gemcitabine.
+- **자동 판정:** 실패
+- 참고 — Sonnet 추출: The therapeutic efficacy of Cyclophosphamide can be increased when used in combination with Gemcitabine.; The therapeutic efficacy of Gemcitabine can be increased when used in combination with Cyclophosphamide.; Gemcitabine may increase the myelosuppressive activities of Cyclophosphamide.; Cyclophosphamide may increase the myelosuppressive activities of Gemcitabine.; Gemcitabine may increase the hepatotoxic activities of Cyclophosphamide.; Cyclophosphamide may increase the hepatotoxic activities of Gemcitabine. (Flash와 다름)
 - **사람 판정:** [ ]
 
 <details><summary>A의 답 전문</summary>
@@ -130,11 +133,12 @@
 
 </details>
 
-## q03 — Nevirapine이랑 Clopidogrel 상호작용 예측해줘  ⚠️ 채점기 불일치
+## q03 — Nevirapine이랑 Clopidogrel 상호작용 예측해줘
 
 - **정답 문장 (질문 순서, 모델 1위 관계 25):** Nevirapine may decrease the antiplatelet activities of Clopidogrel.
-- **채점기 sonnet-5.5:** The metabolism of Nevirapine can be decreased when combined with Clopidogrel.; Nevirapine may increase the antiplatelet activities of Clopidogrel.; The risk or severity of bleeding can be increased when Nevirapine is combined with Clopidogrel.; The serum concentration of the active metabolites of Clopidogrel can be increased when Clopidogrel is used in combination with Nevirapine.
-- **채점기 gemini-3.5-flash:** Nevirapine may increase the antiplatelet activities of Clopidogrel.; The risk or severity of bleeding can be increased when Nevirapine is combined with Clopidogrel.; The serum concentration of Nevirapine can be increased when it is combined with Clopidogrel.; The serum concentration of the active metabolites of Clopidogrel can be increased when Clopidogrel is used in combination with Nevirapine.
+- **Flash 추출 (채택):** Nevirapine may increase the antiplatelet activities of Clopidogrel.; The risk or severity of bleeding can be increased when Nevirapine is combined with Clopidogrel.; The serum concentration of Nevirapine can be increased when it is combined with Clopidogrel.; The serum concentration of the active metabolites of Clopidogrel can be increased when Clopidogrel is used in combination with Nevirapine.
+- **자동 판정:** 실패
+- 참고 — Sonnet 추출: The metabolism of Nevirapine can be decreased when combined with Clopidogrel.; Nevirapine may increase the antiplatelet activities of Clopidogrel.; The risk or severity of bleeding can be increased when Nevirapine is combined with Clopidogrel.; The serum concentration of the active metabolites of Clopidogrel can be increased when Clopidogrel is used in combination with Nevirapine. (Flash와 다름)
 - **사람 판정:** [ ]
 
 <details><summary>A의 답 전문</summary>
@@ -182,11 +186,12 @@
 
 </details>
 
-## q04 — Sulpiride이랑 Flupentixol 상호작용 예측해줘  ⚠️ 채점기 불일치
+## q04 — Sulpiride이랑 Flupentixol 상호작용 예측해줘
 
 - **정답 문장 (질문 순서, 모델 1위 관계 35):** Flupentixol may increase the antipsychotic activities of Sulpiride.
-- **채점기 sonnet-5.5:** Sulpiride may increase the QTc-prolonging activities of Flupentixol.; Sulpiride may increase the orthostatic hypotensive activities of Flupentixol.; Sulpiride may increase the sedative activities of Flupentixol.; The risk or severity of adverse effects can be increased when Sulpiride is combined with Flupentixol.
-- **채점기 gemini-3.5-flash:** Sulpiride may increase the anticholinergic activities of Flupentixol.; Sulpiride may increase the adverse neuromuscular activities of Flupentixol.; Sulpiride may increase the orthostatic hypotensive activities of Flupentixol.; Sulpiride may increase the sedative activities of Flupentixol.; The risk or severity of QTc prolongation can be increased when Sulpiride is combined with Flupentixol.; The risk or severity of adverse effects can be increased when Sulpiride is combined with Flupentixol.; Sulpiride may increase the arrhythmogenic activities of Flupentixol.
+- **Flash 추출 (채택):** Sulpiride may increase the anticholinergic activities of Flupentixol.; Sulpiride may increase the adverse neuromuscular activities of Flupentixol.; Sulpiride may increase the orthostatic hypotensive activities of Flupentixol.; Sulpiride may increase the sedative activities of Flupentixol.; The risk or severity of QTc prolongation can be increased when Sulpiride is combined with Flupentixol.; The risk or severity of adverse effects can be increased when Sulpiride is combined with Flupentixol.; Sulpiride may increase the arrhythmogenic activities of Flupentixol.
+- **자동 판정:** 실패
+- 참고 — Sonnet 추출: Sulpiride may increase the QTc-prolonging activities of Flupentixol.; Sulpiride may increase the orthostatic hypotensive activities of Flupentixol.; Sulpiride may increase the sedative activities of Flupentixol.; The risk or severity of adverse effects can be increased when Sulpiride is combined with Flupentixol. (Flash와 다름)
 - **사람 판정:** [ ]
 
 <details><summary>A의 답 전문</summary>
@@ -258,11 +263,12 @@
 
 </details>
 
-## q05 — Cinchocaine이랑 Pramipexole 상호작용 예측해줘  ⚠️ 채점기 불일치
+## q05 — Cinchocaine이랑 Pramipexole 상호작용 예측해줘
 
 - **정답 문장 (질문 순서, 모델 1위 관계 31):** Cinchocaine may increase the sedative activities of Pramipexole.
-- **채점기 sonnet-5.5:** Cinchocaine may increase the central nervous system depressant (CNS depressant) activities of Pramipexole.; The risk or severity of hypotension can be increased when Cinchocaine is combined with Pramipexole.
-- **채점기 gemini-3.5-flash:** (추출 없음)
+- **Flash 추출 (채택):** (추출 없음)
+- **자동 판정:** 실패
+- 참고 — Sonnet 추출: Cinchocaine may increase the central nervous system depressant (CNS depressant) activities of Pramipexole.; The risk or severity of hypotension can be increased when Cinchocaine is combined with Pramipexole. (Flash와 다름)
 - **사람 판정:** [ ]
 
 <details><summary>A의 답 전문</summary>
@@ -300,11 +306,12 @@
 
 </details>
 
-## q06 — Azelastine이랑 Torasemide 상호작용 예측해줘  ⚠️ 채점기 불일치
+## q06 — Azelastine이랑 Torasemide 상호작용 예측해줘
 
 - **정답 문장 (질문 순서, 모델 1위 관계 28):** Azelastine may decrease the diuretic activities of Torasemide.
-- **채점기 sonnet-5.5:** The risk or severity of QTc prolongation can be increased when Azelastine is combined with Torasemide.; The risk or severity of hypotension can be increased when Azelastine is combined with Torasemide.
-- **채점기 gemini-3.5-flash:** The risk or severity of QTc prolongation can be increased when Azelastine is combined with Torasemide.
+- **Flash 추출 (채택):** The risk or severity of QTc prolongation can be increased when Azelastine is combined with Torasemide.
+- **자동 판정:** 실패
+- 참고 — Sonnet 추출: The risk or severity of QTc prolongation can be increased when Azelastine is combined with Torasemide.; The risk or severity of hypotension can be increased when Azelastine is combined with Torasemide. (Flash와 다름)
 - **사람 판정:** [ ]
 
 <details><summary>A의 답 전문</summary>
@@ -349,8 +356,9 @@
 ## q07 — Pantoprazole이랑 Methylphenidate 상호작용 예측해줘
 
 - **정답 문장 (질문 순서, 모델 1위 관계 17):** Pantoprazole can cause an increase in the absorption of Methylphenidate resulting in an increased serum concentration and potentially a worsening of adverse effects.
-- **채점기 sonnet-5.5:** (추출 없음)
-- **채점기 gemini-3.5-flash:** (추출 없음)
+- **Flash 추출 (채택):** (추출 없음)
+- **자동 판정:** 실패
+- 참고 — Sonnet 추출: (추출 없음)
 - **사람 판정:** [ ]
 
 <details><summary>A의 답 전문</summary>
@@ -388,11 +396,12 @@ Pantoprazole은 위 pH를 올리므로 **pH 의존적 방출 제형**에서는 �
 
 </details>
 
-## q08 — Bupranolol이랑 Vilanterol 상호작용 예측해줘  ⚠️ 채점기 불일치
+## q08 — Bupranolol이랑 Vilanterol 상호작용 예측해줘
 
 - **정답 문장 (질문 순서, 모델 1위 관계 13):** Bupranolol may decrease the bronchodilatory activities of Vilanterol.
-- **채점기 sonnet-5.5:** Bupranolol may decrease the bronchodilatory activities of Vilanterol.; Bupranolol may increase the bronchoconstrictory activities of Vilanterol.
-- **채점기 gemini-3.5-flash:** Bupranolol may decrease the bronchodilatory activities of Vilanterol.
+- **Flash 추출 (채택):** Bupranolol may decrease the bronchodilatory activities of Vilanterol.
+- **자동 판정:** 성공
+- 참고 — Sonnet 추출: Bupranolol may decrease the bronchodilatory activities of Vilanterol.; Bupranolol may increase the bronchoconstrictory activities of Vilanterol. (Flash와 다름)
 - **사람 판정:** [ ]
 
 <details><summary>A의 답 전문</summary>
@@ -441,8 +450,9 @@ Pantoprazole은 위 pH를 올리므로 **pH 의존적 방출 제형**에서는 �
 ## q09 — Estrone이랑 Glycerol phenylbutyrate 상호작용 예측해줘
 
 - **정답 문장 (질문 순서, 모델 1위 관계 69):** The therapeutic efficacy of Glycerol phenylbutyrate can be decreased when used in combination with Estrone.
-- **채점기 sonnet-5.5:** The metabolism of Estrone can be increased when combined with Glycerol phenylbutyrate.
-- **채점기 gemini-3.5-flash:** The metabolism of Estrone can be increased when combined with Glycerol phenylbutyrate.
+- **Flash 추출 (채택):** The metabolism of Estrone can be increased when combined with Glycerol phenylbutyrate.
+- **자동 판정:** 실패
+- 참고 — Sonnet 추출: The metabolism of Estrone can be increased when combined with Glycerol phenylbutyrate.
 - **사람 판정:** [ ]
 
 <details><summary>A의 답 전문</summary>
@@ -491,8 +501,9 @@ Pantoprazole은 위 pH를 올리므로 **pH 의존적 방출 제형**에서는 �
 ## q10 — Protocatechualdehyde이랑 Mestranol 상호작용 예측해줘
 
 - **정답 문장 (질문 순서, 모델 1위 관계 11):** Mestranol may decrease the anticoagulant activities of Protocatechualdehyde.
-- **채점기 sonnet-5.5:** (추출 없음)
-- **채점기 gemini-3.5-flash:** (추출 없음)
+- **Flash 추출 (채택):** (추출 없음)
+- **자동 판정:** 실패
+- 참고 — Sonnet 추출: (추출 없음)
 - **사람 판정:** [ ]
 
 <details><summary>A의 답 전문</summary>

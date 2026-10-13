@@ -3,8 +3,170 @@
   "result": "fail",
   "relation_match": null,
   "causes": [
-    "약물 식별 실패 또는 해석 불가"
+    "기타 오답"
   ],
-  "claims": [],
-  "needs_human": true
+  "claims": [
+    {
+      "order": null,
+      "relation": null,
+      "prob": null,
+      "model_used": "",
+      "description": "",
+      "parsed": [
+        2,
+        "DB00391",
+        "DB00875"
+      ],
+      "checks": {
+        "order": "DB00391|DB00875",
+        "model_top_relation": null,
+        "effect": false,
+        "direction": false
+      },
+      "correct": false,
+      "causes": [
+        "기타 오답"
+      ],
+      "notes": []
+    },
+    {
+      "order": null,
+      "relation": null,
+      "prob": null,
+      "model_used": "",
+      "description": "",
+      "parsed": [
+        22,
+        "DB00391",
+        "DB00875"
+      ],
+      "checks": {
+        "order": "DB00391|DB00875",
+        "model_top_relation": null,
+        "effect": false,
+        "direction": false
+      },
+      "correct": false,
+      "causes": [
+        "기타 오답"
+      ],
+      "notes": []
+    },
+    {
+      "order": null,
+      "relation": null,
+      "prob": null,
+      "model_used": "",
+      "description": "",
+      "parsed": [
+        30,
+        "DB00391",
+        "DB00875"
+      ],
+      "checks": {
+        "order": "DB00391|DB00875",
+        "model_top_relation": null,
+        "effect": false,
+        "direction": false
+      },
+      "correct": false,
+      "causes": [
+        "기타 오답"
+      ],
+      "notes": []
+    },
+    {
+      "order": null,
+      "relation": null,
+      "prob": null,
+      "model_used": "",
+      "description": "",
+      "parsed": [
+        32,
+        "DB00391",
+        "DB00875"
+      ],
+      "checks": {
+        "order": "DB00391|DB00875",
+        "model_top_relation": null,
+        "effect": false,
+        "direction": false
+      },
+      "correct": false,
+      "causes": [
+        "기타 오답"
+      ],
+      "notes": []
+    },
+    {
+      "order": null,
+      "relation": null,
+      "prob": null,
+      "model_used": "",
+      "description": "",
+      "parsed": [
+        33,
+        "DB00391",
+        "DB00875"
+      ],
+      "checks": {
+        "order": "DB00391|DB00875",
+        "model_top_relation": null,
+        "effect": false,
+        "direction": false
+      },
+      "correct": false,
+      "causes": [
+        "기타 오답"
+      ],
+      "notes": []
+    },
+    {
+      "order": null,
+      "relation": null,
+      "prob": null,
+      "model_used": "",
+      "description": "",
+      "parsed": [
+        49,
+        "DB00391",
+        "DB00875"
+      ],
+      "checks": {
+        "order": "DB00875|DB00391",
+        "model_top_relation": null,
+        "effect": true,
+        "direction": false
+      },
+      "correct": false,
+      "causes": [
+        "방향 오류"
+      ],
+      "notes": []
+    },
+    {
+      "order": null,
+      "relation": null,
+      "prob": null,
+      "model_used": "",
+      "description": "",
+      "parsed": [
+        82,
+        "DB00391",
+        "DB00875"
+      ],
+      "checks": {
+        "order": "DB00391|DB00875",
+        "model_top_relation": null,
+        "effect": false,
+        "direction": false
+      },
+      "correct": false,
+      "causes": [
+        "기타 오답"
+      ],
+      "notes": []
+    }
+  ],
+  "graders_agree": false
 }

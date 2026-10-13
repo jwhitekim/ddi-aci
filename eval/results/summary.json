@@ -29,12 +29,12 @@
   {
     "condition": "A",
     "n": 10,
-    "success_rate": 0.0,
+    "success_rate": 0.1,
     "valid_execution_rate": 1.0,
     "relation_match_rate": null,
     "failure_causes": {
-      "약물 식별 실패 또는 해석 불가": 9,
-      "기타 오답": 1
+      "기타 오답": 6,
+      "약물 식별 실패 또는 해석 불가": 3
     },
     "avg_turns": null,
     "avg_seconds": null,

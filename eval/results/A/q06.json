@@ -3,8 +3,32 @@
   "result": "fail",
   "relation_match": null,
   "causes": [
-    "약물 식별 실패 또는 해석 불가"
+    "기타 오답"
   ],
-  "claims": [],
-  "needs_human": true
+  "claims": [
+    {
+      "order": null,
+      "relation": null,
+      "prob": null,
+      "model_used": "",
+      "description": "",
+      "parsed": [
+        33,
+        "DB00972",
+        "DB00214"
+      ],
+      "checks": {
+        "order": "DB00972|DB00214",
+        "model_top_relation": null,
+        "effect": false,
+        "direction": true
+      },
+      "correct": false,
+      "causes": [
+        "기타 오답"
+      ],
+      "notes": []
+    }
+  ],
+  "graders_agree": false
 }

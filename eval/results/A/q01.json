@@ -3,8 +3,76 @@
   "result": "fail",
   "relation_match": null,
   "causes": [
-    "약물 식별 실패 또는 해석 불가"
+    "기타 오답"
   ],
-  "claims": [],
-  "needs_human": true
+  "claims": [
+    {
+      "order": null,
+      "relation": null,
+      "prob": null,
+      "model_used": "",
+      "description": "",
+      "parsed": [
+        33,
+        "DB01232",
+        "DB01244"
+      ],
+      "checks": {
+        "order": "DB01232|DB01244",
+        "model_top_relation": null,
+        "effect": false,
+        "direction": true
+      },
+      "correct": false,
+      "causes": [
+        "기타 오답"
+      ],
+      "notes": []
+    },
+    {
+      "order": null,
+      "relation": null,
+      "prob": null,
+      "model_used": "",
+      "description": "",
+      "parsed": [
+        47,
+        "DB01232",
+        "DB01244"
+      ],
+      "checks": {
+        "order": "DB01244|DB01232",
+        "model_top_relation": null,
+        "effect": true,
+        "direction": true
+      },
+      "correct": true,
+      "causes": [],
+      "notes": []
+    },
+    {
+      "order": null,
+      "relation": null,
+      "prob": null,
+      "model_used": "",
+      "description": "",
+      "parsed": [
+        73,
+        "DB01232",
+        "DB01244"
+      ],
+      "checks": {
+        "order": "DB01232|DB01244",
+        "model_top_relation": null,
+        "effect": false,
+        "direction": true
+      },
+      "correct": false,
+      "causes": [
+        "기타 오답"
+      ],
+      "notes": []
+    }
+  ],
+  "graders_agree": false
 }

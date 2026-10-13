@@ -6,5 +6,5 @@
     "약물 식별 실패 또는 해석 불가"
   ],
   "claims": [],
-  "needs_human": false
+  "graders_agree": true
 }

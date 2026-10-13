@@ -254,7 +254,7 @@ def main():
             claims = [{'order': None, 'relation': None, 'prob': None, 'model_used': '', 'description': c.get('text', ''),
                        'parsed': (c['T'], c['drug1'], c['drug2'])} for c in item.get('claims', [])]
             r = score_question(q, claims, bool(item.get('answer')))
-            r['needs_human'] = item.get('needs_human', False)
+            r['graders_agree'] = item.get('graders_agree')
             results.append(r)
         (out / 'A').mkdir(parents=True, exist_ok=True)
         for r in results:

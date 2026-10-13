@@ -2,7 +2,7 @@
 
     .venv-openhands/bin/python eval/run_baseline_a.py
 
-출력: eval/a_answers.jsonl (답), eval/a_claims.jsonl (채점기 추출 결과, 불일치는 needs_human)
+출력: eval/a_answers.jsonl (답), eval/a_claims.jsonl (채점기 추출 결과. 채택은 ADOPTED_GRADER, 다른 채점기는 일치율 참고용)
 """
 import csv
 import json
@@ -25,6 +25,7 @@ GRADERS = {
     'sonnet-5.5': ANSWER_MODEL,
     'gemini-3.5-flash': dict(model='gemini/gemini-3.5-flash', api_key=os.environ.get('GEMINI_API_KEY')),
 }
+ADOPTED_GRADER = 'gemini-3.5-flash'  # 답변 모델(Sonnet 5.5)과 다른 모델로 채점
 
 with open(REPO / 'ddi' / 'data' / 'Interaction_information.csv', encoding='utf-8') as f:
     TEMPLATES = {int(r['Interaction type']): r['Description'] for r in csv.DictReader(f)}
@@ -79,11 +80,11 @@ def main():
             per = {name: extract(cfg, q, answer) for name, cfg in GRADERS.items()}
             vals = list(per.values())
             agreed = vals[0] == vals[1]
-            adopted = vals[0] if agreed else []
-            f.write(json.dumps({'qid': q['qid'], 'answer': answer, 'graders': per, 'needs_human': not agreed,
+            adopted = per[ADOPTED_GRADER]
+            f.write(json.dumps({'qid': q['qid'], 'answer': answer, 'graders': per, 'graders_agree': agreed,
                                 'claims': [{'T': t, 'drug1': a, 'drug2': b} for t, a, b in adopted]},
                                ensure_ascii=False) + '\n')
-            print('A graded', q['qid'], 'agreed' if agreed else 'NEEDS HUMAN', per, flush=True)
+            print('A graded', q['qid'], 'agreed' if agreed else 'graders differ', per, flush=True)
 
 
 if __name__ == '__main__':

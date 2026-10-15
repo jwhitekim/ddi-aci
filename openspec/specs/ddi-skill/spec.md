@@ -2,7 +2,7 @@
 
 ## Purpose
 
-조건 C의 에이전트가 환경 ①에서 호출하는 DDI 함수 모음(domain-specific ACI의 commands·environment feedback·guardrails)을 정의한다. 약물 식별부터 결과 저장까지, 관계 번호 해석의 함정을 함수 안에서 처리한다.
+조건 C의 에이전트가 환경 ①에서 호출하는 DDI 함수 모음(model-specific ACI의 commands·environment feedback·guardrails)을 정의한다. 약물 식별부터 결과 저장까지, 관계 번호 해석의 함정을 함수 안에서 처리한다.
 
 ## Requirements
 

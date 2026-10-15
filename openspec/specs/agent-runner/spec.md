@@ -2,7 +2,7 @@
 
 ## Purpose
 
-조건(B 또는 C)과 질문 하나를 받아 OpenHands CodeActAgent를 정해진 설정으로 실행하고, 결과 CSV와 대화 기록을 모으는 실행기를 정의한다. B와 C는 domain-specific ACI를 제외한 모든 실행 설정이 같아야 한다.
+조건(B 또는 C)과 질문 하나를 받아 OpenHands CodeActAgent를 정해진 설정으로 실행하고, 결과 CSV와 대화 기록을 모으는 실행기를 정의한다. B와 C는 model-specific ACI(DDI-ACI)를 제외한 모든 실행 설정이 같아야 한다.
 
 ## Requirements
 
@@ -14,7 +14,7 @@
 - **THEN** 출력 폴더의 실행 정보에 `openhands-ai 0.62.0`과 `CodeActAgent`가 기록되어 있다
 
 ### Requirement: B와 C는 ACI 외의 설정이 같다
-B와 C 실행은 같은 LLM 설정(모델, temperature 0.0, 확장 추론 없음), 같은 최대 상호작용 턴(30), 같은 GPU 설정, 같은 질문 문장을 써야 한다(SHALL). 질문 문장 뒤에는 두 조건 모두 같은 환경 ② 위치 안내 한 줄(`/opt/conda/envs/dsn/bin/python`, `/opt/DSN-DDI`)을 붙여야 한다(SHALL). 두 조건의 차이는 기본 이미지(`ddi-runtime` / `ddi-specialist`), 작업 폴더의 `.openhands/` 내용, C 전용 마운트(`ddi` 패키지, 예측 서버 코드)뿐이어야 한다(MUST).
+B와 C 실행은 같은 LLM 설정(모델, temperature 0.0, 추론 강도 기본값 — 따로 설정하지 않으며 추론 토큰은 발생할 수 있음), 같은 최대 상호작용 턴(30), 같은 GPU 설정, 같은 질문 문장을 써야 한다(SHALL). 질문 문장 뒤에는 두 조건 모두 같은 환경 ② 위치 안내 한 줄(`/opt/conda/envs/dsn/bin/python`, `/opt/DSN-DDI`)을 붙여야 한다(SHALL). 두 조건의 차이는 기본 이미지(`ddi-runtime` / `ddi-specialist`), 작업 폴더의 `.openhands/` 내용, C 전용 마운트(`ddi` 패키지, 예측 서버 코드)뿐이어야 한다(MUST).
 
 #### Scenario: 설정 비교
 - **WHEN** 같은 질문으로 B와 C의 OpenHands 설정 파일과 질문 파일을 만들면

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-비교 실험의 세 조건(A: LLM 단독, B: generalist agent, C: specialist agent)이 각각 무엇을 받는지 정한다. 그래서 B와 C의 차이가 domain-specific ACI 하나뿐이 되게 하고, 결과를 같은 형식으로 채점할 수 있게 한다.
+비교 실험의 세 조건(A: LLM 단독, B: generalist agent, C: specialist agent)이 각각 무엇을 받는지 정한다. 그래서 B와 C의 차이가 model-specific ACI 하나뿐이 되게 하고, 결과를 같은 형식으로 채점할 수 있게 한다.
 
 ## Requirements
 

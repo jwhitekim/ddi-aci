@@ -2,7 +2,7 @@
 
 ## Purpose
 
-B와 C가 공통으로 쓰는 DSN-DDI 런타임 이미지를 정의한다. 원 DSN-DDI 스크립트가 이 이미지 안에서 GPU로 논문 수치를 재현해야 하고, domain-specific ACI는 이미지에 들어가지 않아야 한다.
+B와 C가 공통으로 쓰는 DSN-DDI 런타임 이미지를 정의한다. 원 DSN-DDI 스크립트가 이 이미지 안에서 GPU로 논문 수치를 재현해야 하고, model-specific ACI는 이미지에 들어가지 않아야 한다.
 
 ## Requirements
 

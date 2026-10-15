@@ -1,0 +1,4 @@
+drug_a,drug_b,relation,prob,model_used,description
+DB00972,DB00214,28,0.9997221827507019,transductive,Azelastine may decrease the diuretic activities of Torasemide.
+DB00972,DB00214,69,0.7769665718078613,transductive,The therapeutic efficacy of Torasemide can be decreased when used in combination with Azelastine.
+DB00972,DB00214,19,0.7604143023490906,transductive,Torasemide may increase the QTc-prolonging activities of Azelastine.

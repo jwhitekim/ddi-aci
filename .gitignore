@@ -1,7 +1,8 @@
 docs.txt
 .venv-openhands/
 .env
-runs/
+runs/*
+!runs/eval/
 
 __pycache__
 /**/__pycache__

@@ -1,0 +1,22 @@
+{
+  "condition": "B",
+  "task": "Saquinavir이랑 Bepridil 상호작용 예측해줘",
+  "openhands_version": "0.62.0",
+  "agent": "CodeActAgent",
+  "base_image": "ddi-runtime",
+  "model": "openai/anthropic/claude-sonnet-5.5",
+  "max_iterations": 30,
+  "exit_code": 0,
+  "seconds": 209.3,
+  "result_csvs": [
+    "saquinavir_bepridil_ddi.csv"
+  ],
+  "status": "finished",
+  "turns": 12,
+  "tokens": {
+    "prompt_tokens": 538353,
+    "completion_tokens": 14553,
+    "cache_read_tokens": 502373,
+    "cache_write_tokens": 35926
+  }
+}

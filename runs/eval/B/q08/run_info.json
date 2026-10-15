@@ -1,0 +1,22 @@
+{
+  "condition": "B",
+  "task": "Bupranolol이랑 Vilanterol 상호작용 예측해줘",
+  "openhands_version": "0.62.0",
+  "agent": "CodeActAgent",
+  "base_image": "ddi-runtime",
+  "model": "openai/anthropic/claude-sonnet-5.5",
+  "max_iterations": 30,
+  "exit_code": 0,
+  "seconds": 152.7,
+  "result_csvs": [
+    "bupranolol_vilanterol_ddi.csv"
+  ],
+  "status": "finished",
+  "turns": 12,
+  "tokens": {
+    "prompt_tokens": 350198,
+    "completion_tokens": 8003,
+    "cache_read_tokens": 319937,
+    "cache_write_tokens": 30235
+  }
+}

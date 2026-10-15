@@ -1,0 +1,2 @@
+drug_a,drug_b,relation,prob,model_used,description
+Cyclophosphamide,Gemcitabine,14,0.999944,DSN-DDI transductive (drugbank_test/transductive_drugbank.pkl),Cyclophosphamide may decrease the bronchodilatory activities of Gemcitabine.

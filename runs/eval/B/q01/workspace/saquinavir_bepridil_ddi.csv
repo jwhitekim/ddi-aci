@@ -1,0 +1,2 @@
+drug_a,drug_b,relation,prob,model_used,description
+Saquinavir,Bepridil,69,0.9685,transductive_drugbank.pkl,Saquinavir may increase the analgesic activities of Bepridil.

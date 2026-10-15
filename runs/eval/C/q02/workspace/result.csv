@@ -1,0 +1,2 @@
+drug_a,drug_b,relation,prob,model_used,description
+DB00531,DB00441,14,0.9999493360519409,transductive,Cyclophosphamide may increase the cardiotoxic activities of Gemcitabine.

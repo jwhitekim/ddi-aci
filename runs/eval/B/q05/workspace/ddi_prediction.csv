@@ -1,0 +1,2 @@
+drug_a,drug_b,relation,prob,model_used,description
+Cinchocaine,Pramipexole,31,1.0,transductive_drugbank.pkl,Cinchocaine may increase the sedative activities of Pramipexole.

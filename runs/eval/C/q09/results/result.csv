@@ -1,0 +1,2 @@
+drug_a,drug_b,relation,prob,model_used,description
+DB00655,DB08909,69,0.995591402053833,transductive,The therapeutic efficacy of Glycerol phenylbutyrate can be decreased when used in combination with Estrone.

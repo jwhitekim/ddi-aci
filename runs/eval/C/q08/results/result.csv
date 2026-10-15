@@ -1,0 +1,2 @@
+drug_a,drug_b,relation,prob,model_used,description
+DB08808,DB09082,13,0.9999938011169434,transductive,Bupranolol may decrease the bronchodilatory activities of Vilanterol.

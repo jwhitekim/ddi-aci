@@ -1,0 +1,2 @@
+drug_a,drug_b,relation,prob,model_used,description
+Azelastine,Torasemide,28,0.9997,DSN-DDI transductive_drugbank.pkl,Azelastine may decrease the diuretic activities of Torasemide.

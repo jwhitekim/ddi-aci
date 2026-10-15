@@ -1,0 +1,4 @@
+drug_a,drug_b,relation,prob,model_used,description
+DB01232,DB01244,69,0.96846604347229,transductive,The therapeutic efficacy of Bepridil can be decreased when used in combination with Saquinavir.
+DB01232,DB01244,48,0.9220522046089172,transductive,The risk or severity of adverse effects can be increased when Saquinavir is combined with Bepridil.
+DB01232,DB01244,72,0.7908328175544739,transductive,The serum concentration of Saquinavir can be increased when it is combined with Bepridil.

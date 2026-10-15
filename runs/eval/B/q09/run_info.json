@@ -1,0 +1,22 @@
+{
+  "condition": "B",
+  "task": "Estrone이랑 Glycerol phenylbutyrate 상호작용 예측해줘",
+  "openhands_version": "0.62.0",
+  "agent": "CodeActAgent",
+  "base_image": "ddi-runtime",
+  "model": "openai/anthropic/claude-sonnet-5.5",
+  "max_iterations": 30,
+  "exit_code": 0,
+  "seconds": 118.4,
+  "result_csvs": [
+    "ddi_prediction.csv"
+  ],
+  "status": "finished",
+  "turns": 11,
+  "tokens": {
+    "prompt_tokens": 277544,
+    "completion_tokens": 5790,
+    "cache_read_tokens": 255987,
+    "cache_write_tokens": 21531
+  }
+}

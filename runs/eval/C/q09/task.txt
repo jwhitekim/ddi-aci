@@ -1,0 +1,7 @@
+Estrone이랑 Glycerol phenylbutyrate 상호작용 예측해줘
+
+참고: DSN-DDI 저장소(가중치, 데이터 포함)는 /opt/DSN-DDI 에 있고, 그 실행용 파이썬은 /opt/conda/envs/dsn/bin/python 입니다.
+질문에 적힌 순서대로 첫 번째 약물을 drug_a, 두 번째 약물을 drug_b로 하여 예측하세요.
+최종 결과는 /workspace 에 CSV 파일로 저장하세요. CSV 칼럼은 drug_a, drug_b, relation, prob, model_used, description 입니다.
+relation 에는 DSN-DDI 모델이 출력한 관계 번호(0~85)를 그대로 쓰고, description 에는 그 관계를 설명하는 문장을 쓰세요.
+작업이 끝나면 finish 도구로 종료하세요.

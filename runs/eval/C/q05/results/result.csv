@@ -1,0 +1,2 @@
+drug_a,drug_b,relation,prob,model_used,description
+DB00527,DB00413,31,0.9999992847442627,transductive,Cinchocaine may increase the sedative activities of Pramipexole.

@@ -1,0 +1,2 @@
+drug_a,drug_b,relation,prob,model_used,description
+Pantoprazole,Methylphenidate,17,0.9999915361404419,transductive_drugbank.pkl,Pantoprazole can cause an increase in the absorption of Methylphenidate resulting in an increased serum concentration and potentially a worsening of adverse effects.

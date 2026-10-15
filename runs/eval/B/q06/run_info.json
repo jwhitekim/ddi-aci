@@ -1,0 +1,22 @@
+{
+  "condition": "B",
+  "task": "Azelastine이랑 Torasemide 상호작용 예측해줘",
+  "openhands_version": "0.62.0",
+  "agent": "CodeActAgent",
+  "base_image": "ddi-runtime",
+  "model": "openai/anthropic/claude-sonnet-5.5",
+  "max_iterations": 30,
+  "exit_code": 0,
+  "seconds": 187.6,
+  "result_csvs": [
+    "azelastine_torasemide_ddi.csv"
+  ],
+  "status": "finished",
+  "turns": 11,
+  "tokens": {
+    "prompt_tokens": 461931,
+    "completion_tokens": 11586,
+    "cache_read_tokens": 433583,
+    "cache_write_tokens": 28308
+  }
+}

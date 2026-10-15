@@ -1,0 +1,4 @@
+drug_a,drug_b,relation,prob,model_used,description
+DB00213,DB00422,17,0.9999915361404419,transductive,Pantoprazole can cause an increase in the absorption of Methylphenidate resulting in an increased serum concentration and potentially a worsening of adverse effects.
+DB00213,DB00422,48,0.3787549138069153,transductive,The risk or severity of adverse effects can be increased when Pantoprazole is combined with Methylphenidate.
+DB00213,DB00422,72,0.2348456084728241,transductive,The serum concentration of Pantoprazole can be increased when it is combined with Methylphenidate.

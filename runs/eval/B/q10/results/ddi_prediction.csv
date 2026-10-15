@@ -1,0 +1,2 @@
+drug_a,drug_b,relation,prob,model_used,description
+Protocatechualdehyde,Mestranol,11,0.9994,transductive_drugbank.pkl,Mestranol may decrease the anticoagulant activities of Protocatechualdehyde.

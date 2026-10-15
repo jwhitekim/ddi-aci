@@ -1,5 +1,5 @@
 """작업 2.1~2.5 확인. 서버 컨테이너 네트워크에 붙인 python:3.11 에서 실행:
-docker run --rm --network container:<서버> -v $PWD:/w -w /w python:3.11 python ddi_tests/check_ddi.py
+docker run --rm --network container:<서버> -v $PWD:/w -w /w python:3.11 python ddi/test/check_ddi.py
 """
 import csv
 import itertools

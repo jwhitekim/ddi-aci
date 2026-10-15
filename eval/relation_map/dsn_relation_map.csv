@@ -1,0 +1,87 @@
+dsn_type,interaction_type,ssi_type,subject,n_dsn_pairs,n_matched,type_agreement,orientation,orientation_agreement,row_matches_rule,orientation_matches_subject,description
+0,1,74,1,11,10,1.0,same,1.0,True,True,#Drug1 may increase the photosensitizing activities of #Drug2.
+1,2,44,2,323,323,1.0,reversed,1.0,True,True,#Drug1 may increase the anticholinergic activities of #Drug2.
+2,3,3,1,518,518,1.0,same,1.0,True,True,The bioavailability of #Drug2 can be decreased when combined with #Drug1.
+3,4,6,1,5011,4945,1.0,same,1.0,True,True,The metabolism of #Drug2 can be increased when combined with #Drug1.
+4,5,41,1,309,309,1.0,same,1.0,True,True,#Drug1 may decrease the vasoconstricting activities of #Drug2.
+5,6,45,2,3160,3160,1.0,reversed,1.0,True,True,#Drug1 may increase the anticoagulant activities of #Drug2.
+6,7,22,2,21,21,1.0,reversed,1.0,True,True,#Drug1 may increase the ototoxic activities of #Drug2.
+7,8,13,1,244,244,1.0,same,1.0,True,True,The therapeutic efficacy of #Drug2 can be increased when used in combination with #Drug1.
+8,9,63,2,2109,2109,1.0,reversed,1.0,True,True,#Drug1 may increase the hypoglycemic activities of #Drug2.
+9,10,46,1,629,629,1.0,same,1.0,True,True,#Drug1 may increase the antihypertensive activities of #Drug2.
+10,11,11,1,312,299,1.0,same,1.0,True,True,The serum concentration of the active metabolites of #Drug2 can be reduced when #Drug2 is used in combination with #Drug1 resulting in a loss in efficacy.
+11,12,33,2,238,238,1.0,reversed,1.0,True,True,#Drug1 may decrease the anticoagulant activities of #Drug2.
+12,13,2,1,45,45,1.0,same,1.0,True,True,The absorption of #Drug2 can be decreased when combined with #Drug1.
+13,14,36,1,361,361,1.0,same,1.0,True,True,#Drug1 may decrease the bronchodilatory activities of #Drug2.
+14,15,17,1,202,197,1.0,same,1.0,True,True,#Drug1 may increase the cardiotoxic activities of #Drug2.
+15,16,53,2,5413,5410,1.0,reversed,1.0,True,True,#Drug1 may increase the central nervous system depressant (CNS depressant) activities of #Drug2.
+16,17,38,1,83,83,1.0,same,1.0,True,True,#Drug1 may decrease the neuromuscular blocking activities of #Drug2.
+17,18,1,1,82,81,1.0,same,1.0,True,True,#Drug1 can cause an increase in the absorption of #Drug2 resulting in an increased serum concentration and potentially a worsening of adverse effects.
+18,19,83,2,109,109,1.0,reversed,1.0,True,True,#Drug1 may increase the vasoconstricting activities of #Drug2.
+19,20,75,2,6140,6101,1.0,reversed,1.0,True,True,#Drug1 may increase the QTc-prolonging activities of #Drug2.
+20,21,72,2,428,428,1.0,reversed,1.0,True,True,#Drug1 may increase the neuromuscular blocking activities of #Drug2.
+21,22,42,2,94,94,1.0,reversed,1.0,True,True,#Drug1 may increase the adverse neuromuscular activities of #Drug2.
+22,23,79,2,56,56,1.0,reversed,1.0,True,True,#Drug1 may increase the stimulatory activities of #Drug2.
+23,24,62,2,180,180,1.0,reversed,1.0,True,True,#Drug1 may increase the hypocalcemic activities of #Drug2.
+24,25,50,1,716,716,1.0,same,1.0,True,True,#Drug1 may increase the atrioventricular blocking (AV block) activities of #Drug2.
+25,26,35,1,7,7,1.0,same,1.0,True,True,#Drug1 may decrease the antiplatelet activities of #Drug2.
+26,27,71,1,936,936,1.0,same,1.0,True,True,#Drug1 may increase the neuroexcitatory activities of #Drug2.
+27,28,56,2,11,11,1.0,reversed,1.0,True,True,#Drug1 may increase the dermatologic adverse activities of #Drug2.
+28,29,37,1,324,324,1.0,same,1.0,True,True,#Drug1 may decrease the diuretic activities of #Drug2.
+29,30,73,1,616,616,1.0,same,1.0,True,True,#Drug1 may increase the orthostatic hypotensive activities of #Drug2.
+30,31,29,3,14,14,1.0,same,1.0,True,True,The risk or severity of hypertension can be increased when #Drug2 is combined with #Drug1.
+31,32,77,1,1011,1011,1.0,same,1.0,True,True,#Drug1 may increase the sedative activities of #Drug2.
+32,33,31,3,442,440,1.0,same,1.0,True,True,The risk or severity of QTc prolongation can be increased when #Drug1 is combined with #Drug2.
+33,34,68,1,312,309,1.0,same,1.0,True,True,#Drug1 may increase the immunosuppressive activities of #Drug2.
+34,35,21,1,69,69,1.0,same,1.0,True,True,#Drug1 may increase the neurotoxic activities of #Drug2.
+35,36,48,2,94,94,1.0,reversed,1.0,True,True,#Drug1 may increase the antipsychotic activities of #Drug2.
+36,37,34,2,3089,3088,1.0,reversed,1.0,True,True,#Drug1 may decrease the antihypertensive activities of #Drug2.
+37,38,84,2,33,33,1.0,reversed,1.0,True,True,#Drug1 may increase the vasodilatory activities of #Drug2.
+38,39,55,1,148,148,1.0,same,1.0,True,True,#Drug1 may increase the constipating activities of #Drug2.
+39,40,76,2,300,300,1.0,reversed,1.0,True,True,#Drug1 may increase the respiratory depressant activities of #Drug2.
+40,41,67,1,14,14,1.0,same,1.0,True,True,#Drug1 may increase the hypotensive and central nervous system depressant (CNS depressant) activities of #Drug2.
+41,42,28,3,6,6,1.0,same,1.0,True,True,The risk or severity of hyperkalemia can be increased when #Drug1 is combined with #Drug2.
+42,43,7,2,11,11,1.0,reversed,1.0,True,True,The protein binding of #Drug2 can be decreased when combined with #Drug1.
+43,44,18,1,13,13,1.0,same,1.0,True,True,#Drug1 may increase the central neurotoxic activities of #Drug2.
+44,45,23,2,33,33,1.0,reversed,1.0,True,True,#Drug1 may decrease effectiveness of #Drug2 as a diagnostic agent.
+45,46,52,1,26,26,1.0,same,1.0,True,True,#Drug1 may increase the bronchoconstrictory activities of #Drug2.
+46,47,5,2,34360,34151,1.0,reversed,1.0,True,True,The metabolism of #Drug2 can be decreased when combined with #Drug1.
+47,48,70,2,69,69,1.0,reversed,1.0,True,True,#Drug1 may increase the myopathic rhabdomyolysis activities of #Drug2.
+48,49,25,3,60751,60680,1.0,same,1.0,True,True,The risk or severity of adverse effects can be increased when #Drug1 is combined with #Drug2.
+49,50,27,3,26,26,1.0,same,1.0,True,True,The risk or severity of heart failure can be increased when #Drug2 is combined with #Drug1.
+50,51,58,2,83,83,1.0,reversed,1.0,True,True,#Drug1 may increase the hypercalcemic activities of #Drug2.
+51,52,32,2,10,10,1.0,reversed,1.0,True,True,#Drug1 may decrease the analgesic activities of #Drug2.
+52,53,47,2,336,336,1.0,reversed,1.0,True,True,#Drug1 may increase the antiplatelet activities of #Drug2.
+53,54,51,1,1277,1277,1.0,same,1.0,True,True,#Drug1 may increase the bradycardic activities of #Drug2.
+54,55,65,2,118,118,1.0,reversed,1.0,True,True,#Drug1 may increase the hyponatremic activities of #Drug2.
+55,56,30,3,33,33,1.0,same,1.0,True,True,The risk or severity of hypotension can be increased when #Drug1 is combined with #Drug2.
+56,57,20,2,664,662,1.0,reversed,1.0,True,True,#Drug1 may increase the nephrotoxic activities of #Drug2.
+57,58,16,2,1043,1026,1.0,reversed,1.0,True,True,#Drug1 may decrease the cardiotoxic activities of #Drug2.
+58,59,82,1,43,43,1.0,same,1.0,True,True,#Drug1 may increase the ulcerogenic activities of #Drug2.
+59,60,66,1,8397,8393,1.0,same,1.0,True,True,#Drug1 may increase the hypotensive activities of #Drug2.
+60,61,40,2,498,498,1.0,reversed,1.0,True,True,#Drug1 may decrease the stimulatory activities of #Drug2.
+61,62,4,1,11,11,1.0,same,1.0,True,True,The bioavailability of #Drug2 can be increased when combined with #Drug1.
+62,63,69,2,34,28,1.0,reversed,1.0,True,True,#Drug1 may increase the myelosuppressive activities of #Drug2.
+63,64,78,2,803,796,1.0,reversed,1.0,True,True,#Drug1 may increase the serotonergic activities of #Drug2.
+64,65,15,2,32,32,1.0,reversed,1.0,True,True,#Drug1 may increase the excretion rate of #Drug2 which could result in a lower serum level and potentially a reduction in efficacy.
+65,66,26,3,128,128,1.0,same,1.0,True,True,The risk or severity of bleeding can be increased when #Drug1 is combined with #Drug2.
+66,67,0,2,930,893,1.0,reversed,1.0,True,True,#Drug1 can cause a decrease in the absorption of #Drug2 resulting in a reduced serum concentration and potentially a decrease in efficacy.
+67,68,60,2,278,276,1.0,reversed,1.0,True,True,#Drug1 may increase the hyperkalemic activities of #Drug2.
+68,69,43,2,280,276,1.0,reversed,1.0,True,True,#Drug1 may increase the analgesic activities of #Drug2.
+69,70,12,1,7786,7774,1.0,same,1.0,True,True,The therapeutic efficacy of #Drug2 can be decreased when used in combination with #Drug1.
+70,71,61,2,673,671,1.0,reversed,1.0,True,True,#Drug1 may increase the hypertensive activities of #Drug2.
+71,72,14,2,1825,1820,1.0,reversed,1.0,True,True,#Drug1 may decrease the excretion rate of #Drug2 which could result in a higher serum level.
+72,73,9,2,23779,23489,1.0,reversed,1.0,True,True,The serum concentration of #Drug2 can be increased when it is combined with #Drug1.
+73,74,57,1,422,422,1.0,same,1.0,True,True,#Drug1 may increase the fluid retaining activities of #Drug2.
+74,75,8,1,9470,9321,1.0,same,1.0,True,True,The serum concentration of #Drug2 can be decreased when it is combined with #Drug1.
+75,76,39,1,558,558,1.0,same,1.0,True,True,#Drug1 may decrease the sedative activities of #Drug2.
+76,77,10,1,538,538,1.0,same,1.0,True,True,The serum concentration of the active metabolites of #Drug2 can be increased when #Drug2 is used in combination with #Drug1.
+77,78,59,2,28,28,1.0,reversed,1.0,True,True,#Drug1 may increase the hyperglycemic activities of #Drug2.
+78,79,54,1,27,27,1.0,same,1.0,True,True,#Drug1 may increase the central nervous system depressant (CNS depressant) and hypertensive activities of #Drug2.
+79,80,19,2,64,63,1.0,reversed,1.0,True,True,#Drug1 may increase the hepatotoxic activities of #Drug2.
+80,81,81,2,108,108,1.0,reversed,1.0,True,True,#Drug1 may increase the thrombogenic activities of #Drug2.
+81,82,49,2,355,355,1.0,reversed,1.0,True,True,#Drug1 may increase the arrhythmogenic activities of #Drug2.
+82,83,64,1,1204,1204,1.0,same,1.0,True,True,#Drug1 may increase the hypokalemic activities of #Drug2.
+83,84,85,1,65,65,1.0,same,1.0,True,True,#Drug1 may increase the vasopressor activities of #Drug2.
+84,85,80,1,372,372,1.0,same,1.0,True,True,#Drug1 may increase the tachycardic activities of #Drug2.
+85,86,24,2,27,27,1.0,reversed,1.0,True,True,The risk of a hypersensitivity reaction to #Drug2 is increased when it is combined with #Drug1.

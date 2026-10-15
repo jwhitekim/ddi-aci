@@ -1,0 +1,15 @@
+{
+  "n_relations": 86,
+  "one_to_one": true,
+  "min_type_agreement": 1.0,
+  "min_orientation_agreement": 1.0,
+  "rule_row_matches": 86,
+  "orientation_matches_subject": 86,
+  "subject_counts": {
+    "1": 37,
+    "2": 42,
+    "3": 7
+  },
+  "matched_pairs": 190856,
+  "dsn_pairs": 191808
+}

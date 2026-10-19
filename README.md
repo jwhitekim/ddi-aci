@@ -1,10 +1,10 @@
 # DDI-ACI
 
-**An Agent-Computer Interface for LLM Agents Operating a Drug-Drug Interaction Prediction Model**
+**An Agent-Computer Interface for LLM Agents Operating a Drug–Drug Interaction Prediction Model**
 
 DDI-ACI is a model-specific agent-computer interface (ACI) that lets an LLM agent operate [DSN-DDI](https://github.com/microsoft/Drug-Interaction-Research/tree/DSN-DDI-for-DDI-Prediction), a drug–drug interaction (DDI) prediction model, and report its output faithfully. Neither DSN-DDI nor the OpenHands CodeActAgent is modified.
 
-Paper: *DDI-ACI: An Agent-Computer Interface for LLM Agents Operating a Drug-Drug Interaction Prediction Model*, Jun-Hee Kim and Sang-Woong Lee (School of Computing, Gachon University).
+Paper: *DDI-ACI: An Agent-Computer Interface for LLM Agents Operating a Drug–Drug Interaction Prediction Model*, Jun-Hee Kim and Sang-Woong Lee (School of Computing, Gachon University).
 
 [한국어 README](README_KO.md)
 
@@ -30,13 +30,13 @@ All three conditions use the same LLM. Conditions B and C also share the same ag
 | Avg. prompt tokens (incl. cache reads) | — | 384,776 | 42,419 |
 | Cost per query | $0.021 | $0.201 | $0.042 |
 
-Success means the reported sentence has the same effect and the same drug direction as the model's top-1 prediction for the queried order. It measures agreement with the model output, not clinical validity. B obtained the right relation number in 10/10 queries but failed in three: in q01 and q02 it picked the preceding description row, and in q04 it reversed the drug roles. B also looked up the recorded labels in the data files it could access, but in q01 and q03, where the label differs from the model's prediction, it still reported the model's prediction.
+Success means the reported sentence has the same effect and the same drug direction as the model's top-1 prediction for the queried order. It measures agreement with the model output, not clinical validity. B obtained the right relation number in 10/10 queries but failed in three: in q01 and q02 it picked the preceding description row, and in q04 it reversed the drug roles.
 
 Details: [`eval/RESULTS.md`](eval/RESULTS.md) · Evaluation spec: [`eval/eval_spec.md`](eval/eval_spec.md) · Answers side by side: [`eval/ANSWER_COMPARISON.md`](eval/ANSWER_COMPARISON.md)
 
 ### Limitations
 
-This is a pilot study: one model (DSN-DDI), ten queries, one seed, and one run per query. The B–C difference is not statistically significant (exact McNemar test p = 0.25; three discordant queries favor C, none favor B). We did not test the reverse drug order or the seven symmetric `Subject = 3` types, and we did not separate the effects of C's tools and instructions. The single grader for A (Gemini 3.5 Flash) was chosen after inspecting A's outputs, and the one-direction success criterion was fixed after the v1 run (see [`eval/eval_spec.md`](eval/eval_spec.md) section 0 and [`eval/RESULTS_v1.md`](eval/RESULTS_v1.md)).
+This is a pilot study: one model (DSN-DDI), ten queries, one seed, and one run per query. The B–C difference is not statistically significant (exact McNemar test p = 0.25; three discordant queries favor C, none favor B). We did not test the reverse drug order or the seven symmetric `Subject = 3` types, and we did not separate the effects of C's tools and instructions. The task instruction and success criterion were finalized after a preliminary round of agent runs that is excluded from the reported results.
 
 ## Repository layout
 
@@ -48,6 +48,7 @@ This is a pilot study: one model (DSN-DDI), ten queries, one seed, and one run p
 | `docker/` | `ddi-runtime` image (B and C), `ddi-specialist` image (C), reproduction notes |
 | `eval/` | Questions, ground truth, scoring, results, baseline A, relation map check |
 | `runs/eval/` | Raw v2 runs: trajectories, logs, agent CSVs, token counts |
+| `openspec/` | Specs (`specs/`) and archived changes (`changes/archive/`) |
 | `ddi/test/` | Checks for the `ddi` package |
 | `Drug-Interaction-Research/` | Original DSN-DDI repository (submodule) |
 

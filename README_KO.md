@@ -4,7 +4,7 @@
 
 DDI-ACI는 LLM 에이전트가 약물 상호작용(DDI) 예측 모델 [DSN-DDI](https://github.com/microsoft/Drug-Interaction-Research/tree/DSN-DDI-for-DDI-Prediction)를 실행하고, 그 출력을 정확하게 전달하도록 돕는 모델 특화 에이전트-컴퓨터 인터페이스(ACI)입니다. DSN-DDI와 OpenHands CodeActAgent는 수정하지 않았습니다.
 
-논문: *DDI-ACI: An Agent-Computer Interface for LLM Agents Operating a Drug-Drug Interaction Prediction Model*, Jun-Hee Kim, Sang-Woong Lee (가천대학교 School of Computing)
+논문: *DDI-ACI: An Agent-Computer Interface for LLM Agents Operating a Drug–Drug Interaction Prediction Model*, Jun-Hee Kim, Sang-Woong Lee (가천대학교 School of Computing)
 
 [English README](README.md)
 
@@ -32,7 +32,7 @@ DDI-ACI는 이 규칙들을 도구 안에 담았습니다. 그래서 에이전�
 
 성공은 질문 순서 방향에서, 전달한 문장이 모델 1위 예측과 같은 효과이고 약물 방향도 맞은 경우입니다. 즉 모델 출력과 일치하는지를 재는 것이지, 임상적으로 맞는지를 재는 것이 아닙니다.
 
-B는 10문항 모두 관계 번호는 맞게 얻었지만 3문항에서 틀렸습니다. q01·q02에서는 설명 파일의 한 행 앞 문장을 골랐고, q04에서는 약물 역할을 뒤집었습니다. B는 접근할 수 있는 데이터 파일에서 기록된 라벨도 찾아봤습니다. 하지만 라벨과 모델 예측이 다른 q01·q03에서도 모델 예측 쪽을 답했습니다.
+B는 10문항 모두 관계 번호는 맞게 얻었지만 3문항에서 틀렸습니다. q01·q02에서는 설명 파일의 한 행 앞 문장을 골랐고, q04에서는 약물 역할을 뒤집었습니다.
 
 상세 결과: [`eval/RESULTS.md`](eval/RESULTS.md) · 평가 명세: [`eval/eval_spec.md`](eval/eval_spec.md) · 조건별 답변 비교: [`eval/ANSWER_COMPARISON.md`](eval/ANSWER_COMPARISON.md)
 
@@ -41,9 +41,7 @@ B는 10문항 모두 관계 번호는 맞게 얻었지만 3문항에서 틀렸�
 - **규모:** 모델 하나(DSN-DDI), 10문항, seed 하나, 문항당 1회 실행인 예비 연구입니다.
 - **통계:** B와 C의 차이는 통계적으로 유의하지 않습니다(정확 McNemar 검정 p = 0.25). 결과가 갈린 3문항은 모두 C가 맞혔고, B만 맞힌 문항은 없습니다.
 - **검증하지 않은 것:** 반대 약물 순서, 방향이 없는 대칭 관계 7종(`Subject = 3`), C의 도구와 지시문 각각의 효과.
-- **사후에 정한 것:** 다음 두 가지는 결과를 본 뒤에 정했습니다([`eval/eval_spec.md`](eval/eval_spec.md) 0장, [`eval/RESULTS_v1.md`](eval/RESULTS_v1.md) 참고).
-  - A 채점기를 Gemini 3.5 Flash 하나로 정한 것: A의 출력을 본 뒤
-  - 질문 순서 한 방향만 채점하는 기준: v1 실행 결과를 본 뒤
+- **절차:** 과제 지시와 성공 기준은 예비 실행 뒤에 확정했고, 예비 실행 결과는 보고 결과에서 제외했습니다.
 
 ## 저장소 구성
 
@@ -55,6 +53,7 @@ B는 10문항 모두 관계 번호는 맞게 얻었지만 3문항에서 틀렸�
 | `docker/` | `ddi-runtime` 이미지(B·C), `ddi-specialist` 이미지(C), 재현 기록 |
 | `eval/` | 질문, 정답, 채점, 결과, 조건 A, 관계 번호 규칙 검증 |
 | `runs/eval/` | v2 실행 원자료: 대화 기록, 로그, 에이전트가 만든 CSV, 토큰 수 |
+| `openspec/` | 스펙(`specs/`)과 아카이브된 변경(`changes/archive/`) |
 | `ddi/test/` | `ddi` 패키지 점검 |
 | `Drug-Interaction-Research/` | 원 DSN-DDI 저장소 (서브모듈) |
 

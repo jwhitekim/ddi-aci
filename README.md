@@ -47,7 +47,7 @@ This is a pilot study: one model (DSN-DDI), ten queries, one seed, and one run p
 | `agent/` | OpenHands runner (`run_agent.py`), config template, micro agent prompt, task instruction |
 | `docker/` | `ddi-runtime` image (B and C), `ddi-specialist` image (C), reproduction notes |
 | `eval/` | Questions, ground truth, scoring, results, baseline A, relation map check |
-| `runs/eval/` | Raw v2 runs: trajectories, logs, agent CSVs, token counts |
+| `runs/eval/` | Raw runs: trajectories, logs, agent CSVs, token counts |
 | `openspec/` | Specs (`specs/`) and archived changes (`changes/archive/`) |
 | `ddi/test/` | Checks for the `ddi` package |
 | `Drug-Interaction-Research/` | Original DSN-DDI repository (submodule) |

@@ -52,7 +52,7 @@ B는 10문항 모두 관계 번호는 맞게 얻었지만 3문항에서 틀렸�
 | `agent/` | OpenHands 실행기(`run_agent.py`), 설정 틀, micro agent 프롬프트, 과제 지시 |
 | `docker/` | `ddi-runtime` 이미지(B·C), `ddi-specialist` 이미지(C), 재현 기록 |
 | `eval/` | 질문, 정답, 채점, 결과, 조건 A, 관계 번호 규칙 검증 |
-| `runs/eval/` | v2 실행 원자료: 대화 기록, 로그, 에이전트가 만든 CSV, 토큰 수 |
+| `runs/eval/` | 실행 원자료: 대화 기록, 로그, 에이전트가 만든 CSV, 토큰 수 |
 | `openspec/` | 스펙(`specs/`)과 아카이브된 변경(`changes/archive/`) |
 | `ddi/test/` | `ddi` 패키지 점검 |
 | `Drug-Interaction-Research/` | 원 DSN-DDI 저장소 (서브모듈) |

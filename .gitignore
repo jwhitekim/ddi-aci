@@ -1,8 +1,7 @@
-docs.txt
 .venv-openhands/
 .env
-runs/*
-!runs/eval/
 
-__pycache__
-/**/__pycache__
+# 실행 원자료 (OpenHands/benchmarks 의 eval_outputs/ 와 같은 역할)
+eval_outputs/
+
+__pycache__/

@@ -34,7 +34,7 @@ DDI-ACI는 이 규칙들을 도구 안에 담았습니다. 그래서 에이전�
 
 B는 10문항 모두 관계 번호는 맞게 얻었지만 3문항에서 틀렸습니다. q01·q02에서는 설명 파일의 한 행 앞 문장을 골랐고, q04에서는 약물 역할을 뒤집었습니다.
 
-상세 결과: [`eval/RESULTS.md`](eval/RESULTS.md) · 평가 명세: [`eval/eval_spec.md`](eval/eval_spec.md) · 조건별 답변 비교: [`eval/ANSWER_COMPARISON.md`](eval/ANSWER_COMPARISON.md)
+상세 결과: [`results/RESULTS.md`](results/RESULTS.md) · 평가 명세: [`benchmarks/ddi/eval_spec.md`](benchmarks/ddi/eval_spec.md) · 조건별 답변 비교: [`results/v2/ANSWER_COMPARISON.md`](results/v2/ANSWER_COMPARISON.md)
 
 ### 한계
 
@@ -47,15 +47,16 @@ B는 10문항 모두 관계 번호는 맞게 얻었지만 3문항에서 틀렸�
 
 | 경로 | 내용 |
 |---|---|
-| `ddi/` | DDI skill: 에이전트의 IPython에 import되는 `ddi` 파이썬 패키지 |
-| `server/` | 원 DSN-DDI 모델과 가중치를 감싼 예측 서버 (Python 3.7) |
-| `agent/` | OpenHands 실행기(`run_agent.py`), 설정 틀, micro agent 프롬프트, 과제 지시 |
-| `docker/` | `ddi-runtime` 이미지(B·C), `ddi-specialist` 이미지(C), 재현 기록 |
-| `eval/` | 질문, 정답, 채점, 결과, 조건 A, 관계 번호 규칙 검증 |
-| `runs/eval/` | 실행 원자료: 대화 기록, 로그, 에이전트가 만든 CSV, 토큰 수 |
+| `ddi-tools/ddi/` | 에이전트가 부르는 도구 인터페이스: 에이전트의 IPython에 import되는 `ddi` 파이썬 패키지 |
+| `ddi-tools/server/` | 도구 뒷단: 원 DSN-DDI 모델과 가중치를 감싼 예측 서버 (Python 3.7) |
+| `ddi-workspace/` | 실행 환경: `ddi-runtime` 이미지(B·C), `ddi-specialist` 이미지(C), 재현 기록 |
+| `benchmarks/ddi/` | 평가: `run_infer.py`(실행), `eval_infer.py`(채점), `data/`(질문, 정답, 관계 번호 대응표), `scripts/` |
+| `benchmarks/ddi/agent/` | B·C용 OpenHands 실행기(`run_agent.py`), 설정 틀, micro agent 프롬프트, 과제 지시 |
+| `results/` | 공개 결과: 버전별 채점(`v1/`, `v2/`), 조건 A, v2 실행 원자료(`v2/raw/`) |
+| `eval_outputs/` | 새 실행 원자료 (git 제외) |
+| `third_party/DSN-DDI/` | 원 DSN-DDI 저장소 (서브모듈) |
+| `tests/` | 대상별 점검: `tools/`(`ddi` 패키지, 예측 서버. 컨테이너 안에서 실행), `workspace/`(OpenHands 런타임), `layout/`(저장소 구조) |
 | `openspec/` | 스펙(`specs/`)과 아카이브된 변경(`changes/archive/`) |
-| `ddi/test/` | `ddi` 패키지 점검 |
-| `Drug-Interaction-Research/` | 원 DSN-DDI 저장소 (서브모듈) |
 
 ## `ddi` skill
 
@@ -81,28 +82,31 @@ res["top"][0]["description"]
 
 ```bash
 # 1. 이미지
-docker build -f docker/Dockerfile -t ddi-runtime .                 # B·C
-docker build -f docker/Dockerfile.specialist -t ddi-specialist .   # C 전용
+docker build -f ddi-workspace/Dockerfile -t ddi-runtime .                 # B·C
+docker build -f ddi-workspace/Dockerfile.specialist -t ddi-specialist .   # C 전용
 
 # 2. OpenHands 환경
 python3.12 -m venv .venv-openhands
-.venv-openhands/bin/pip install -r agent/requirements.lock.txt
+.venv-openhands/bin/pip install -r benchmarks/ddi/agent/requirements.lock.txt
 echo "AI_GATEWAY_API_KEY=..." > .env    # A 채점에는 GEMINI_API_KEY도 필요
 
 # 3. 질문 하나 실행
-.venv-openhands/bin/python agent/run_agent.py --condition C \
-    --task "Warfarin이랑 Aspirin 상호작용 예측해줘" --out runs/try_C
+.venv-openhands/bin/python benchmarks/ddi/agent/run_agent.py --condition C \
+    --task "Warfarin이랑 Aspirin 상호작용 예측해줘" --out eval_outputs/try_C
 
 # 4. 전체 평가
-.venv-openhands/bin/python eval/scripts/run_batch.py --condition C --workers 1
-.venv-openhands/bin/python eval/scripts/run_batch.py --condition B --workers 2
-.venv-openhands/bin/python eval/scripts/run_baseline_a.py
-python3 eval/scripts/score.py
+.venv-openhands/bin/python benchmarks/ddi/run_infer.py --condition C --workers 1
+.venv-openhands/bin/python benchmarks/ddi/run_infer.py --condition B --workers 2
+.venv-openhands/bin/python benchmarks/ddi/scripts/run_baseline_a.py
+python3 benchmarks/ddi/eval_infer.py --runs-dir eval_outputs/ddi --out eval_outputs/ddi/scores
+
+# 공개한 v2 원자료(results/v2/raw)를 다시 채점해 results/v2 에 쓰기
+python3 benchmarks/ddi/eval_infer.py
 ```
 
-- 정답은 예측 서버와 독립적으로, 원 DSN-DDI 코드로 계산합니다: `eval/scripts/make_ground_truth.py` (`docker run` 명령은 파일 첫머리 설명 참고)
-- 관계 번호 규칙은 규칙 자체를 쓰지 않고 SSI-DDI 약물 쌍과 대조해 검증했습니다: `eval/scripts/verify_relation_map.py` (86종 모두 일치, [`eval/relation_map/`](eval/relation_map/README.md) 참고)
-- DSN-DDI 재현 기록(fold0 transductive ACC 0.973, 논문 0.969): [`docker/REPRODUCTION.md`](docker/REPRODUCTION.md)
+- 정답은 예측 서버와 독립적으로, 원 DSN-DDI 코드로 계산합니다: `benchmarks/ddi/scripts/make_ground_truth.py` (`docker run` 명령은 파일 첫머리 설명 참고)
+- 관계 번호 규칙은 규칙 자체를 쓰지 않고 SSI-DDI 약물 쌍과 대조해 검증했습니다: `benchmarks/ddi/scripts/verify_relation_map.py` (86종 모두 일치, [`benchmarks/ddi/data/relation_map/`](benchmarks/ddi/data/relation_map/README.md) 참고)
+- DSN-DDI 재현 기록(fold0 transductive ACC 0.973, 논문 0.969): [`ddi-workspace/REPRODUCTION.md`](ddi-workspace/REPRODUCTION.md)
 
 ## 데이터와 출처
 

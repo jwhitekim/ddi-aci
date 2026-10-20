@@ -56,7 +56,7 @@ B는 10문항 모두 관계 번호는 맞게 얻었지만 3문항에서 틀렸�
 | `eval_outputs/` | 실행 출력. 공개한 평가 `v1/`, `v2/`(보고서, 채점, `raw/`에 원자료)만 git에 올리고, 새 실행(`eval_outputs/ddi/`) 등 나머지는 git 제외 |
 | `third_party/DSN-DDI/` | 원 DSN-DDI 저장소 (서브모듈) |
 | `tests/` | 대상별 점검: `tools/`(`ddi` 패키지, 예측 서버. 컨테이너 안에서 실행), `runtime/`(OpenHands 런타임), `layout/`(저장소 구조) |
-| `openspec/` | 스펙(`specs/`)과 아카이브된 변경(`changes/archive/`) |
+| `.claude/rules/` | 이 프로젝트 개발 규칙 (구조, 도구 규칙, 비교 조건, 평가, 검증) |
 
 ## `ddi` skill
 

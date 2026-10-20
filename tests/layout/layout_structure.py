@@ -10,6 +10,7 @@
     eval_outputs/         실행 출력. 공개한 평가 v1/, v2/ (보고서, 채점, raw/) 만 git 에 있음
     third_party/DSN-DDI/  원 DSN-DDI 저장소 (submodule)
     tests/                tools/, runtime/, layout/
+    .claude/rules/        개발 규칙 (layout, ddi-tools, conditions, evaluation, verification)
 
 범위
 - 위 폴더와 핵심 파일이 있고, 옛 폴더는 없다
@@ -31,15 +32,16 @@ FILES = {
     'ddi-tools/microagent': ('ddi.md',),
     'eval_outputs': ('v2/RESULTS.md', 'v1/RESULTS.md', 'v1/summary.json', 'v2/summary.json', 'v2/ANSWER_COMPARISON.md',
                 'v2/raw/A/a_claims.jsonl', 'v2/raw/A/a_answers.jsonl', 'v2/raw/logs/score_output.txt'),
+    '.claude/rules': ('layout.md', 'ddi-tools.md', 'conditions.md', 'evaluation.md', 'verification.md'),
     'tests': ('tools/check_ddi.py', 'tools/check_edges.py', 'tools/check_original.py',
               'runtime/check_runtime.py'),
 }
 OLD = ('agent', 'ddi', 'server', 'docker', 'eval', 'runs', 'tool', 'tools', 'agent_pkg', 'agent-pkg',
        'agent-server', 'Drug-Interaction-Research', 'benchmarks/ddi/agent', 'ddi-workspace',
        'ddi-agent/c_workspace', 'tests/workspace', 'ddi-tools/ddi/server.py',
-       'results', 'eval_outputs/eval_v1')
+       'results', 'eval_outputs/eval_v1', 'openspec')
 TOP = ('ddi-agent/', 'ddi-tools/ddi/', 'ddi-tools/server/', 'ddi-tools/microagent/', 'ddi-runtime/', 'benchmarks/ddi/', 'eval_outputs/',
-       'third_party/DSN-DDI/', 'tests/', 'openspec/')
+       'third_party/DSN-DDI/', 'tests/', '.claude/rules/')
 
 # 1. 폴더와 파일
 for d, files in FILES.items():

@@ -5,10 +5,10 @@ import subprocess
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 
-# 옛 경로가 남아 있어도 되는 곳: 기록(보관된 변경, 실행 원자료, git 에 없는 실행 출력), 외부 코드, 논문(별도 관리)
+# 옛 경로가 남아 있어도 되는 곳: 기록(실행 원자료, git 에 없는 실행 출력), 외부 코드, 논문(별도 관리)
 _SKIP_DIRS = {'.git', '.venv-openhands', 'third_party', 'paper', '__pycache__'}
 # 구조 확인 스크립트는 옛 경로를 검사 문자열로 가지므로 제외
-_SKIP_PREFIXES = (os.path.join('openspec', 'changes', 'archive'), os.path.join('eval_outputs', 'v1', 'raw'),
+_SKIP_PREFIXES = (os.path.join('eval_outputs', 'v1', 'raw'),
                   os.path.join('eval_outputs', 'v2', 'raw'), os.path.join('eval_outputs', 'ddi'),
                   os.path.join('eval_outputs', 'scratch'),
                   os.path.join('tests', 'layout'))

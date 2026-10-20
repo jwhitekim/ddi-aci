@@ -57,7 +57,7 @@ stray = [os.path.relpath(os.path.join(r, f), REPO)
          for r, _, fs in os.walk(REPO)
          for f in fs if f.startswith('check_') and f.endswith('.py')
          and not os.path.relpath(r, REPO).startswith(('tests', '.git', '.venv-openhands', 'third_party', 'paper',
-                                                      'eval_outputs', 'openspec'))]
+                                                      'eval_outputs'))]
 check('check_*.py 는 tests/ 아래에만', not stray, stray)
 
 # 5. 옛 경로 참조 (앞에 / . - 글자가 없는 옛 최상위 폴더)

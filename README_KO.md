@@ -88,7 +88,7 @@ docker build -f ddi-runtime/Dockerfile.specialist -t ddi-specialist .   # C 전�
 # 2. OpenHands 환경
 python3.12 -m venv .venv-openhands
 .venv-openhands/bin/pip install -r ddi-agent/requirements.lock.txt
-echo "AI_GATEWAY_API_KEY=..." > .env    # A 채점에는 GEMINI_API_KEY도 필요
+cp .env.example .env               # AI_GATEWAY_API_KEY, GEMINI_API_KEY(A 채점) 값 채우기
 
 # 3. 질문 하나 실행
 .venv-openhands/bin/python ddi-agent/run_agent.py --condition C --task-suffix benchmarks/ddi/prompts/task_suffix.txt \

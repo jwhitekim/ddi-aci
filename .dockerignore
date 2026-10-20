@@ -1,0 +1,5 @@
+# 이미지는 ddi-tools/ 의 도구·서버 코드와 데이터만 복사한다. 나머지(.env 의 API 키, .venv-openhands, eval_outputs 등)는 빌드에 보내지 않는다
+*
+!ddi-tools/ddi/
+!ddi-tools/server/
+**/__pycache__

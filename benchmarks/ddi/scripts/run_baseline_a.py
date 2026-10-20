@@ -1,9 +1,10 @@
 """A 조건(LLM 단독): 도구 없이 질문만 보내고, 답에서 효과·방향 주장을 채점기 모델 두 개로 뽑는다.
 
-    .venv-openhands/bin/python benchmarks/ddi/scripts/run_baseline_a.py
+    .venv-openhands/bin/python benchmarks/ddi/scripts/run_baseline_a.py [--output-dir eval_outputs/ddi/A]
 
-출력: results/baseline_a/a_answers.jsonl (답), results/baseline_a/a_claims.jsonl (채점기 추출 결과. 채택은 ADOPTED_GRADER, 다른 채점기는 일치율 참고용)
+출력: <output-dir>/a_answers.jsonl (답), <output-dir>/a_claims.jsonl (채점기 추출 결과. 채택은 ADOPTED_GRADER, 다른 채점기는 일치율 참고용)
 """
+import argparse
 import csv
 import json
 import os
@@ -63,8 +64,13 @@ def extract(cfg, q, answer):
 
 
 def main():
+    p = argparse.ArgumentParser()
+    p.add_argument('--output-dir', default=str(REPO / 'eval_outputs' / 'ddi' / 'A'), help='공개한 v2 답: results/v2/raw/A')
+    args = p.parse_args()
+    out = Path(args.output_dir)
+    out.mkdir(parents=True, exist_ok=True)
     questions = [json.loads(l) for l in open(BENCH / 'data' / 'questions' / 'questions.jsonl', encoding='utf-8')]
-    ans_path, claims_path = REPO / 'results' / 'baseline_a' / 'a_answers.jsonl', REPO / 'results' / 'baseline_a' / 'a_claims.jsonl'
+    ans_path, claims_path = out / 'a_answers.jsonl', out / 'a_claims.jsonl'
     answers = {}
     if ans_path.exists():
         answers = {json.loads(l)['qid']: json.loads(l) for l in open(ans_path, encoding='utf-8')}

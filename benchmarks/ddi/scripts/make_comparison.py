@@ -2,7 +2,7 @@
 
     python3 benchmarks/ddi/scripts/make_comparison.py
 
-입력: benchmarks/ddi/data/questions/questions.jsonl, results/baseline_a/a_answers.jsonl·a_claims.jsonl,
+입력: benchmarks/ddi/data/questions/questions.jsonl, results/v2/raw/A/a_answers.jsonl·a_claims.jsonl,
       results/v2/{B,C}/q*.json, results/v2/raw/{B,C}/q*/trajectory.json
 출력: results/v2/ANSWER_COMPARISON.md
 """
@@ -64,8 +64,8 @@ def mark(ok):
 
 def main():
     qs = jsonl(BENCH / 'data' / 'questions' / 'questions.jsonl')
-    a_ans = {x['qid']: x['answer'] for x in jsonl(RESULTS / 'baseline_a' / 'a_answers.jsonl')}
-    a_claims = {x['qid']: x for x in jsonl(RESULTS / 'baseline_a' / 'a_claims.jsonl')}
+    a_ans = {x['qid']: x['answer'] for x in jsonl(RESULTS / 'v2' / 'raw' / 'A' / 'a_answers.jsonl')}
+    a_claims = {x['qid']: x for x in jsonl(RESULTS / 'v2' / 'raw' / 'A' / 'a_claims.jsonl')}
     rows = []
     for q in qs:
         a, b = q['drugs']
@@ -77,7 +77,7 @@ def main():
 
     out = ['# A·B·C 답변 비교 (v2, 10문항)', '',
            '같은 질문을 세 조건에 주고, 각 조건이 최종적으로 내놓은 답을 원 DSN-DDI 모델의 예측(정답)과 나란히 비교한다. '
-           '채점 기준은 `eval_spec.md` 0장, 수치는 `results/RESULTS.md`. 이 문서는 `benchmarks/ddi/scripts/make_comparison.py`로 만든다.', '',
+           '채점 기준은 `eval_spec.md` 0장, 수치는 `results/v2/RESULTS.md`. 이 문서는 `benchmarks/ddi/scripts/make_comparison.py`로 만든다.', '',
            '- **과제:** 질문 → (A) LLM이 지식으로 답함 / (B·C) 에이전트가 DSN-DDI 모델을 실행하고 그 예측을 보고 답함',
            '- **정답:** 원 DSN-DDI 모델이 질문 순서의 약물 쌍에 대해 낸 1위 관계 문장',
            '- **비교 대상:** A는 답에서 채점기(Gemini 3.5 Flash)가 뽑은 주장, B·C는 결과 파일에 적은 질문 순서 방향의 문장', '']

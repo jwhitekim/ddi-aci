@@ -1,6 +1,6 @@
 """평가 채점기 (eval_spec.md 4·5장). A·B·C 모두 같은 기준.
 
-    python3 benchmarks/ddi/eval_infer.py  # 공개 원자료 results/v2/raw/{B,C}, results/baseline_a/a_claims.jsonl 채점 → results/v2/
+    python3 benchmarks/ddi/eval_infer.py  # 공개 원자료 results/v2/raw/{A,B,C} 채점 (A 는 A/a_claims.jsonl) → results/v2/
     python3 benchmarks/ddi/eval_infer.py --runs-dir eval_outputs/ddi --out eval_outputs/ddi/scores   # 새 실행 채점
     python3 benchmarks/ddi/eval_infer.py --questions benchmarks/ddi/data/questions/smoke_question.jsonl --run X=eval_outputs/scratch/sonnet_B30   # 임의 실행 채점
 
@@ -246,7 +246,7 @@ def main():
                 (out / cond / ('%s.json' % r['qid'])).write_text(json.dumps(r, ensure_ascii=False, indent=2))
             summaries.append(summarize(cond, results))
 
-    a_path = REPO / 'results' / 'baseline_a' / 'a_claims.jsonl'
+    a_path = Path(args.runs_dir) / 'A' / 'a_claims.jsonl'
     if a_path.exists():
         results = []
         by_q = {json.loads(l)['qid']: json.loads(l) for l in open(a_path, encoding='utf-8')}

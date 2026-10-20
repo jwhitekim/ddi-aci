@@ -1,6 +1,6 @@
 # 평가 결과 v2 (10문항)
 
-실행: 2026-10-12 13:41–13:55 · LLM: Claude Sonnet 5.5 · 기준: `eval_spec.md` 0장 (실행 전 확정, 커밋 90594ea) · 채점: `benchmarks/ddi/eval_infer.py` · 원자료: `results/v2/`, `results/v2/raw/` · v1(지시 수정 전): `results/v1/RESULTS.md`
+실행: 2026-10-12 13:41–13:55 · LLM: Claude Sonnet 5.5 · 기준: `eval_spec.md` 0장 (실행 전 확정, 커밋 90594ea) · 채점: `benchmarks/ddi/eval_infer.py` · 원자료: `results/v2/raw/` (A·B·C) · v1(지시 수정 전): `results/v1/RESULTS.md`
 
 ## 1. 요약
 
@@ -56,4 +56,4 @@
 
 ## 5. 확인할 점
 
-- (선택) A 10문항 사람 확인: `results/baseline_a/a_grading_check.md`
+- (선택) A 10문항 사람 확인: `results/v2/raw/A/a_grading_check.md`

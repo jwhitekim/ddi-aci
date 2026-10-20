@@ -1,6 +1,6 @@
 # A·B·C 답변 비교 (v2, 10문항)
 
-같은 질문을 세 조건에 주고, 각 조건이 최종적으로 내놓은 답을 원 DSN-DDI 모델의 예측(정답)과 나란히 비교한다. 채점 기준은 `eval_spec.md` 0장, 수치는 `results/RESULTS.md`. 이 문서는 `benchmarks/ddi/scripts/make_comparison.py`로 만든다.
+같은 질문을 세 조건에 주고, 각 조건이 최종적으로 내놓은 답을 원 DSN-DDI 모델의 예측(정답)과 나란히 비교한다. 채점 기준은 `eval_spec.md` 0장, 수치는 `results/v2/RESULTS.md`. 이 문서는 `benchmarks/ddi/scripts/make_comparison.py`로 만든다.
 
 - **과제:** 질문 → (A) LLM이 지식으로 답함 / (B·C) 에이전트가 DSN-DDI 모델을 실행하고 그 예측을 보고 답함
 - **정답:** 원 DSN-DDI 모델이 질문 순서의 약물 쌍에 대해 낸 1위 관계 문장

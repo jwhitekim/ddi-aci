@@ -32,7 +32,7 @@ All three conditions use the same LLM. Conditions B and C also share the same ag
 
 Success means the reported sentence has the same effect and the same drug direction as the model's top-1 prediction for the queried order. It measures agreement with the model output, not clinical validity. B obtained the right relation number in 10/10 queries but failed in three: in q01 and q02 it picked the preceding description row, and in q04 it reversed the drug roles.
 
-Details: [`results/RESULTS.md`](results/RESULTS.md) · Evaluation spec: [`benchmarks/ddi/eval_spec.md`](benchmarks/ddi/eval_spec.md) · Answers side by side: [`results/v2/ANSWER_COMPARISON.md`](results/v2/ANSWER_COMPARISON.md)
+Details: [`results/v2/RESULTS.md`](results/v2/RESULTS.md) · Evaluation spec: [`benchmarks/ddi/eval_spec.md`](benchmarks/ddi/eval_spec.md) · Answers side by side: [`results/v2/ANSWER_COMPARISON.md`](results/v2/ANSWER_COMPARISON.md)
 
 ### Limitations
 
@@ -48,7 +48,7 @@ This is a pilot study: one model (DSN-DDI), ten queries, one seed, and one run p
 | `ddi-tools/microagent/` | Micro agent prompt copied into the workspace for C: how to use the `ddi` functions |
 | `ddi-runtime/` | Runtime images: `ddi-runtime` (B and C), `ddi-specialist` (C), reproduction notes |
 | `benchmarks/ddi/` | Evaluation: `run_infer.py` (run), `eval_infer.py` (score), `prompts/` (task instruction appended to every query), `data/` (questions, ground truth, relation map), `scripts/` |
-| `results/` | Published results: scores per version (`v1/`, `v2/`), baseline A, raw v2 runs (`v2/raw/`) |
+| `results/` | Published results per version: `v2/` (report, scores, raw A/B/C runs in `raw/`), `v1/` (report and scores; raw runs not published) |
 | `eval_outputs/` | New run outputs (not tracked by git) |
 | `third_party/DSN-DDI/` | Original DSN-DDI repository (submodule) |
 | `tests/` | Checks by target: `tools/` (`ddi` package, prediction server; run in containers), `runtime/` (OpenHands runtime), `layout/` (repository layout) |
@@ -93,7 +93,7 @@ echo "AI_GATEWAY_API_KEY=..." > .env    # GEMINI_API_KEY is also needed for grad
 # 4. Full evaluation
 .venv-openhands/bin/python benchmarks/ddi/run_infer.py --condition C --workers 1
 .venv-openhands/bin/python benchmarks/ddi/run_infer.py --condition B --workers 2
-.venv-openhands/bin/python benchmarks/ddi/scripts/run_baseline_a.py
+.venv-openhands/bin/python benchmarks/ddi/scripts/run_baseline_a.py --output-dir eval_outputs/ddi/A
 python3 benchmarks/ddi/eval_infer.py --runs-dir eval_outputs/ddi --out eval_outputs/ddi/scores
 
 # Re-score the published v2 runs (results/v2/raw) into results/v2

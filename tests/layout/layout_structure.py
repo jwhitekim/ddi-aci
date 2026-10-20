@@ -7,7 +7,7 @@
     ddi-tools/microagent/ 조건 C 에서 작업 폴더에 넣는 ddi 사용법
     ddi-runtime/          런타임 Docker 이미지 (ddi-runtime, ddi-specialist), 재현 기록
     benchmarks/ddi/       평가 정의: run_infer.py, eval_infer.py, prompts/, data/, scripts/
-    results/              공개 결과 (v1/, v2/, v2/raw/, baseline_a/)
+    results/              버전별 공개 결과 (v2/RESULTS.md, v2/raw/{A,B,C}, v1/RESULTS.md)
     eval_outputs/         새 실행 원자료 (git 제외)
     third_party/DSN-DDI/  원 DSN-DDI 저장소 (submodule)
     tests/                tools/, runtime/, layout/
@@ -30,14 +30,15 @@ FILES = {
                        'data/relation_map/dsn_relation_map.csv', 'scripts/run_eval.sh'),
     'ddi-agent': ('run_agent.py', 'openhands_main.py', 'config.toml.j2', 'requirements.lock.txt'),
     'ddi-tools/microagent': ('ddi.md',),
-    'results': ('RESULTS.md', 'v1/RESULTS.md', 'v1/summary.json', 'v2/summary.json', 'v2/ANSWER_COMPARISON.md',
-                'baseline_a/a_claims.jsonl', 'v2/raw/logs/score_output.txt'),
+    'results': ('v2/RESULTS.md', 'v1/RESULTS.md', 'v1/summary.json', 'v2/summary.json', 'v2/ANSWER_COMPARISON.md',
+                'v2/raw/A/a_claims.jsonl', 'v2/raw/A/a_answers.jsonl', 'v2/raw/logs/score_output.txt'),
     'tests': ('tools/check_ddi.py', 'tools/check_edges.py', 'tools/check_original.py',
               'runtime/check_runtime.py'),
 }
 OLD = ('agent', 'ddi', 'server', 'docker', 'eval', 'runs', 'tool', 'tools', 'agent_pkg', 'agent-pkg',
        'agent-server', 'Drug-Interaction-Research', 'benchmarks/ddi/agent', 'ddi-workspace',
-       'ddi-agent/c_workspace', 'tests/workspace', 'ddi-tools/ddi/server.py')
+       'ddi-agent/c_workspace', 'tests/workspace', 'ddi-tools/ddi/server.py',
+       'results/baseline_a', 'results/RESULTS.md')
 TOP = ('ddi-agent/', 'ddi-tools/ddi/', 'ddi-tools/server/', 'ddi-tools/microagent/', 'ddi-runtime/', 'benchmarks/ddi/', 'results/', 'eval_outputs/',
        'third_party/DSN-DDI/', 'tests/', 'openspec/')
 

@@ -27,7 +27,7 @@ FILES = {
     'benchmarks/ddi': ('run_infer.py', 'eval_infer.py', 'eval_spec.md', 'prompts/task_suffix.txt',
                        'data/questions/questions.jsonl',
                        'data/relation_map/dsn_relation_map.csv', 'scripts/run_eval.sh'),
-    'ddi-agent': ('run_agent.py', 'openhands_main.py', 'config.toml.j2', 'requirements.lock.txt'),
+    'ddi-agent': ('run_agent.py', 'llm_main.py', 'config.toml.j2', 'requirements.lock.txt'),
     'ddi-tools/microagent': ('ddi.md',),
     'eval_outputs': ('v2/RESULTS.md', 'v1/RESULTS.md', 'v1/summary.json', 'v2/summary.json', 'v2/ANSWER_COMPARISON.md',
                 'v2/raw/A/a_claims.jsonl', 'v2/raw/A/a_answers.jsonl', 'v2/raw/logs/score_output.txt'),

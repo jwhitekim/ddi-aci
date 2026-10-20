@@ -64,7 +64,7 @@ check('check_*.py 는 tests/ 아래에만', not stray, stray)
 OLD = r'(?<![\w/.-])(?:eval|runs|agent|agent_pkg|agent-pkg|agent-server|docker|tool|server|ddi)/(?!\*)'
 refs = [r for r in find_refs(OLD, regex=True)]
 check('옛 최상위 폴더 경로 참조 없음', not refs, refs)
-for old in ('oh_main', r'(?<!run_)baseline_a', r'(?<![\w/])results/(?:v[12]|RESULTS)', 'eval_v1', 'ddi-workspace', 'c_workspace', 'tests/workspace', r'from \.server\b', 'benchmarks/ddi/agent', "REPO / 'eval'", "REPO / 'runs'", r'(?<![\w/])Drug-Interaction-Research'):
+for old in ('oh_main', 'openhands_main', r'(?<!run_)baseline_a', r'(?<![\w/])results/(?:v[12]|RESULTS)', 'eval_v1', 'ddi-workspace', 'c_workspace', 'tests/workspace', r'from \.server\b', 'benchmarks/ddi/agent', "REPO / 'eval'", "REPO / 'runs'", r'(?<![\w/])Drug-Interaction-Research'):
     refs = find_refs(old, regex=True)
     check('옛 이름 %s 참조 없음' % old, not refs, refs)
 

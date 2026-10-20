@@ -107,8 +107,8 @@ def main():
     out = Path(args.out).resolve()
     prepare(args.condition, args.task, out, args)
 
-    # openhands_main.py: openhands.core.main 을 그대로 실행하되 Vercel 게이트웨이 프롬프트 캐싱(caching=auto)을 켠다
-    cmd = [sys.executable, str(AGENT_DIR / 'openhands_main.py'), '--config-file', str(out / 'config.toml'),
+    # llm_main.py: openhands.core.main 을 그대로 실행하되 Vercel 게이트웨이 프롬프트 캐싱(caching=auto)을 켠다
+    cmd = [sys.executable, str(AGENT_DIR / 'llm_main.py'), '--config-file', str(out / 'config.toml'),
            '-f', str(out / 'task.txt'), '-c', 'CodeActAgent', '-i', str(MAX_ITERATIONS)]
     env = dict(os.environ, LLM_API_KEY=api_key)
     start = time.time()

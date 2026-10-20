@@ -1,4 +1,4 @@
-"""OpenHands 0.62.0 헤드리스 실행 진입점 (run_agent.py 가 `python -m openhands.core.main` 대신 실행).
+"""LLM 캐싱을 켜고 OpenHands 0.62.0 을 헤드리스로 실행하는 진입점 (run_agent.py 가 `python -m openhands.core.main` 대신 실행).
 
 Vercel AI Gateway 를 쓸 때 프롬프트 캐싱을 켠다. 캐싱은 비용·속도에만 영향을 준다.
 - 0.62.0 은 모델 이름 목록(claude-sonnet-4* 까지)으로 캐싱 대상을 정해서 Sonnet 5.5 에 캐시 표시를 붙이지 않고,

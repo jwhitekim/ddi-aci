@@ -29,7 +29,7 @@ cached = [f for f in git('ls-files').split() if '__pycache__' in f or f.endswith
 check('캐시 파일이 git 에 없음', not cached, cached)
 
 # 4. 고정 패키지 목록
-lock = open(path('benchmarks', 'ddi', 'agent', 'requirements.lock.txt'), encoding='utf-8').read().splitlines()
+lock = open(path('ddi-agent', 'requirements.lock.txt'), encoding='utf-8').read().splitlines()
 local = [l for l in lock if 'file://' in l or re.search(r'(^|\s)/(home|Users)/', l)]
 check('requirements.lock.txt 에 로컬 경로 없음', not local, local)
 

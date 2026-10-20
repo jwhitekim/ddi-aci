@@ -35,7 +35,7 @@
 - v1 대비 B 토큰이 문항당 약 82만 → 38만으로 줄었다 (finish 지시로 끝난 뒤 반복이 사라짐)
 - 추론 강도는 기본값이며 추론 토큰이 발생했다 (B 10문항 모두, C 9문항. `trajectory.json`의 `reasoning_tokens`)
 - 프롬프트 캐싱은 B·C(OpenHands 경로)에만 켰다. A(`run_baseline_a.py`)는 캐싱 설정 없이 호출했다
-- 실제 v2 과제문은 `results/v2/raw/*/q*/task.txt`(= 질문 + `benchmarks/ddi/agent/task_suffix.txt`)다. `benchmarks/ddi/data/questions/questions.jsonl`의 `question_with_suffix` 필드는 v1 안내문이 남아 있어 v2와 다르다
+- 실제 v2 과제문은 `results/v2/raw/*/q*/task.txt`(= 질문 + `benchmarks/ddi/prompts/task_suffix.txt`)다. `benchmarks/ddi/data/questions/questions.jsonl`의 `question_with_suffix` 필드는 v1 안내문이 남아 있어 v2와 다르다
 
 ## 3-1. 통계와 한계
 

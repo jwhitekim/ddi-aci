@@ -6,7 +6,7 @@
 
 **바꾼 이유:** v1 실행(`eval_outputs/eval_v1/`, `results/v1/RESULTS.md`)에서 과제 지시가 관계 번호 표기(0부터/1부터)와 예측 순서를 정하지 않아, B가 1부터 세는 번호를 써서 문장이 맞아도 틀린 것으로 채점되었고, C는 한 순서만 계산했다. 그래서 지시와 채점 기준을 다시 정하고 B·C를 다시 실행한다. A는 도구가 없고 질문이 같아 다시 실행하지 않는다.
 
-**과제 지시 (`benchmarks/ddi/agent/task_suffix.txt`, B·C 공통):** 질문 순서대로 첫 약물을 drug_a, 두 번째를 drug_b로 예측 / relation에는 모델이 출력한 관계 번호(0~85)를 그대로 / description에는 그 관계를 설명하는 문장 / 끝나면 finish 도구로 종료. 번호→문장 대응법과 약물 방향 규칙은 알려 주지 않는다 (평가 대상).
+**과제 지시 (`benchmarks/ddi/prompts/task_suffix.txt`, B·C 공통):** 질문 순서대로 첫 약물을 drug_a, 두 번째를 drug_b로 예측 / relation에는 모델이 출력한 관계 번호(0~85)를 그대로 / description에는 그 관계를 설명하는 문장 / 끝나면 finish 도구로 종료. 번호→문장 대응법과 약물 방향 규칙은 알려 주지 않는다 (평가 대상).
 
 **채점 (A·B·C 같은 기준):**
 - 질문 순서(= 데이터 저장 순서) 한 방향만 본다. 반대 순서는 보지 않는다
@@ -36,7 +36,7 @@
 - **조건:** 두 약물 모두 fold0 train에 있고(transductive), DrugBank 약물 사전에 이름이 있음
 - **추출:** seed 42, 서로 다른 관계 번호 10개가 나오도록 뽑음
 - **약물을 적는 순서:** 데이터 저장 순서
-- 모든 질문 뒤에 B·C 공통 안내 문장(`benchmarks/ddi/agent/task_suffix.txt`)을 붙인다
+- 모든 질문 뒤에 B·C 공통 안내 문장(`benchmarks/ddi/prompts/task_suffix.txt`)을 붙인다
 
 ## 3. 정답
 

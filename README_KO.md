@@ -47,11 +47,11 @@ B는 10문항 모두 관계 번호는 맞게 얻었지만 3문항에서 틀렸�
 
 | 경로 | 내용 |
 |---|---|
+| `ddi-agent/` | 에이전트 실행기: 조건 B·C로 OpenHands CodeActAgent를 띄움(`run_agent.py`), 설정 틀, 조건 C용 micro agent 프롬프트 |
 | `ddi-tools/ddi/` | 에이전트가 부르는 도구 인터페이스: 에이전트의 IPython에 import되는 `ddi` 파이썬 패키지 |
 | `ddi-tools/server/` | 도구 뒷단: 원 DSN-DDI 모델과 가중치를 감싼 예측 서버 (Python 3.7) |
 | `ddi-workspace/` | 실행 환경: `ddi-runtime` 이미지(B·C), `ddi-specialist` 이미지(C), 재현 기록 |
-| `benchmarks/ddi/` | 평가: `run_infer.py`(실행), `eval_infer.py`(채점), `data/`(질문, 정답, 관계 번호 대응표), `scripts/` |
-| `benchmarks/ddi/agent/` | B·C용 OpenHands 실행기(`run_agent.py`), 설정 틀, micro agent 프롬프트, 과제 지시 |
+| `benchmarks/ddi/` | 평가: `run_infer.py`(실행), `eval_infer.py`(채점), `prompts/`(모든 질문 뒤에 붙이는 과제 지시), `data/`(질문, 정답, 관계 번호 대응표), `scripts/` |
 | `results/` | 공개 결과: 버전별 채점(`v1/`, `v2/`), 조건 A, v2 실행 원자료(`v2/raw/`) |
 | `eval_outputs/` | 새 실행 원자료 (git 제외) |
 | `third_party/DSN-DDI/` | 원 DSN-DDI 저장소 (서브모듈) |
@@ -87,11 +87,11 @@ docker build -f ddi-workspace/Dockerfile.specialist -t ddi-specialist .   # C �
 
 # 2. OpenHands 환경
 python3.12 -m venv .venv-openhands
-.venv-openhands/bin/pip install -r benchmarks/ddi/agent/requirements.lock.txt
+.venv-openhands/bin/pip install -r ddi-agent/requirements.lock.txt
 echo "AI_GATEWAY_API_KEY=..." > .env    # A 채점에는 GEMINI_API_KEY도 필요
 
 # 3. 질문 하나 실행
-.venv-openhands/bin/python benchmarks/ddi/agent/run_agent.py --condition C \
+.venv-openhands/bin/python ddi-agent/run_agent.py --condition C --task-suffix benchmarks/ddi/prompts/task_suffix.txt \
     --task "Warfarin이랑 Aspirin 상호작용 예측해줘" --out eval_outputs/try_C
 
 # 4. 전체 평가

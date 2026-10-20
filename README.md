@@ -42,11 +42,11 @@ This is a pilot study: one model (DSN-DDI), ten queries, one seed, and one run p
 
 | Path | Contents |
 |---|---|
+| `ddi-agent/` | Agent runner: launches OpenHands CodeActAgent for condition B or C (`run_agent.py`), config template, micro agent prompt for C |
 | `ddi-tools/ddi/` | Tool interface the agent calls: the `ddi` Python package imported into the agent's IPython |
 | `ddi-tools/server/` | Tool back end: prediction server wrapping the original DSN-DDI model and weights (Python 3.7) |
 | `ddi-workspace/` | Execution environment: `ddi-runtime` image (B and C), `ddi-specialist` image (C), reproduction notes |
-| `benchmarks/ddi/` | Evaluation: `run_infer.py` (run), `eval_infer.py` (score), `data/` (questions, ground truth, relation map), `scripts/` |
-| `benchmarks/ddi/agent/` | OpenHands runner (`run_agent.py`), config template, micro agent prompt and task instruction for B and C |
+| `benchmarks/ddi/` | Evaluation: `run_infer.py` (run), `eval_infer.py` (score), `prompts/` (task instruction appended to every query), `data/` (questions, ground truth, relation map), `scripts/` |
 | `results/` | Published results: scores per version (`v1/`, `v2/`), baseline A, raw v2 runs (`v2/raw/`) |
 | `eval_outputs/` | New run outputs (not tracked by git) |
 | `third_party/DSN-DDI/` | Original DSN-DDI repository (submodule) |
@@ -82,11 +82,11 @@ docker build -f ddi-workspace/Dockerfile.specialist -t ddi-specialist .   # C on
 
 # 2. OpenHands environment
 python3.12 -m venv .venv-openhands
-.venv-openhands/bin/pip install -r benchmarks/ddi/agent/requirements.lock.txt
+.venv-openhands/bin/pip install -r ddi-agent/requirements.lock.txt
 echo "AI_GATEWAY_API_KEY=..." > .env    # GEMINI_API_KEY is also needed for grading A
 
 # 3. One query
-.venv-openhands/bin/python benchmarks/ddi/agent/run_agent.py --condition C \
+.venv-openhands/bin/python ddi-agent/run_agent.py --condition C --task-suffix benchmarks/ddi/prompts/task_suffix.txt \
     --task "Warfarin이랑 Aspirin 상호작용 예측해줘" --out eval_outputs/try_C
 
 # 4. Full evaluation
@@ -113,4 +113,4 @@ python3 benchmarks/ddi/eval_infer.py
 
 This work was supported by the National Research Foundation of Korea (NRF) grant funded by the Korea government (MSIT) (RS-2025-00520064).
 
-Most internal notes (`benchmarks/ddi/*.md`, `results/*.md`, `benchmarks/ddi/agent/SMOKE_TEST.md`, `ddi-workspace/REPRODUCTION.md`, code comments) are in Korean.
+Most internal notes (`benchmarks/ddi/*.md`, `results/*.md`, `ddi-agent/SMOKE_TEST.md`, `ddi-workspace/REPRODUCTION.md`, code comments) are in Korean.

@@ -1,7 +1,9 @@
 """조건(B/C)과 질문 하나로 OpenHands 0.62.0 CodeActAgent 를 실행하고 결과를 모은다.
 
-    .venv-openhands/bin/python benchmarks/ddi/agent/run_agent.py \
+    .venv-openhands/bin/python ddi-agent/run_agent.py \
         --condition C --task "Warfarin이랑 Aspirin 상호작용 예측해줘" --out eval_outputs/scratch/smoke_C
+
+평가에서는 benchmarks/ddi/run_infer.py 가 과제 지시(--task-suffix)를 붙여 부른다.
 
 API 키는 환경 변수나 프로젝트 루트의 .env 에서 읽는다 (기본 AI_GATEWAY_API_KEY).
 임시로 Gemini 를 직접 쓸 때: --model gemini/gemini-3.5-flash --base-url "" --api-key-env GEMINI_API_KEY
@@ -23,7 +25,7 @@ import jinja2
 from dotenv import load_dotenv
 
 AGENT_DIR = Path(__file__).resolve().parent
-REPO = AGENT_DIR.parents[2]
+REPO = AGENT_DIR.parent
 DDI_DIR = REPO / 'ddi-tools' / 'ddi'
 SERVER_DIR = REPO / 'ddi-tools' / 'server'
 load_dotenv(REPO / '.env')
@@ -57,7 +59,9 @@ def prepare(condition, task, out, args):
     else:
         workspace.mkdir(parents=True)
     (out / 'config.toml').write_text(render_config(condition, out, args))
-    (out / 'task.txt').write_text(task + (AGENT_DIR / 'task_suffix.txt').read_text())
+    suffix_path = getattr(args, 'task_suffix', None)
+    suffix = Path(suffix_path).read_text() if suffix_path else ''
+    (out / 'task.txt').write_text(task + suffix)
 
 
 def summarize(out):
@@ -89,6 +93,7 @@ def main():
     p.add_argument('--condition', choices=sorted(BASE_IMAGES), required=True)
     p.add_argument('--task', required=True)
     p.add_argument('--out', required=True)
+    p.add_argument('--task-suffix', help='질문 뒤에 붙일 과제 지시 파일 (평가: benchmarks/ddi/prompts/task_suffix.txt)')
     p.add_argument('--model', default='openai/anthropic/claude-sonnet-5.5')
     p.add_argument('--base-url', default='https://ai-gateway.vercel.sh/v1')
     p.add_argument('--api-key-env', default='AI_GATEWAY_API_KEY')

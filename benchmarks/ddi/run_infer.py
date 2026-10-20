@@ -1,4 +1,4 @@
-"""평가 질문을 B 또는 C 조건으로 실행한다 (문항마다 benchmarks/ddi/agent/run_agent.py 호출).
+"""평가 질문을 B 또는 C 조건으로 실행한다 (문항마다 ddi-agent/run_agent.py 호출).
 
     .venv-openhands/bin/python benchmarks/ddi/run_infer.py --condition B --workers 2
 
@@ -22,7 +22,8 @@ def run_one(output_dir, condition, q):
     out = output_dir / condition / q['qid']
     if out.exists():
         return q['qid'], 'skip'
-    cmd = [sys.executable, str(BENCH / 'agent' / 'run_agent.py'), '--condition', condition,
+    cmd = [sys.executable, str(REPO / 'ddi-agent' / 'run_agent.py'), '--condition', condition,
+           '--task-suffix', str(BENCH / 'prompts' / 'task_suffix.txt'),
            '--task', q['question'], '--out', str(out)]
     # 문항마다 새 프로세스 그룹으로 실행해, 시간 초과 시 OpenHands·빌드 등 하위 프로세스까지 함께 정리한다
     proc = subprocess.Popen(cmd, cwd=REPO, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, start_new_session=True)

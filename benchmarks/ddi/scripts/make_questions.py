@@ -32,7 +32,7 @@ def main():
 
     rng = random.Random(SEED)
     relations = rng.sample(sorted(by_rel), N_QUESTIONS)  # 서로 다른 관계 10개
-    suffix = open('/w/bench/agent/task_suffix.txt', encoding='utf-8').read()
+    suffix = open('/w/bench/prompts/task_suffix.txt', encoding='utf-8').read()
     with open('/w/bench/data/questions/questions_base.jsonl', 'w', encoding='utf-8') as out:
         for i, rel in enumerate(relations, 1):
             a, b = rng.choice(sorted(by_rel[rel]))

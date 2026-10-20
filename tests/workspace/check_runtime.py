@@ -15,7 +15,7 @@ from openhands.core.setup import create_runtime
 from openhands.events.action import CmdRunAction, IPythonRunCellAction
 from openhands.utils.async_utils import call_async_from_sync
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'benchmarks' / 'ddi' / 'agent'))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'ddi-agent'))
 import run_agent  # noqa: E402
 
 CHECKS = [

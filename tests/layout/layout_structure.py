@@ -10,7 +10,7 @@
     results/              공개 결과 (v1/, v2/, v2/raw/, baseline_a/)
     eval_outputs/         새 실행 원자료 (git 제외)
     third_party/DSN-DDI/  원 DSN-DDI 저장소 (submodule)
-    tests/                tools/, workspace/, layout/
+    tests/                tools/, runtime/, layout/
 
 범위
 - 위 폴더와 핵심 파일이 있고, 옛 폴더는 없다
@@ -33,11 +33,11 @@ FILES = {
     'results': ('RESULTS.md', 'v1/RESULTS.md', 'v1/summary.json', 'v2/summary.json', 'v2/ANSWER_COMPARISON.md',
                 'baseline_a/a_claims.jsonl', 'v2/raw/logs/score_output.txt'),
     'tests': ('tools/check_ddi.py', 'tools/check_edges.py', 'tools/check_original.py',
-              'workspace/check_runtime.py'),
+              'runtime/check_runtime.py'),
 }
 OLD = ('agent', 'ddi', 'server', 'docker', 'eval', 'runs', 'tool', 'tools', 'agent_pkg', 'agent-pkg',
        'agent-server', 'Drug-Interaction-Research', 'benchmarks/ddi/agent', 'ddi-workspace',
-       'ddi-agent/c_workspace')
+       'ddi-agent/c_workspace', 'tests/workspace', 'ddi-tools/ddi/server.py')
 TOP = ('ddi-agent/', 'ddi-tools/ddi/', 'ddi-tools/server/', 'ddi-tools/microagent/', 'ddi-runtime/', 'benchmarks/ddi/', 'results/', 'eval_outputs/',
        'third_party/DSN-DDI/', 'tests/', 'openspec/')
 
@@ -53,7 +53,7 @@ for c in 'BC':
     n = len([d for d in os.listdir(path('results', 'v2', 'raw', c)) if d.startswith('q')])
     check('results/v2/raw/%s 원자료 10문항' % c, n == 10, n)
 for d in OLD:
-    check('옛 폴더 %s/ 없음' % d, not os.path.exists(path(d)))
+    check('옛 경로 %s 없음' % d, not os.path.exists(path(d)))
 
 # 2. submodule
 check('.gitmodules 경로 third_party/DSN-DDI', 'path = third_party/DSN-DDI' in open(path('.gitmodules')).read())

@@ -16,7 +16,7 @@ from _common import REPO, check, find_refs, finish, path
 BASES = {'REPO': '', 'BENCH': 'benchmarks/ddi', 'RESULTS': 'results', 'AGENT_DIR': 'ddi-agent',
          'DDI_DIR': 'ddi-tools/ddi', 'SERVER_DIR': 'ddi-tools/server',
          'MICROAGENT': 'ddi-tools/microagent/ddi.md'}
-PY = [os.path.join(r, f) for d in ('ddi-agent', 'benchmarks', 'tests/tools', 'tests/workspace', 'ddi-tools')
+PY = [os.path.join(r, f) for d in ('ddi-agent', 'benchmarks', 'tests/tools', 'tests/runtime', 'ddi-tools')
       for r, _, fs in os.walk(path(d)) for f in fs if f.endswith('.py')]
 
 # 1. REPO / '...' 경로
@@ -64,7 +64,7 @@ check('check_*.py 는 tests/ 아래에만', not stray, stray)
 OLD = r'(?<![\w/.-])(?:eval|runs|agent|agent_pkg|agent-pkg|agent-server|docker|tool|server|ddi)/(?!\*)'
 refs = [r for r in find_refs(OLD, regex=True)]
 check('옛 최상위 폴더 경로 참조 없음', not refs, refs)
-for old in ('oh_main', 'ddi-workspace', 'c_workspace', 'benchmarks/ddi/agent', "REPO / 'eval'", "REPO / 'runs'", r'(?<![\w/])Drug-Interaction-Research'):
+for old in ('oh_main', 'ddi-workspace', 'c_workspace', 'tests/workspace', r'from \.server\b', 'benchmarks/ddi/agent', "REPO / 'eval'", "REPO / 'runs'", r'(?<![\w/])Drug-Interaction-Research'):
     refs = find_refs(old, regex=True)
     check('옛 이름 %s 참조 없음' % old, not refs, refs)
 

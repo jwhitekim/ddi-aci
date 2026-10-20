@@ -51,7 +51,7 @@ This is a pilot study: one model (DSN-DDI), ten queries, one seed, and one run p
 | `results/` | Published results: scores per version (`v1/`, `v2/`), baseline A, raw v2 runs (`v2/raw/`) |
 | `eval_outputs/` | New run outputs (not tracked by git) |
 | `third_party/DSN-DDI/` | Original DSN-DDI repository (submodule) |
-| `tests/` | Checks by target: `tools/` (`ddi` package, prediction server; run in containers), `workspace/` (OpenHands runtime), `layout/` (repository layout) |
+| `tests/` | Checks by target: `tools/` (`ddi` package, prediction server; run in containers), `runtime/` (OpenHands runtime), `layout/` (repository layout) |
 | `openspec/` | Specs (`specs/`) and archived changes (`changes/archive/`) |
 
 ## The `ddi` skill

@@ -3,7 +3,7 @@ import csv
 import os
 import re
 
-from .server import _post
+from .client import _post
 
 _DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
 _ID_RE = re.compile(r'^DB\d{5}$', re.IGNORECASE)

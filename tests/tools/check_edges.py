@@ -1,4 +1,4 @@
-"""작업 1.3 확인: 경계 입력. 저장소를 /w 로 마운트한 서버 컨테이너 안, /opt/DSN-DDI 에서 실행:
+"""예측 서버 경계 입력 확인. 저장소를 /w 로 마운트한 서버 컨테이너 안, /opt/DSN-DDI 에서 실행:
 docker run -d --gpus all -v $PWD:/w:ro --name ddi-srv ddi-specialist
 docker exec -w /opt/DSN-DDI ddi-srv python /w/tests/tools/check_edges.py
 """

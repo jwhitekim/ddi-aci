@@ -1,7 +1,7 @@
 """예측: 한 쌍(predict), 여러 쌍(predict_many)."""
 from .drugs import _key, _payload, resolve_drug
 from .relations import explain
-from .server import _post
+from .client import _post
 
 
 def predict(a, b, top_k=3):

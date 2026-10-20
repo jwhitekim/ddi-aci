@@ -1,6 +1,6 @@
 """LLM 없이 OpenHands 런타임만 띄워 조건별 환경을 점검한다 (스모크 테스트 사전 확인).
 
-    .venv-openhands/bin/python tests/workspace/check_runtime.py --condition C --out eval_outputs/scratch/check_C
+    .venv-openhands/bin/python tests/runtime/check_runtime.py --condition C --out eval_outputs/scratch/check_C
 
 확인: 런타임 빌드, (C) IPython 시작 파일로 서버 기동과 ddi 자동 import, 환경 ② GPU. (헤드리스 실행과 같게 setup 스크립트는 부르지 않음)
 """

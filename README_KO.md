@@ -56,7 +56,7 @@ B는 10문항 모두 관계 번호는 맞게 얻었지만 3문항에서 틀렸�
 | `results/` | 공개 결과: 버전별 채점(`v1/`, `v2/`), 조건 A, v2 실행 원자료(`v2/raw/`) |
 | `eval_outputs/` | 새 실행 원자료 (git 제외) |
 | `third_party/DSN-DDI/` | 원 DSN-DDI 저장소 (서브모듈) |
-| `tests/` | 대상별 점검: `tools/`(`ddi` 패키지, 예측 서버. 컨테이너 안에서 실행), `workspace/`(OpenHands 런타임), `layout/`(저장소 구조) |
+| `tests/` | 대상별 점검: `tools/`(`ddi` 패키지, 예측 서버. 컨테이너 안에서 실행), `runtime/`(OpenHands 런타임), `layout/`(저장소 구조) |
 | `openspec/` | 스펙(`specs/`)과 아카이브된 변경(`changes/archive/`) |
 
 ## `ddi` skill

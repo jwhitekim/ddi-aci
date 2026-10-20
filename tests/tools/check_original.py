@@ -1,4 +1,4 @@
-"""작업 1.1 확인: predictor 확률 == 원 DrugDataset.collate_fn 양성 샘플(배치 크기 1) 확률 (fold0 test 20쌍).
+"""예측 서버 정확성 확인: predictor 확률 == 원 DrugDataset.collate_fn 양성 샘플(배치 크기 1) 확률 (fold0 test 20쌍).
 
 실행 (ddi-runtime 컨테이너, /opt/DSN-DDI 에서):
     docker run --rm --gpus all -v $PWD:/w:ro ddi-runtime python /w/tests/tools/check_original.py

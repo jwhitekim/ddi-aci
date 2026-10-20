@@ -13,7 +13,7 @@
 # B 는 --condition B --out eval_outputs/scratch/smoke_B
 ```
 
-사전 점검(LLM 없이 런타임만): `tests/workspace/check_runtime.py --condition {B,C}`
+사전 점검(LLM 없이 런타임만): `tests/runtime/check_runtime.py --condition {B,C}`
 
 ## 2. 결과
 
@@ -38,7 +38,7 @@
 
 **B 행동:** `/opt/DSN-DDI` 탐색, README·설명 파일 읽기, DrugBank 약물 사전에서 Warfarin·Aspirin 검색 → 추론 스크립트 작성 전에 10턴 초과. 10턴 중 4턴을 작업 계획 도구(`task_tracking`)에 썼다.
 
-**환경 점검 (`tests/workspace/check_runtime.py`)**
+**환경 점검 (`tests/runtime/check_runtime.py`)**
 
 | 항목 | C | B |
 |---|---|---|

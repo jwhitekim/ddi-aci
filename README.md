@@ -42,10 +42,11 @@ This is a pilot study: one model (DSN-DDI), ten queries, one seed, and one run p
 
 | Path | Contents |
 |---|---|
-| `ddi-agent/` | Agent runner: launches OpenHands CodeActAgent for condition B or C (`run_agent.py`), config template, micro agent prompt for C |
+| `ddi-agent/` | Agent runner: launches OpenHands CodeActAgent for condition B or C (`run_agent.py`), config template |
 | `ddi-tools/ddi/` | Tool interface the agent calls: the `ddi` Python package imported into the agent's IPython |
 | `ddi-tools/server/` | Tool back end: prediction server wrapping the original DSN-DDI model and weights (Python 3.7) |
-| `ddi-workspace/` | Execution environment: `ddi-runtime` image (B and C), `ddi-specialist` image (C), reproduction notes |
+| `ddi-tools/microagent/` | Micro agent prompt copied into the workspace for C: how to use the `ddi` functions |
+| `ddi-runtime/` | Runtime images: `ddi-runtime` (B and C), `ddi-specialist` (C), reproduction notes |
 | `benchmarks/ddi/` | Evaluation: `run_infer.py` (run), `eval_infer.py` (score), `prompts/` (task instruction appended to every query), `data/` (questions, ground truth, relation map), `scripts/` |
 | `results/` | Published results: scores per version (`v1/`, `v2/`), baseline A, raw v2 runs (`v2/raw/`) |
 | `eval_outputs/` | New run outputs (not tracked by git) |
@@ -77,8 +78,8 @@ Requirements: Linux, Docker with an NVIDIA GPU (the weights are stored as CUDA t
 
 ```bash
 # 1. Images
-docker build -f ddi-workspace/Dockerfile -t ddi-runtime .                 # B and C
-docker build -f ddi-workspace/Dockerfile.specialist -t ddi-specialist .   # C only
+docker build -f ddi-runtime/Dockerfile -t ddi-runtime .                 # B and C
+docker build -f ddi-runtime/Dockerfile.specialist -t ddi-specialist .   # C only
 
 # 2. OpenHands environment
 python3.12 -m venv .venv-openhands
@@ -101,7 +102,7 @@ python3 benchmarks/ddi/eval_infer.py
 
 - Ground truth comes from the original DSN-DDI code, independent of the prediction server: `benchmarks/ddi/scripts/make_ground_truth.py` (see its docstring for the `docker run` command).
 - The relation-number rule is checked against SSI-DDI pairs without using the rule itself: `benchmarks/ddi/scripts/verify_relation_map.py` (86/86 relations match, see [`benchmarks/ddi/data/relation_map/`](benchmarks/ddi/data/relation_map/README.md)).
-- DSN-DDI reproduction (fold0 transductive ACC 0.973 vs. 0.969 reported): [`ddi-workspace/REPRODUCTION.md`](ddi-workspace/REPRODUCTION.md).
+- DSN-DDI reproduction (fold0 transductive ACC 0.973 vs. 0.969 reported): [`ddi-runtime/REPRODUCTION.md`](ddi-runtime/REPRODUCTION.md).
 
 ## Data and credits
 
@@ -113,4 +114,4 @@ python3 benchmarks/ddi/eval_infer.py
 
 This work was supported by the National Research Foundation of Korea (NRF) grant funded by the Korea government (MSIT) (RS-2025-00520064).
 
-Most internal notes (`benchmarks/ddi/*.md`, `results/*.md`, `ddi-agent/SMOKE_TEST.md`, `ddi-workspace/REPRODUCTION.md`, code comments) are in Korean.
+Most internal notes (`benchmarks/ddi/*.md`, `results/*.md`, `ddi-agent/SMOKE_TEST.md`, `ddi-runtime/REPRODUCTION.md`, code comments) are in Korean.

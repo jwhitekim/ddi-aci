@@ -1,6 +1,6 @@
 # DSN-DDI 재현 기록
 
-기록일: 2026-10-01 · 이미지: `ddi-runtime` (`ddi-workspace/Dockerfile`) · 저장소 커밋 `6f23522`
+기록일: 2026-10-01 · 이미지: `ddi-runtime` (`ddi-runtime/Dockerfile`) · 저장소 커밋 `6f23522`
 
 ## 실행 환경
 
@@ -11,7 +11,7 @@
 
 ```bash
 # 프로젝트 루트에서
-docker build -f ddi-workspace/Dockerfile -t ddi-runtime .
+docker build -f ddi-runtime/Dockerfile -t ddi-runtime .
 docker run --rm --gpus all --shm-size=8g ddi-runtime python -u drugbank_test/transductive_test.py
 docker run --rm --gpus all --shm-size=8g ddi-runtime python -u drugbank_test/inductive_test.py
 ```

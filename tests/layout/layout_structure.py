@@ -1,10 +1,11 @@
 """루트 구조 확인. 실행: python3 tests/layout/layout_structure.py
 
-목표 구조 (OpenHands software-agent-sdk, OpenHands/benchmarks 를 따름)
-    ddi-agent/            에이전트 실행기 (openhands-sdk 대응)
-    ddi-tools/ddi/        도구 인터페이스 (openhands-tools 대응)
+목표 구조 (benchmarks/ddi/ 는 OpenHands/benchmarks 의 benchmarks/<이름>/ 형식을 따름)
+    ddi-agent/            에이전트 실행기 (OpenHands 0.62.0 을 조건 B·C 로 띄움)
+    ddi-tools/ddi/        도구 인터페이스 (에이전트 IPython 에 import 되는 ddi 패키지)
     ddi-tools/server/     도구 뒷단 예측 서버
-    ddi-workspace/        실행 환경 Docker 이미지 (openhands-workspace 대응)
+    ddi-tools/microagent/ 조건 C 에서 작업 폴더에 넣는 ddi 사용법
+    ddi-runtime/          런타임 Docker 이미지 (ddi-runtime, ddi-specialist), 재현 기록
     benchmarks/ddi/       평가 정의: run_infer.py, eval_infer.py, prompts/, data/, scripts/
     results/              공개 결과 (v1/, v2/, v2/raw/, baseline_a/)
     eval_outputs/         새 실행 원자료 (git 제외)
@@ -23,20 +24,21 @@ from _common import check, finish, git, path
 FILES = {
     'ddi-tools/ddi': ('__init__.py', 'data/dbvocab.csv', 'data/dsn_drugs.txt', 'data/Interaction_information.csv'),
     'ddi-tools/server': ('app.py', 'predictor.py'),
-    'ddi-workspace': ('Dockerfile', 'Dockerfile.specialist', 'REPRODUCTION.md'),
+    'ddi-runtime': ('Dockerfile', 'Dockerfile.specialist', 'REPRODUCTION.md'),
     'benchmarks/ddi': ('run_infer.py', 'eval_infer.py', 'eval_spec.md', 'prompts/task_suffix.txt',
                        'data/questions/questions.jsonl',
                        'data/relation_map/dsn_relation_map.csv', 'scripts/run_eval.sh'),
-    'ddi-agent': ('run_agent.py', 'openhands_main.py', 'config.toml.j2', 'requirements.lock.txt',
-                  'c_workspace/.openhands/microagents/ddi.md'),
+    'ddi-agent': ('run_agent.py', 'openhands_main.py', 'config.toml.j2', 'requirements.lock.txt'),
+    'ddi-tools/microagent': ('ddi.md',),
     'results': ('RESULTS.md', 'v1/RESULTS.md', 'v1/summary.json', 'v2/summary.json', 'v2/ANSWER_COMPARISON.md',
                 'baseline_a/a_claims.jsonl', 'v2/raw/logs/score_output.txt'),
     'tests': ('tools/check_ddi.py', 'tools/check_edges.py', 'tools/check_original.py',
               'workspace/check_runtime.py'),
 }
 OLD = ('agent', 'ddi', 'server', 'docker', 'eval', 'runs', 'tool', 'tools', 'agent_pkg', 'agent-pkg',
-       'agent-server', 'Drug-Interaction-Research', 'benchmarks/ddi/agent')
-TOP = ('ddi-agent/', 'ddi-tools/ddi/', 'ddi-tools/server/', 'ddi-workspace/', 'benchmarks/ddi/', 'results/', 'eval_outputs/',
+       'agent-server', 'Drug-Interaction-Research', 'benchmarks/ddi/agent', 'ddi-workspace',
+       'ddi-agent/c_workspace')
+TOP = ('ddi-agent/', 'ddi-tools/ddi/', 'ddi-tools/server/', 'ddi-tools/microagent/', 'ddi-runtime/', 'benchmarks/ddi/', 'results/', 'eval_outputs/',
        'third_party/DSN-DDI/', 'tests/', 'openspec/')
 
 # 1. 폴더와 파일

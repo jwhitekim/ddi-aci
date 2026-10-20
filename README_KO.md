@@ -47,10 +47,11 @@ B는 10문항 모두 관계 번호는 맞게 얻었지만 3문항에서 틀렸�
 
 | 경로 | 내용 |
 |---|---|
-| `ddi-agent/` | 에이전트 실행기: 조건 B·C로 OpenHands CodeActAgent를 띄움(`run_agent.py`), 설정 틀, 조건 C용 micro agent 프롬프트 |
+| `ddi-agent/` | 에이전트 실행기: 조건 B·C로 OpenHands CodeActAgent를 띄움(`run_agent.py`), 설정 틀 |
 | `ddi-tools/ddi/` | 에이전트가 부르는 도구 인터페이스: 에이전트의 IPython에 import되는 `ddi` 파이썬 패키지 |
 | `ddi-tools/server/` | 도구 뒷단: 원 DSN-DDI 모델과 가중치를 감싼 예측 서버 (Python 3.7) |
-| `ddi-workspace/` | 실행 환경: `ddi-runtime` 이미지(B·C), `ddi-specialist` 이미지(C), 재현 기록 |
+| `ddi-tools/microagent/` | 조건 C에서 작업 폴더에 넣는 micro agent 프롬프트: `ddi` 함수 사용법 |
+| `ddi-runtime/` | 런타임 이미지: `ddi-runtime`(B·C), `ddi-specialist`(C), 재현 기록 |
 | `benchmarks/ddi/` | 평가: `run_infer.py`(실행), `eval_infer.py`(채점), `prompts/`(모든 질문 뒤에 붙이는 과제 지시), `data/`(질문, 정답, 관계 번호 대응표), `scripts/` |
 | `results/` | 공개 결과: 버전별 채점(`v1/`, `v2/`), 조건 A, v2 실행 원자료(`v2/raw/`) |
 | `eval_outputs/` | 새 실행 원자료 (git 제외) |
@@ -82,8 +83,8 @@ res["top"][0]["description"]
 
 ```bash
 # 1. 이미지
-docker build -f ddi-workspace/Dockerfile -t ddi-runtime .                 # B·C
-docker build -f ddi-workspace/Dockerfile.specialist -t ddi-specialist .   # C 전용
+docker build -f ddi-runtime/Dockerfile -t ddi-runtime .                 # B·C
+docker build -f ddi-runtime/Dockerfile.specialist -t ddi-specialist .   # C 전용
 
 # 2. OpenHands 환경
 python3.12 -m venv .venv-openhands
@@ -106,7 +107,7 @@ python3 benchmarks/ddi/eval_infer.py
 
 - 정답은 예측 서버와 독립적으로, 원 DSN-DDI 코드로 계산합니다: `benchmarks/ddi/scripts/make_ground_truth.py` (`docker run` 명령은 파일 첫머리 설명 참고)
 - 관계 번호 규칙은 규칙 자체를 쓰지 않고 SSI-DDI 약물 쌍과 대조해 검증했습니다: `benchmarks/ddi/scripts/verify_relation_map.py` (86종 모두 일치, [`benchmarks/ddi/data/relation_map/`](benchmarks/ddi/data/relation_map/README.md) 참고)
-- DSN-DDI 재현 기록(fold0 transductive ACC 0.973, 논문 0.969): [`ddi-workspace/REPRODUCTION.md`](ddi-workspace/REPRODUCTION.md)
+- DSN-DDI 재현 기록(fold0 transductive ACC 0.973, 논문 0.969): [`ddi-runtime/REPRODUCTION.md`](ddi-runtime/REPRODUCTION.md)
 
 ## 데이터와 출처
 

@@ -28,6 +28,7 @@ AGENT_DIR = Path(__file__).resolve().parent
 REPO = AGENT_DIR.parent
 DDI_DIR = REPO / 'ddi-tools' / 'ddi'
 SERVER_DIR = REPO / 'ddi-tools' / 'server'
+MICROAGENT = REPO / 'ddi-tools' / 'microagent' / 'ddi.md'
 load_dotenv(REPO / '.env')
 BASE_IMAGES = {'B': 'ddi-runtime', 'C': 'ddi-specialist'}
 MAX_ITERATIONS = 30
@@ -54,10 +55,11 @@ def prepare(condition, task, out, args):
     if out.exists():
         sys.exit('출력 폴더가 이미 있습니다: %s' % out)
     workspace = out / 'workspace'
+    workspace.mkdir(parents=True)
     if condition == 'C':
-        shutil.copytree(AGENT_DIR / 'c_workspace', workspace)
-    else:
-        workspace.mkdir(parents=True)
+        # C 전용: ddi 도구 사용법을 micro agent 로 작업 폴더에 넣는다
+        (workspace / '.openhands' / 'microagents').mkdir(parents=True)
+        shutil.copy(MICROAGENT, workspace / '.openhands' / 'microagents' / 'ddi.md')
     (out / 'config.toml').write_text(render_config(condition, out, args))
     suffix_path = getattr(args, 'task_suffix', None)
     suffix = Path(suffix_path).read_text() if suffix_path else ''

@@ -1,5 +1,5 @@
 # DSN-DDI 런타임 이미지 (B·C 공통). 프로젝트 루트에서 빌드:
-#   docker build -f ddi-workspace/Dockerfile -t ddi-runtime .
+#   docker build -f ddi-runtime/Dockerfile -t ddi-runtime .
 FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive

@@ -1,0 +1,28 @@
+/home/prml/workspace/ddi-agent/.venv-openhands/lib/python3.12/site-packages/fastmcp/server/auth/providers/jwt.py:10: AuthlibDeprecationWarning: authlib.jose module is deprecated, please use joserfc instead.
+It will be compatible before version 2.0.0.
+  from authlib.jose import JsonWebKey, JsonWebToken
+/home/prml/workspace/ddi-agent/.venv-openhands/lib/python3.12/site-packages/authlib/integrations/httpx_client/assertion_client.py:5: AuthlibDeprecationWarning: The httpx module is deprecated; please use httpx2 instead.
+  from ._compat import httpx2
+[92m12:42:47 - openhands:INFO[0m: llm_registry.py:87 - [LLM registry a19af350-5283-4cfe-b707-ac3b868870e8]: Registering service for agent
+[92m12:42:47 - openhands:INFO[0m: llm_registry.py:87 - [LLM registry a19af350-5283-4cfe-b707-ac3b868870e8]: Registering service for condenser
+[92m12:42:48 - openhands:INFO[0m: runtime_build.py:191 - Building image: ghcr.io/openhands/runtime:oh_v0.62.0_su5pla01da9mhro1_hu5f0gcq9ptu2uin
+[92m12:42:48 - openhands:INFO[0m: docker_runtime.py:182 - [runtime 7b20786d-3a02-4b-e14f6fce7fc83e6] Starting runtime with image: ghcr.io/openhands/runtime:oh_v0.62.0_su5pla01da9mhro1_hu5f0gcq9ptu2uin
+[92m12:42:48 - openhands:INFO[0m: docker_runtime.py:495 - [runtime 7b20786d-3a02-4b-e14f6fce7fc83e6] Starting server with command: ['/openhands/micromamba/bin/micromamba', 'run', '-n', 'openhands', 'poetry', 'run', 'python', '-u', '-m', 'openhands.runtime.action_execution_server', '35542', '--working-dir', '/workspace', '--plugins', 'agent_skills', 'jupyter', '--username', 'openhands', '--user-id', '1000']
+[92m12:42:49 - openhands:INFO[0m: docker_runtime.py:186 - [runtime 7b20786d-3a02-4b-e14f6fce7fc83e6] Container started: openhands-runtime-7b20786d-3a02-4b-e14f6fce7fc83e6. VSCode URL: None
+[92m12:42:49 - openhands:INFO[0m: docker_runtime.py:197 - [runtime 7b20786d-3a02-4b-e14f6fce7fc83e6] Waiting for ******ent to become ready at http://localhost:35542...
+[92m12:43:24 - openhands:INFO[0m: docker_runtime.py:203 - [runtime 7b20786d-3a02-4b-e14f6fce7fc83e6] Runtime is ready.
+[92m12:43:24 - openhands:INFO[0m: base.py:1061 - Successfully configured git: name=openhands, email=openhands@all-hands.dev
+[92m12:43:24 - openhands:INFO[0m: base.py:890 - [runtime 7b20786d-3a02-4b-e14f6fce7fc83e6] Selected repo: None, loading microagents from /workspace/.openhands/microagents (inside runtime)
+[92m12:43:24 - openhands:INFO[0m: base.py:637 - [runtime 7b20786d-3a02-4b-e14f6fce7fc83e6] Attempting to list files in repository microagents directory: /workspace/.openhands/microagents
+[92m12:43:24 - openhands:INFO[0m: base.py:651 - [runtime 7b20786d-3a02-4b-e14f6fce7fc83e6] Found 1 files in repository microagents directory
+[92m12:43:24 - openhands:INFO[0m: base.py:665 - [runtime 7b20786d-3a02-4b-e14f6fce7fc83e6] Loaded 1 repo agents and 0 knowledge agents from repository
+[92m12:43:24 - openhands:INFO[0m: memory.py:261 - Loading user workspace microagents: ['ddi']
+[92m12:43:24 - openhands:INFO[0m: state_tracker.py:94 - AgentController 7b20786d-3a02-4b-e14f6fce7fc83e6 - created new state. start_id: 0
+[92m12:43:24 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7b20786d-3a02-4b-e14f6fce7fc83e6] Setting agent(CodeActAgent) state from AgentState.LOADING to AgentState.RUNNING
+[92m12:43:24 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:43:33 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7b20786d-3a02-4b-e14f6fce7fc83e6] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.AWAITING_USER_INPUT
+[92m12:43:33 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:43:33 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7b20786d-3a02-4b-e14f6fce7fc83e6] Setting agent(CodeActAgent) state from AgentState.AWAITING_USER_INPUT to AgentState.RUNNING
+[92m12:43:33 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:43:37 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7b20786d-3a02-4b-e14f6fce7fc83e6] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.FINISHED
+[92m12:43:37 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats

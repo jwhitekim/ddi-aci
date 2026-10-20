@@ -1,0 +1,22 @@
+/home/prml/workspace/ddi-agent/.venv-openhands/lib/python3.12/site-packages/fastmcp/server/auth/providers/jwt.py:10: AuthlibDeprecationWarning: authlib.jose module is deprecated, please use joserfc instead.
+It will be compatible before version 2.0.0.
+  from authlib.jose import JsonWebKey, JsonWebToken
+/home/prml/workspace/ddi-agent/.venv-openhands/lib/python3.12/site-packages/authlib/integrations/httpx_client/assertion_client.py:5: AuthlibDeprecationWarning: The httpx module is deprecated; please use httpx2 instead.
+  from ._compat import httpx2
+[92m12:41:17 - openhands:INFO[0m: llm_registry.py:87 - [LLM registry c62b6441-cf6c-47ec-89d3-66a7a2b9fa90]: Registering service for agent
+[92m12:41:17 - openhands:INFO[0m: llm_registry.py:87 - [LLM registry c62b6441-cf6c-47ec-89d3-66a7a2b9fa90]: Registering service for condenser
+[92m12:41:19 - openhands:INFO[0m: runtime_build.py:191 - Building image: ghcr.io/openhands/runtime:oh_v0.62.0_5xm0eyq9bpyo02p9_hu5f0gcq9ptu2uin
+[92m12:41:19 - openhands:INFO[0m: docker_runtime.py:182 - [runtime bf62cc34-2fdb-4b-e658680bab5abc5] Starting runtime with image: ghcr.io/openhands/runtime:oh_v0.62.0_5xm0eyq9bpyo02p9_hu5f0gcq9ptu2uin
+[92m12:41:19 - openhands:INFO[0m: docker_runtime.py:495 - [runtime bf62cc34-2fdb-4b-e658680bab5abc5] Starting server with command: ['/openhands/micromamba/bin/micromamba', 'run', '-n', 'openhands', 'poetry', 'run', 'python', '-u', '-m', 'openhands.runtime.action_execution_server', '36185', '--working-dir', '/workspace', '--plugins', 'agent_skills', 'jupyter', '--username', 'openhands', '--user-id', '1000']
+[92m12:41:21 - openhands:INFO[0m: docker_runtime.py:186 - [runtime bf62cc34-2fdb-4b-e658680bab5abc5] Container started: openhands-runtime-bf62cc34-2fdb-4b-e658680bab5abc5. VSCode URL: None
+[92m12:41:21 - openhands:INFO[0m: docker_runtime.py:197 - [runtime bf62cc34-2fdb-4b-e658680bab5abc5] Waiting for ******ent to become ready at http://localhost:36185...
+[92m12:41:57 - openhands:INFO[0m: docker_runtime.py:203 - [runtime bf62cc34-2fdb-4b-e658680bab5abc5] Runtime is ready.
+[92m12:41:58 - openhands:INFO[0m: base.py:1061 - Successfully configured git: name=openhands, email=openhands@all-hands.dev
+[92m12:41:58 - openhands:INFO[0m: base.py:890 - [runtime bf62cc34-2fdb-4b-e658680bab5abc5] Selected repo: None, loading microagents from /workspace/.openhands/microagents (inside runtime)
+[92m12:41:58 - openhands:INFO[0m: base.py:637 - [runtime bf62cc34-2fdb-4b-e658680bab5abc5] Attempting to list files in repository microagents directory: /workspace/.openhands/microagents
+[92m12:41:58 - openhands:INFO[0m: memory.py:261 - Loading user workspace microagents: []
+[92m12:41:58 - openhands:INFO[0m: state_tracker.py:94 - AgentController bf62cc34-2fdb-4b-e658680bab5abc5 - created new state. start_id: 0
+[92m12:41:58 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller bf62cc34-2fdb-4b-e658680bab5abc5] Setting agent(CodeActAgent) state from AgentState.LOADING to AgentState.RUNNING
+[92m12:41:58 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:52:52 - openhands:INFO[0m: agent_controller.py:1027 - [Agent Controller bf62cc34-2fdb-4b-e658680bab5abc5] Pending action active for 561.51s: CmdRunAction (id=27)
+[92m12:52:52 - openhands:INFO[0m: agent_controller.py:1027 - [Agent Controller bf62cc34-2fdb-4b-e658680bab5abc5] Pending action active for 561.51s: CmdRunAction (id=27)

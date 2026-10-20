@@ -13,7 +13,7 @@ from pathlib import Path
 
 from _common import REPO, check, find_refs, finish, path
 
-BASES = {'REPO': '', 'BENCH': 'benchmarks/ddi', 'RESULTS': 'results', 'AGENT_DIR': 'ddi-agent',
+BASES = {'REPO': '', 'BENCH': 'benchmarks/ddi', 'RESULTS': 'eval_outputs', 'AGENT_DIR': 'ddi-agent',
          'DDI_DIR': 'ddi-tools/ddi', 'SERVER_DIR': 'ddi-tools/server',
          'MICROAGENT': 'ddi-tools/microagent/ddi.md'}
 PY = [os.path.join(r, f) for d in ('ddi-agent', 'benchmarks', 'tests/tools', 'tests/runtime', 'ddi-tools')
@@ -25,7 +25,7 @@ for fp in PY:
     names = '|'.join(BASES)
     for base, parts in re.findall(r"\b(" + names + r")((?:\s*/\s*'[^'%]+')+)", src):
         rel = os.path.join(BASES[base], *re.findall(r"'([^']+)'", parts))
-        if rel.startswith('eval_outputs'):
+        if rel.startswith('eval_outputs') and not rel.startswith(('eval_outputs/v1', 'eval_outputs/v2')):
             continue
         check('%s → %s 있음' % (os.path.relpath(fp, REPO), rel), os.path.exists(path(rel)))
 
@@ -64,7 +64,7 @@ check('check_*.py 는 tests/ 아래에만', not stray, stray)
 OLD = r'(?<![\w/.-])(?:eval|runs|agent|agent_pkg|agent-pkg|agent-server|docker|tool|server|ddi)/(?!\*)'
 refs = [r for r in find_refs(OLD, regex=True)]
 check('옛 최상위 폴더 경로 참조 없음', not refs, refs)
-for old in ('oh_main', r'(?<!run_)baseline_a', r'(?<![\w/])results/RESULTS\.md', 'ddi-workspace', 'c_workspace', 'tests/workspace', r'from \.server\b', 'benchmarks/ddi/agent', "REPO / 'eval'", "REPO / 'runs'", r'(?<![\w/])Drug-Interaction-Research'):
+for old in ('oh_main', r'(?<!run_)baseline_a', r'(?<![\w/])results/(?:v[12]|RESULTS)', 'eval_v1', 'ddi-workspace', 'c_workspace', 'tests/workspace', r'from \.server\b', 'benchmarks/ddi/agent', "REPO / 'eval'", "REPO / 'runs'", r'(?<![\w/])Drug-Interaction-Research'):
     refs = find_refs(old, regex=True)
     check('옛 이름 %s 참조 없음' % old, not refs, refs)
 

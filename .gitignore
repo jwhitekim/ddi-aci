@@ -1,7 +1,9 @@
 .venv-openhands/
 .env
 
-# 실행 원자료 (OpenHands/benchmarks 의 eval_outputs/ 와 같은 역할)
-eval_outputs/
+# 실행 출력 (OpenHands/benchmarks 의 eval_outputs/ 와 같은 역할). 공개한 평가 v1/, v2/ 만 git 에 올린다
+eval_outputs/*
+!eval_outputs/v1/
+!eval_outputs/v2/
 
 __pycache__/

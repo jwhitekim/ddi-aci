@@ -2,9 +2,9 @@
 
     python3 benchmarks/ddi/scripts/make_comparison.py
 
-입력: benchmarks/ddi/data/questions/questions.jsonl, results/v2/raw/A/a_answers.jsonl·a_claims.jsonl,
-      results/v2/{B,C}/q*.json, results/v2/raw/{B,C}/q*/trajectory.json
-출력: results/v2/ANSWER_COMPARISON.md
+입력: benchmarks/ddi/data/questions/questions.jsonl, eval_outputs/v2/raw/A/a_answers.jsonl·a_claims.jsonl,
+      eval_outputs/v2/{B,C}/q*.json, eval_outputs/v2/raw/{B,C}/q*/trajectory.json
+출력: eval_outputs/v2/ANSWER_COMPARISON.md
 """
 import csv
 import json
@@ -12,7 +12,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[3]
 BENCH = REPO / 'benchmarks' / 'ddi'
-RESULTS = REPO / 'results'
+RESULTS = REPO / 'eval_outputs'
 SHOW = 'q04'  # 대표 사례 (B가 방향을 틀린 문항)
 
 with open(REPO / 'ddi-tools' / 'ddi' / 'data' / 'Interaction_information.csv', encoding='utf-8') as f:
@@ -77,7 +77,7 @@ def main():
 
     out = ['# A·B·C 답변 비교 (v2, 10문항)', '',
            '같은 질문을 세 조건에 주고, 각 조건이 최종적으로 내놓은 답을 원 DSN-DDI 모델의 예측(정답)과 나란히 비교한다. '
-           '채점 기준은 `eval_spec.md` 0장, 수치는 `results/v2/RESULTS.md`. 이 문서는 `benchmarks/ddi/scripts/make_comparison.py`로 만든다.', '',
+           '채점 기준은 `eval_spec.md` 0장, 수치는 `eval_outputs/v2/RESULTS.md`. 이 문서는 `benchmarks/ddi/scripts/make_comparison.py`로 만든다.', '',
            '- **과제:** 질문 → (A) LLM이 지식으로 답함 / (B·C) 에이전트가 DSN-DDI 모델을 실행하고 그 예측을 보고 답함',
            '- **정답:** 원 DSN-DDI 모델이 질문 순서의 약물 쌍에 대해 낸 1위 관계 문장',
            '- **비교 대상:** A는 답에서 채점기(Gemini 3.5 Flash)가 뽑은 주장, B·C는 결과 파일에 적은 질문 순서 방향의 문장', '']

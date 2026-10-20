@@ -1,7 +1,7 @@
 """git 관리 상태 확인. 실행: python3 tests/layout/layout_git.py
 
 범위
-- 새 실행 원자료 eval_outputs/ 는 git 에서 빠지고, 공개 원자료 results/v2/raw/ 는 git 에 올라가 있다
+- eval_outputs/ 에서 공개한 평가 v1/, v2/ 만 git 에 있고, 새 실행(ddi/)·시험 실행(scratch/)은 빠진다
 - .gitignore 에 없는 파일을 가리키는 항목, 중복 규칙이 없다
 - 캐시 파일이 git 에 없다
 - 고정 패키지 목록에 이 컴퓨터에만 있는 경로가 없다
@@ -12,9 +12,12 @@ import re
 from _common import check, finish, git, path
 
 # 1. 원자료
-check('eval_outputs/ 는 git 에서 빠짐', git('check-ignore', 'eval_outputs/x').strip() != '')
-check('eval_outputs/ 아래 git 파일 없음', git('ls-files', 'eval_outputs').strip() == '')
-check('results/v2/raw/ 가 git 에 있음', git('ls-files', 'results/v2/raw').strip() != '')
+for d in ('ddi', 'scratch', 'x'):
+    check('eval_outputs/%s/ 는 git 에서 빠짐' % d, git('check-ignore', 'eval_outputs/%s/f' % d).strip() != '')
+tracked = set(f.split('/')[1] for f in git('ls-files', 'eval_outputs').split())
+check('eval_outputs/ 아래 git 파일은 v1/, v2/ 만', tracked == {'v1', 'v2'}, tracked)
+for v in ('v1', 'v2'):
+    check('eval_outputs/%s/raw/ 가 git 에 있음' % v, git('ls-files', 'eval_outputs/%s/raw' % v).strip() != '')
 
 # 2. .gitignore
 rules = [l.strip() for l in open(path('.gitignore'), encoding='utf-8') if l.strip() and not l.startswith('#')]

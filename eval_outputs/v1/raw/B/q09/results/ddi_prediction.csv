@@ -1,0 +1,2 @@
+drug_a,drug_b,relation,prob,model_used,description
+Estrone,Glycerol phenylbutyrate,70,0.9956,DSN-DDI transductive (drugbank_test/transductive_drugbank.pkl),The therapeutic efficacy of Glycerol phenylbutyrate can be decreased when used in combination with Estrone.

@@ -7,8 +7,7 @@
     ddi-tools/microagent/ 조건 C 에서 작업 폴더에 넣는 ddi 사용법
     ddi-runtime/          런타임 Docker 이미지 (ddi-runtime, ddi-specialist), 재현 기록
     benchmarks/ddi/       평가 정의: run_infer.py, eval_infer.py, prompts/, data/, scripts/
-    results/              버전별 공개 결과 (v2/RESULTS.md, v2/raw/{A,B,C}, v1/RESULTS.md)
-    eval_outputs/         새 실행 원자료 (git 제외)
+    eval_outputs/         실행 출력. 공개한 평가 v1/, v2/ (보고서, 채점, raw/) 만 git 에 있음
     third_party/DSN-DDI/  원 DSN-DDI 저장소 (submodule)
     tests/                tools/, runtime/, layout/
 
@@ -30,7 +29,7 @@ FILES = {
                        'data/relation_map/dsn_relation_map.csv', 'scripts/run_eval.sh'),
     'ddi-agent': ('run_agent.py', 'openhands_main.py', 'config.toml.j2', 'requirements.lock.txt'),
     'ddi-tools/microagent': ('ddi.md',),
-    'results': ('v2/RESULTS.md', 'v1/RESULTS.md', 'v1/summary.json', 'v2/summary.json', 'v2/ANSWER_COMPARISON.md',
+    'eval_outputs': ('v2/RESULTS.md', 'v1/RESULTS.md', 'v1/summary.json', 'v2/summary.json', 'v2/ANSWER_COMPARISON.md',
                 'v2/raw/A/a_claims.jsonl', 'v2/raw/A/a_answers.jsonl', 'v2/raw/logs/score_output.txt'),
     'tests': ('tools/check_ddi.py', 'tools/check_edges.py', 'tools/check_original.py',
               'runtime/check_runtime.py'),
@@ -38,8 +37,8 @@ FILES = {
 OLD = ('agent', 'ddi', 'server', 'docker', 'eval', 'runs', 'tool', 'tools', 'agent_pkg', 'agent-pkg',
        'agent-server', 'Drug-Interaction-Research', 'benchmarks/ddi/agent', 'ddi-workspace',
        'ddi-agent/c_workspace', 'tests/workspace', 'ddi-tools/ddi/server.py',
-       'results/baseline_a', 'results/RESULTS.md')
-TOP = ('ddi-agent/', 'ddi-tools/ddi/', 'ddi-tools/server/', 'ddi-tools/microagent/', 'ddi-runtime/', 'benchmarks/ddi/', 'results/', 'eval_outputs/',
+       'results', 'eval_outputs/eval_v1')
+TOP = ('ddi-agent/', 'ddi-tools/ddi/', 'ddi-tools/server/', 'ddi-tools/microagent/', 'ddi-runtime/', 'benchmarks/ddi/', 'eval_outputs/',
        'third_party/DSN-DDI/', 'tests/', 'openspec/')
 
 # 1. 폴더와 파일
@@ -48,11 +47,12 @@ for d, files in FILES.items():
         check('%s/%s 있음' % (d, f), os.path.isfile(path(d, f)))
 for v in ('v1', 'v2'):
     for c in 'ABC':
-        n = len([f for f in os.listdir(path('results', v, c)) if f.endswith('.json')])
-        check('results/%s/%s 채점 10개' % (v, c), n == 10, n)
-for c in 'BC':
-    n = len([d for d in os.listdir(path('results', 'v2', 'raw', c)) if d.startswith('q')])
-    check('results/v2/raw/%s 원자료 10문항' % c, n == 10, n)
+        n = len([f for f in os.listdir(path('eval_outputs', v, c)) if f.endswith('.json')])
+        check('eval_outputs/%s/%s 채점 10개' % (v, c), n == 10, n)
+for v in ('v1', 'v2'):
+    for c in 'BC':
+        n = len([d for d in os.listdir(path('eval_outputs', v, 'raw', c)) if d.startswith('q')])
+        check('eval_outputs/%s/raw/%s 원자료 10문항' % (v, c), n == 10, n)
 for d in OLD:
     check('옛 경로 %s 없음' % d, not os.path.exists(path(d)))
 

@@ -1,0 +1,22 @@
+{
+  "condition": "C",
+  "task": "Cyclophosphamide이랑 Gemcitabine 상호작용 예측해줘",
+  "openhands_version": "0.62.0",
+  "agent": "CodeActAgent",
+  "base_image": "ddi-specialist",
+  "model": "openai/anthropic/claude-sonnet-5.5",
+  "max_iterations": 30,
+  "exit_code": 0,
+  "seconds": 60.7,
+  "result_csvs": [
+    "result.csv"
+  ],
+  "status": "finished",
+  "turns": 2,
+  "tokens": {
+    "prompt_tokens": 35540,
+    "completion_tokens": 1065,
+    "cache_read_tokens": 33724,
+    "cache_write_tokens": 1806
+  }
+}

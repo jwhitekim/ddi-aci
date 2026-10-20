@@ -1,0 +1,4 @@
+drug_a,drug_b,relation,prob,model_used,description
+DB08808,DB09082,13,0.9999938011169434,transductive,Bupranolol may decrease the bronchodilatory activities of Vilanterol.
+DB08808,DB09082,72,0.7559406161308289,transductive,The serum concentration of Bupranolol can be increased when it is combined with Vilanterol.
+DB08808,DB09082,48,0.525981605052948,transductive,The risk or severity of adverse effects can be increased when Bupranolol is combined with Vilanterol.

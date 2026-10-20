@@ -1,0 +1,87 @@
+drug_a,drug_b,relation,prob,model_used,description
+Sulpiride,Flupentixol,35,1.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the antipsychotic activities of Flupentixol.
+Sulpiride,Flupentixol,48,0.990931,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The risk or severity of adverse effects can be increased when Sulpiride is combined with Flupentixol.
+Sulpiride,Flupentixol,72,0.553765,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The serum concentration of Flupentixol can be increased when it is combined with Sulpiride.
+Sulpiride,Flupentixol,32,0.488612,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The risk or severity of QTc prolongation can be increased when Sulpiride is combined with Flupentixol.
+Sulpiride,Flupentixol,1,0.304665,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the anticholinergic activities of Flupentixol.
+Sulpiride,Flupentixol,69,0.168799,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The therapeutic efficacy of Flupentixol can be decreased when used in combination with Sulpiride.
+Sulpiride,Flupentixol,19,0.153267,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the QTc-prolonging activities of Flupentixol.
+Sulpiride,Flupentixol,34,0.017235,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the neurotoxic activities of Flupentixol.
+Sulpiride,Flupentixol,74,0.015506,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The serum concentration of Flupentixol can be decreased when it is combined with Sulpiride.
+Sulpiride,Flupentixol,46,0.00901,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The metabolism of Flupentixol can be decreased when combined with Sulpiride.
+Sulpiride,Flupentixol,15,0.001685,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the central nervous system depressant (CNS depressant) activities of Flupentixol.
+Sulpiride,Flupentixol,81,0.000773,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the arrhythmogenic activities of Flupentixol.
+Sulpiride,Flupentixol,0,0.000553,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the photosensitizing activities of Flupentixol.
+Sulpiride,Flupentixol,53,0.000379,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the bradycardic activities of Flupentixol.
+Sulpiride,Flupentixol,36,0.000223,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may decrease the antihypertensive activities of Flupentixol.
+Sulpiride,Flupentixol,59,0.000205,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the hypotensive activities of Flupentixol.
+Sulpiride,Flupentixol,66,0.000181,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride can cause a decrease in the absorption of Flupentixol resulting in a reduced serum concentration and potentially a decrease in efficacy.
+Sulpiride,Flupentixol,76,3e-05,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The serum concentration of the active metabolites of Flupentixol can be increased when Flupentixol is used in combination with Sulpiride.
+Sulpiride,Flupentixol,54,1.3e-05,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the hyponatremic activities of Flupentixol.
+Sulpiride,Flupentixol,26,3e-06,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the neuroexcitatory activities of Flupentixol.
+Sulpiride,Flupentixol,11,3e-06,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may decrease the anticoagulant activities of Flupentixol.
+Sulpiride,Flupentixol,79,2e-06,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the hepatotoxic activities of Flupentixol.
+Sulpiride,Flupentixol,33,2e-06,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the immunosuppressive activities of Flupentixol.
+Sulpiride,Flupentixol,8,1e-06,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the hypoglycemic activities of Flupentixol.
+Sulpiride,Flupentixol,42,1e-06,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The protein binding of Flupentixol can be decreased when combined with Sulpiride.
+Sulpiride,Flupentixol,57,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may decrease the cardiotoxic activities of Flupentixol.
+Sulpiride,Flupentixol,60,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may decrease the stimulatory activities of Flupentixol.
+Sulpiride,Flupentixol,56,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the nephrotoxic activities of Flupentixol.
+Sulpiride,Flupentixol,55,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The risk or severity of hypotension can be increased when Sulpiride is combined with Flupentixol.
+Sulpiride,Flupentixol,52,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the antiplatelet activities of Flupentixol.
+Sulpiride,Flupentixol,58,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the ulcerogenic activities of Flupentixol.
+Sulpiride,Flupentixol,65,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The risk or severity of bleeding can be increased when Sulpiride is combined with Flupentixol.
+Sulpiride,Flupentixol,61,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The bioavailability of Flupentixol can be increased when combined with Sulpiride.
+Sulpiride,Flupentixol,62,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the myelosuppressive activities of Flupentixol.
+Sulpiride,Flupentixol,84,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the tachycardic activities of Flupentixol.
+Sulpiride,Flupentixol,83,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the vasopressor activities of Flupentixol.
+Sulpiride,Flupentixol,82,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the hypokalemic activities of Flupentixol.
+Sulpiride,Flupentixol,80,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the thrombogenic activities of Flupentixol.
+Sulpiride,Flupentixol,78,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the central nervous system depressant (CNS depressant) and hypertensive activities of Flupentixol.
+Sulpiride,Flupentixol,77,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the hyperglycemic activities of Flupentixol.
+Sulpiride,Flupentixol,75,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may decrease the sedative activities of Flupentixol.
+Sulpiride,Flupentixol,73,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the fluid retaining activities of Flupentixol.
+Sulpiride,Flupentixol,71,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may decrease the excretion rate of Flupentixol which could result in a higher serum level.
+Sulpiride,Flupentixol,70,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the hypertensive activities of Flupentixol.
+Sulpiride,Flupentixol,68,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the analgesic activities of Flupentixol.
+Sulpiride,Flupentixol,67,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the hyperkalemic activities of Flupentixol.
+Sulpiride,Flupentixol,50,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the hypercalcemic activities of Flupentixol.
+Sulpiride,Flupentixol,64,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the excretion rate of Flupentixol which could result in a lower serum level and potentially a reduction in efficacy.
+Sulpiride,Flupentixol,63,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the serotonergic activities of Flupentixol.
+Sulpiride,Flupentixol,51,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may decrease the analgesic activities of Flupentixol.
+Sulpiride,Flupentixol,43,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the central neurotoxic activities of Flupentixol.
+Sulpiride,Flupentixol,49,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The risk or severity of heart failure can be increased when Flupentixol is combined with Sulpiride.
+Sulpiride,Flupentixol,10,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The serum concentration of the active metabolites of Flupentixol can be reduced when Flupentixol is used in combination with Sulpiride resulting in a loss in efficacy.
+Sulpiride,Flupentixol,18,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the vasoconstricting activities of Flupentixol.
+Sulpiride,Flupentixol,17,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride can cause an increase in the absorption of Flupentixol resulting in an increased serum concentration and potentially a worsening of adverse effects.
+Sulpiride,Flupentixol,16,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may decrease the neuromuscular blocking activities of Flupentixol.
+Sulpiride,Flupentixol,14,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the cardiotoxic activities of Flupentixol.
+Sulpiride,Flupentixol,13,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may decrease the bronchodilatory activities of Flupentixol.
+Sulpiride,Flupentixol,12,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The absorption of Flupentixol can be decreased when combined with Sulpiride.
+Sulpiride,Flupentixol,9,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the antihypertensive activities of Flupentixol.
+Sulpiride,Flupentixol,21,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the adverse neuromuscular activities of Flupentixol.
+Sulpiride,Flupentixol,7,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The therapeutic efficacy of Flupentixol can be increased when used in combination with Sulpiride.
+Sulpiride,Flupentixol,6,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the ototoxic activities of Flupentixol.
+Sulpiride,Flupentixol,5,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the anticoagulant activities of Flupentixol.
+Sulpiride,Flupentixol,4,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may decrease the vasoconstricting activities of Flupentixol.
+Sulpiride,Flupentixol,3,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The metabolism of Flupentixol can be increased when combined with Sulpiride.
+Sulpiride,Flupentixol,2,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The bioavailability of Flupentixol can be decreased when combined with Sulpiride.
+Sulpiride,Flupentixol,20,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the neuromuscular blocking activities of Flupentixol.
+Sulpiride,Flupentixol,22,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the stimulatory activities of Flupentixol.
+Sulpiride,Flupentixol,47,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the myopathic rhabdomyolysis activities of Flupentixol.
+Sulpiride,Flupentixol,37,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the vasodilatory activities of Flupentixol.
+Sulpiride,Flupentixol,45,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the bronchoconstrictory activities of Flupentixol.
+Sulpiride,Flupentixol,44,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may decrease effectiveness of Flupentixol as a diagnostic agent.
+Sulpiride,Flupentixol,41,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The risk or severity of hyperkalemia can be increased when Sulpiride is combined with Flupentixol.
+Sulpiride,Flupentixol,40,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the hypotensive and central nervous system depressant (CNS depressant) activities of Flupentixol.
+Sulpiride,Flupentixol,39,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the respiratory depressant activities of Flupentixol.
+Sulpiride,Flupentixol,38,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the constipating activities of Flupentixol.
+Sulpiride,Flupentixol,31,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the sedative activities of Flupentixol.
+Sulpiride,Flupentixol,23,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the hypocalcemic activities of Flupentixol.
+Sulpiride,Flupentixol,30,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The risk or severity of hypertension can be increased when Flupentixol is combined with Sulpiride.
+Sulpiride,Flupentixol,29,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the orthostatic hypotensive activities of Flupentixol.
+Sulpiride,Flupentixol,28,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may decrease the diuretic activities of Flupentixol.
+Sulpiride,Flupentixol,27,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the dermatologic adverse activities of Flupentixol.
+Sulpiride,Flupentixol,25,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may decrease the antiplatelet activities of Flupentixol.
+Sulpiride,Flupentixol,24,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Sulpiride may increase the atrioventricular blocking (AV block) activities of Flupentixol.
+Sulpiride,Flupentixol,85,0.0,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The risk of a hypersensitivity reaction to Flupentixol is increased when it is combined with Sulpiride.

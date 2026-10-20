@@ -1,0 +1,4 @@
+drug_a,drug_b,relation,prob,model_used,description
+DB00527,DB00413,31,0.9999992847442627,transductive,Cinchocaine may increase the sedative activities of Pramipexole.
+DB00527,DB00413,69,0.958748459815979,transductive,The therapeutic efficacy of Pramipexole can be decreased when used in combination with Cinchocaine.
+DB00527,DB00413,72,0.0689925104379654,transductive,The serum concentration of Cinchocaine can be increased when it is combined with Pramipexole.

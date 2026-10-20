@@ -1,0 +1,22 @@
+{
+  "condition": "B",
+  "task": "Cinchocaine이랑 Pramipexole 상호작용 예측해줘",
+  "openhands_version": "0.62.0",
+  "agent": "CodeActAgent",
+  "base_image": "ddi-runtime",
+  "model": "openai/anthropic/claude-sonnet-5.5",
+  "max_iterations": 30,
+  "exit_code": 0,
+  "seconds": 344.1,
+  "result_csvs": [
+    "cinchocaine_pramipexole_ddi.csv"
+  ],
+  "status": "max_iterations",
+  "turns": 14,
+  "tokens": {
+    "prompt_tokens": 883555,
+    "completion_tokens": 27163,
+    "cache_read_tokens": 848683,
+    "cache_write_tokens": 34782
+  }
+}

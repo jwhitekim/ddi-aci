@@ -1,0 +1,4 @@
+drug_a,drug_b,relation,prob,model_used,description
+DB00655,DB08909,69,0.995591402053833,transductive,The therapeutic efficacy of Glycerol phenylbutyrate can be decreased when used in combination with Estrone.
+DB00655,DB08909,48,0.5134195685386658,transductive,The risk or severity of adverse effects can be increased when Estrone is combined with Glycerol phenylbutyrate.
+DB00655,DB08909,80,0.45704737305641174,transductive,Glycerol phenylbutyrate may increase the thrombogenic activities of Estrone.

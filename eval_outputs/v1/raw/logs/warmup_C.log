@@ -1,0 +1,20 @@
+{
+  "condition": "C",
+  "task": "Reply with the word ready and finish.",
+  "openhands_version": "0.62.0",
+  "agent": "CodeActAgent",
+  "base_image": "ddi-specialist",
+  "model": "openai/anthropic/claude-sonnet-5.5",
+  "max_iterations": 30,
+  "exit_code": 0,
+  "seconds": 809.5,
+  "result_csvs": [],
+  "status": "finished",
+  "turns": 1,
+  "tokens": {
+    "prompt_tokens": 11408,
+    "completion_tokens": 50,
+    "cache_read_tokens": 0,
+    "cache_write_tokens": 11404
+  }
+}

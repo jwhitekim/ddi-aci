@@ -1,0 +1,11 @@
+drug_a,drug_b,relation,prob,model_used,description
+Cyclophosphamide,Gemcitabine,14,0.9999,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),Cyclophosphamide may increase the cardiotoxic activities of Gemcitabine.
+Cyclophosphamide,Gemcitabine,48,0.7277,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The risk or severity of adverse effects can be increased when Cyclophosphamide is combined with Gemcitabine.
+Cyclophosphamide,Gemcitabine,46,0.6174,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The metabolism of Gemcitabine can be decreased when combined with Cyclophosphamide.
+Cyclophosphamide,Gemcitabine,72,0.6016,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The serum concentration of Gemcitabine can be increased when it is combined with Cyclophosphamide.
+Cyclophosphamide,Gemcitabine,74,0.5698,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The serum concentration of Gemcitabine can be decreased when it is combined with Cyclophosphamide.
+Gemcitabine,Cyclophosphamide,48,0.9603,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The risk or severity of adverse effects can be increased when Gemcitabine is combined with Cyclophosphamide.
+Gemcitabine,Cyclophosphamide,10,0.7686,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The serum concentration of the active metabolites of Cyclophosphamide can be reduced when Cyclophosphamide is used in combination with Gemcitabine resulting in a loss in efficacy.
+Gemcitabine,Cyclophosphamide,74,0.7071,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The serum concentration of Cyclophosphamide can be decreased when it is combined with Gemcitabine.
+Gemcitabine,Cyclophosphamide,76,0.651,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The serum concentration of the active metabolites of Cyclophosphamide can be increased when Cyclophosphamide is used in combination with Gemcitabine.
+Gemcitabine,Cyclophosphamide,69,0.5404,DSN-DDI DrugBank transductive (transductive_drugbank.pkl),The therapeutic efficacy of Cyclophosphamide can be decreased when used in combination with Gemcitabine.

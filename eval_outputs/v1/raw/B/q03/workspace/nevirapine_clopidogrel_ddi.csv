@@ -1,0 +1,13 @@
+drug_a,drug_b,relation,prob,model_used,description
+Nevirapine,Clopidogrel,26,1.0,DSN-DDI transductive (DrugBank),Nevirapine may decrease the antiplatelet activities of Clopidogrel.
+Nevirapine,Clopidogrel,4,0.9999,DSN-DDI transductive (DrugBank),The metabolism of Clopidogrel can be increased when combined with Nevirapine.
+Nevirapine,Clopidogrel,11,0.9998,DSN-DDI transductive (DrugBank),The serum concentration of the active metabolites of Clopidogrel can be reduced when Clopidogrel is used in combination with Nevirapine resulting in a loss in efficacy.
+Nevirapine,Clopidogrel,75,0.9944,DSN-DDI transductive (DrugBank),The serum concentration of Clopidogrel can be decreased when it is combined with Nevirapine.
+Nevirapine,Clopidogrel,73,0.9233,DSN-DDI transductive (DrugBank),The serum concentration of Clopidogrel can be increased when it is combined with Nevirapine.
+Nevirapine,Clopidogrel,70,0.9229,DSN-DDI transductive (DrugBank),The therapeutic efficacy of Clopidogrel can be decreased when used in combination with Nevirapine.
+Nevirapine,Clopidogrel,47,0.7915,DSN-DDI transductive (DrugBank),The metabolism of Clopidogrel can be decreased when combined with Nevirapine.
+Nevirapine,Clopidogrel,28,0.5178,DSN-DDI transductive (DrugBank),Nevirapine may increase the dermatologic adverse activities of Clopidogrel.
+Clopidogrel,Nevirapine,47,0.9893,DSN-DDI transductive (DrugBank),The metabolism of Nevirapine can be decreased when combined with Clopidogrel.
+Clopidogrel,Nevirapine,73,0.9637,DSN-DDI transductive (DrugBank),The serum concentration of Nevirapine can be increased when it is combined with Clopidogrel.
+Clopidogrel,Nevirapine,75,0.8062,DSN-DDI transductive (DrugBank),The serum concentration of Nevirapine can be decreased when it is combined with Clopidogrel.
+Clopidogrel,Nevirapine,77,0.5504,DSN-DDI transductive (DrugBank),The serum concentration of the active metabolites of Nevirapine can be increased when Nevirapine is used in combination with Clopidogrel.

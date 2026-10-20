@@ -1,0 +1,22 @@
+{
+  "condition": "B",
+  "task": "Pantoprazole이랑 Methylphenidate 상호작용 예측해줘",
+  "openhands_version": "0.62.0",
+  "agent": "CodeActAgent",
+  "base_image": "ddi-runtime",
+  "model": "openai/anthropic/claude-sonnet-5.5",
+  "max_iterations": 30,
+  "exit_code": 0,
+  "seconds": 232.4,
+  "result_csvs": [
+    "pantoprazole_methylphenidate_ddi.csv"
+  ],
+  "status": "finished",
+  "turns": 13,
+  "tokens": {
+    "prompt_tokens": 587030,
+    "completion_tokens": 15516,
+    "cache_read_tokens": 549055,
+    "cache_write_tokens": 37923
+  }
+}

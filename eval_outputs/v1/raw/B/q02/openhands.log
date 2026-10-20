@@ -1,0 +1,89 @@
+/home/prml/workspace/ddi-agent/.venv-openhands/lib/python3.12/site-packages/fastmcp/server/auth/providers/jwt.py:10: AuthlibDeprecationWarning: authlib.jose module is deprecated, please use joserfc instead.
+It will be compatible before version 2.0.0.
+  from authlib.jose import JsonWebKey, JsonWebToken
+/home/prml/workspace/ddi-agent/.venv-openhands/lib/python3.12/site-packages/authlib/integrations/httpx_client/assertion_client.py:5: AuthlibDeprecationWarning: The httpx module is deprecated; please use httpx2 instead.
+  from ._compat import httpx2
+[92m12:41:17 - openhands:INFO[0m: llm_registry.py:87 - [LLM registry c1e2e95c-4114-4100-bcbd-b65bef4f683b]: Registering service for agent
+[92m12:41:17 - openhands:INFO[0m: llm_registry.py:87 - [LLM registry c1e2e95c-4114-4100-bcbd-b65bef4f683b]: Registering service for condenser
+[92m12:41:18 - openhands:INFO[0m: runtime_build.py:191 - Building image: ghcr.io/openhands/runtime:oh_v0.62.0_5xm0eyq9bpyo02p9_hu5f0gcq9ptu2uin
+[92m12:41:19 - openhands:INFO[0m: docker_runtime.py:182 - [runtime 7e259bce-c633-46-2c1cd4cbc6834d4] Starting runtime with image: ghcr.io/openhands/runtime:oh_v0.62.0_5xm0eyq9bpyo02p9_hu5f0gcq9ptu2uin
+[92m12:41:19 - openhands:INFO[0m: docker_runtime.py:495 - [runtime 7e259bce-c633-46-2c1cd4cbc6834d4] Starting server with command: ['/openhands/micromamba/bin/micromamba', 'run', '-n', 'openhands', 'poetry', 'run', 'python', '-u', '-m', 'openhands.runtime.action_execution_server', '35675', '--working-dir', '/workspace', '--plugins', 'agent_skills', 'jupyter', '--username', 'openhands', '--user-id', '1000']
+[92m12:41:21 - openhands:INFO[0m: docker_runtime.py:186 - [runtime 7e259bce-c633-46-2c1cd4cbc6834d4] Container started: openhands-runtime-7e259bce-c633-46-2c1cd4cbc6834d4. VSCode URL: None
+[92m12:41:21 - openhands:INFO[0m: docker_runtime.py:197 - [runtime 7e259bce-c633-46-2c1cd4cbc6834d4] Waiting for ******ent to become ready at http://localhost:35675...
+[92m12:41:55 - openhands:INFO[0m: docker_runtime.py:203 - [runtime 7e259bce-c633-46-2c1cd4cbc6834d4] Runtime is ready.
+[92m12:41:56 - openhands:INFO[0m: base.py:1061 - Successfully configured git: name=openhands, email=openhands@all-hands.dev
+[92m12:41:56 - openhands:INFO[0m: base.py:890 - [runtime 7e259bce-c633-46-2c1cd4cbc6834d4] Selected repo: None, loading microagents from /workspace/.openhands/microagents (inside runtime)
+[92m12:41:56 - openhands:INFO[0m: base.py:637 - [runtime 7e259bce-c633-46-2c1cd4cbc6834d4] Attempting to list files in repository microagents directory: /workspace/.openhands/microagents
+[92m12:41:56 - openhands:INFO[0m: memory.py:261 - Loading user workspace microagents: []
+[92m12:41:56 - openhands:INFO[0m: state_tracker.py:94 - AgentController 7e259bce-c633-46-2c1cd4cbc6834d4 - created new state. start_id: 0
+[92m12:41:56 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.LOADING to AgentState.RUNNING
+[92m12:41:56 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:43:56 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.AWAITING_USER_INPUT
+[92m12:43:56 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:43:56 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.AWAITING_USER_INPUT to AgentState.RUNNING
+[92m12:43:56 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:44:10 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.AWAITING_USER_INPUT
+[92m12:44:10 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:44:10 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.AWAITING_USER_INPUT to AgentState.RUNNING
+[92m12:44:10 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:44:25 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.AWAITING_USER_INPUT
+[92m12:44:25 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:44:25 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.AWAITING_USER_INPUT to AgentState.RUNNING
+[92m12:44:25 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:44:39 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.AWAITING_USER_INPUT
+[92m12:44:39 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:44:39 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.AWAITING_USER_INPUT to AgentState.RUNNING
+[92m12:44:39 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:44:54 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.AWAITING_USER_INPUT
+[92m12:44:54 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:44:54 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.AWAITING_USER_INPUT to AgentState.RUNNING
+[92m12:44:54 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:45:09 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.AWAITING_USER_INPUT
+[92m12:45:09 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:45:09 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.AWAITING_USER_INPUT to AgentState.RUNNING
+[92m12:45:09 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:45:22 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.AWAITING_USER_INPUT
+[92m12:45:22 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:45:22 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.AWAITING_USER_INPUT to AgentState.RUNNING
+[92m12:45:22 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:45:38 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.AWAITING_USER_INPUT
+[92m12:45:38 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:45:38 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.AWAITING_USER_INPUT to AgentState.RUNNING
+[92m12:45:38 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:45:53 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.AWAITING_USER_INPUT
+[92m12:45:53 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:45:53 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.AWAITING_USER_INPUT to AgentState.RUNNING
+[92m12:45:53 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:46:09 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.AWAITING_USER_INPUT
+[92m12:46:09 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:46:09 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.AWAITING_USER_INPUT to AgentState.RUNNING
+[92m12:46:09 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:46:22 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.AWAITING_USER_INPUT
+[92m12:46:22 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:46:22 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.AWAITING_USER_INPUT to AgentState.RUNNING
+[92m12:46:22 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:46:36 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.AWAITING_USER_INPUT
+[92m12:46:36 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:46:36 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.AWAITING_USER_INPUT to AgentState.RUNNING
+[92m12:46:36 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:46:48 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.AWAITING_USER_INPUT
+[92m12:46:48 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:46:48 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.AWAITING_USER_INPUT to AgentState.RUNNING
+[92m12:46:48 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:47:00 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.AWAITING_USER_INPUT
+[92m12:47:01 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:47:01 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.AWAITING_USER_INPUT to AgentState.RUNNING
+[92m12:47:01 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:47:14 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.AWAITING_USER_INPUT
+[92m12:47:14 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:47:14 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.AWAITING_USER_INPUT to AgentState.RUNNING
+[92m12:47:14 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:47:26 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.AWAITING_USER_INPUT
+[92m12:47:26 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:47:26 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.AWAITING_USER_INPUT to AgentState.RUNNING
+[92m12:47:26 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:47:26 - openhands:WARNING[0m: agent_controller.py:889 - Control flag limits hit
+[92m12:47:26 - openhands:ERROR[0m: loop.py:25 - RuntimeError: Agent reached maximum iteration. Current iteration: 30, max iteration: 30
+[92m12:47:26 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.ERROR
+[92m12:47:26 - openhands:INFO[0m: conversation_stats.py:65 - Saved conversation stats
+[92m12:47:26 - openhands:INFO[0m: agent_controller.py:668 - [Agent Controller 7e259bce-c633-46-2c1cd4cbc6834d4] Setting agent(CodeActAgent) state from AgentState.ERROR to AgentState.ERROR

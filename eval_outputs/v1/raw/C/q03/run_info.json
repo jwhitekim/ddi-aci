@@ -1,0 +1,22 @@
+{
+  "condition": "C",
+  "task": "Nevirapine이랑 Clopidogrel 상호작용 예측해줘",
+  "openhands_version": "0.62.0",
+  "agent": "CodeActAgent",
+  "base_image": "ddi-specialist",
+  "model": "openai/anthropic/claude-sonnet-5.5",
+  "max_iterations": 30,
+  "exit_code": 0,
+  "seconds": 75.5,
+  "result_csvs": [
+    "nevirapine_clopidogrel.csv"
+  ],
+  "status": "finished",
+  "turns": 3,
+  "tokens": {
+    "prompt_tokens": 47743,
+    "completion_tokens": 1521,
+    "cache_read_tokens": 35427,
+    "cache_write_tokens": 12304
+  }
+}

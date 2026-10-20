@@ -1,0 +1,4 @@
+drug_a,drug_b,relation,prob,model_used,description
+DB00531,DB00441,14,0.9999493360519409,transductive,Cyclophosphamide may increase the cardiotoxic activities of Gemcitabine.
+DB00531,DB00441,48,0.7138885855674744,transductive,The risk or severity of adverse effects can be increased when Cyclophosphamide is combined with Gemcitabine.
+DB00531,DB00441,72,0.615959644317627,transductive,The serum concentration of Cyclophosphamide can be increased when it is combined with Gemcitabine.

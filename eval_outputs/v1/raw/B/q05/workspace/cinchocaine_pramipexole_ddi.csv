@@ -1,0 +1,3 @@
+drug_a,drug_b,relation,prob,model_used,description
+Cinchocaine,Pramipexole,32,1.0,DSN-DDI transductive (drugbank),Cinchocaine may increase the sedative activities of Pramipexole.
+Cinchocaine,Pramipexole,70,0.9587,DSN-DDI transductive (drugbank),The therapeutic efficacy of Pramipexole can be decreased when used in combination with Cinchocaine.

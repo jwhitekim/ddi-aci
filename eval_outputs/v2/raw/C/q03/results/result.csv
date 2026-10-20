@@ -1,0 +1,4 @@
+drug_a,drug_b,relation,prob,model_used,description
+DB00238,DB00758,25,0.9999973773956299,transductive,Nevirapine may decrease the antiplatelet activities of Clopidogrel.
+DB00238,DB00758,3,0.9998841285705566,transductive,The metabolism of Clopidogrel can be increased when combined with Nevirapine.
+DB00238,DB00758,10,0.9998160004615784,transductive,The serum concentration of the active metabolites of Clopidogrel can be reduced when Clopidogrel is used in combination with Nevirapine resulting in a loss in efficacy.

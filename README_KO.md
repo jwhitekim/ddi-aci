@@ -34,7 +34,7 @@ DDI-ACI는 이 규칙들을 도구 안에 담았습니다. 그래서 에이전�
 
 B는 10문항 모두 관계 번호는 맞게 얻었지만 3문항에서 틀렸습니다. q01·q02에서는 설명 파일의 한 행 앞 문장을 골랐고, q04에서는 약물 역할을 뒤집었습니다.
 
-상세 결과: [`results/v2/RESULTS.md`](results/v2/RESULTS.md) · 평가 명세: [`benchmarks/ddi/eval_spec.md`](benchmarks/ddi/eval_spec.md) · 조건별 답변 비교: [`results/v2/ANSWER_COMPARISON.md`](results/v2/ANSWER_COMPARISON.md)
+상세 결과: [`eval_outputs/v2/RESULTS.md`](eval_outputs/v2/RESULTS.md) · 평가 명세: [`benchmarks/ddi/eval_spec.md`](benchmarks/ddi/eval_spec.md) · 조건별 답변 비교: [`eval_outputs/v2/ANSWER_COMPARISON.md`](eval_outputs/v2/ANSWER_COMPARISON.md)
 
 ### 한계
 
@@ -53,8 +53,7 @@ B는 10문항 모두 관계 번호는 맞게 얻었지만 3문항에서 틀렸�
 | `ddi-tools/microagent/` | 조건 C에서 작업 폴더에 넣는 micro agent 프롬프트: `ddi` 함수 사용법 |
 | `ddi-runtime/` | 런타임 이미지: `ddi-runtime`(B·C), `ddi-specialist`(C), 재현 기록 |
 | `benchmarks/ddi/` | 평가: `run_infer.py`(실행), `eval_infer.py`(채점), `prompts/`(모든 질문 뒤에 붙이는 과제 지시), `data/`(질문, 정답, 관계 번호 대응표), `scripts/` |
-| `results/` | 버전별 공개 결과: `v2/`(보고서, 채점, `raw/`에 A·B·C 원자료), `v1/`(보고서, 채점. 원자료는 비공개) |
-| `eval_outputs/` | 새 실행 원자료 (git 제외) |
+| `eval_outputs/` | 실행 출력. 공개한 평가 `v1/`, `v2/`(보고서, 채점, `raw/`에 원자료)만 git에 올리고, 새 실행(`eval_outputs/ddi/`) 등 나머지는 git 제외 |
 | `third_party/DSN-DDI/` | 원 DSN-DDI 저장소 (서브모듈) |
 | `tests/` | 대상별 점검: `tools/`(`ddi` 패키지, 예측 서버. 컨테이너 안에서 실행), `runtime/`(OpenHands 런타임), `layout/`(저장소 구조) |
 | `openspec/` | 스펙(`specs/`)과 아카이브된 변경(`changes/archive/`) |
@@ -101,7 +100,7 @@ echo "AI_GATEWAY_API_KEY=..." > .env    # A 채점에는 GEMINI_API_KEY도 필�
 .venv-openhands/bin/python benchmarks/ddi/scripts/run_baseline_a.py --output-dir eval_outputs/ddi/A
 python3 benchmarks/ddi/eval_infer.py --runs-dir eval_outputs/ddi --out eval_outputs/ddi/scores
 
-# 공개한 v2 원자료(results/v2/raw)를 다시 채점해 results/v2 에 쓰기
+# 공개한 v2 원자료(eval_outputs/v2/raw)를 다시 채점해 eval_outputs/v2 에 쓰기
 python3 benchmarks/ddi/eval_infer.py
 ```
 

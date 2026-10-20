@@ -1,0 +1,4 @@
+drug_a,drug_b,relation,prob,model_used,description
+DB00391,DB00875,35,0.9999997615814209,transductive,Flupentixol may increase the antipsychotic activities of Sulpiride.
+DB00391,DB00875,48,0.9901657700538635,transductive,The risk or severity of adverse effects can be increased when Sulpiride is combined with Flupentixol.
+DB00391,DB00875,32,0.5999829769134521,transductive,The risk or severity of QTc prolongation can be increased when Sulpiride is combined with Flupentixol.

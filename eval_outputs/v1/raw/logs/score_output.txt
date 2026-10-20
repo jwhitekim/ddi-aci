@@ -1,0 +1,4 @@
+{"condition": "B", "n": 10, "success_rate": 0.1, "partial_rate": 0.0, "valid_execution_rate": 0.9, "interpretation_accuracy": 0.5, "failure_causes": {"실행 실패": 1, "방향 오류": 4, "번호 체계 오류": 6, "모델 선택 오류": 1}, "avg_turns": 13.1, "avg_seconds": 305.3, "avg_prompt_tokens": 817836.6, "avg_completion_tokens": 25791.8}
+{"condition": "C", "n": 10, "success_rate": 0.0, "partial_rate": 1.0, "valid_execution_rate": 1.0, "interpretation_accuracy": 1.0, "failure_causes": {"한 방향만 보고": 10}, "avg_turns": 2.4, "avg_seconds": 65.8, "avg_prompt_tokens": 41785.8, "avg_completion_tokens": 1310.2}
+{"condition": "A", "n": 10, "success_rate": 0.0, "partial_rate": 0.0, "valid_execution_rate": 1.0, "interpretation_accuracy": 0.0, "failure_causes": {"약물 식별 실패 또는 해석 불가": 9, "기타 오답": 1}, "avg_turns": null, "avg_seconds": null, "avg_prompt_tokens": null, "avg_completion_tokens": null}
+done 10-12 13:15

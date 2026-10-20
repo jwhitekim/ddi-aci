@@ -1,6 +1,6 @@
 """평가 채점기 (eval_spec.md 4·5장). A·B·C 모두 같은 기준.
 
-    python3 benchmarks/ddi/eval_infer.py  # 공개 원자료 results/v2/raw/{A,B,C} 채점 (A 는 A/a_claims.jsonl) → results/v2/
+    python3 benchmarks/ddi/eval_infer.py  # 공개 원자료 eval_outputs/v2/raw/{A,B,C} 채점 (A 는 A/a_claims.jsonl) → eval_outputs/v2/
     python3 benchmarks/ddi/eval_infer.py --runs-dir eval_outputs/ddi --out eval_outputs/ddi/scores   # 새 실행 채점
     python3 benchmarks/ddi/eval_infer.py --questions benchmarks/ddi/data/questions/smoke_question.jsonl --run X=eval_outputs/scratch/sonnet_B30   # 임의 실행 채점
 
@@ -212,8 +212,8 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument('--questions', default=str(BENCH / 'data' / 'questions' / 'questions.jsonl'))
     p.add_argument('--run', action='append', default=[], help='이름=실행폴더 (한 문항 질문 파일과 함께 사용)')
-    p.add_argument('--runs-dir', default=str(REPO / 'results' / 'v2' / 'raw'), help='조건별 실행 폴더(<조건>/<qid>/)가 있는 곳')
-    p.add_argument('--out', default=str(REPO / 'results' / 'v2'))
+    p.add_argument('--runs-dir', default=str(REPO / 'eval_outputs' / 'v2' / 'raw'), help='조건별 실행 폴더(<조건>/<qid>/)가 있는 곳')
+    p.add_argument('--out', default=str(REPO / 'eval_outputs' / 'v2'))
     args = p.parse_args()
     questions = [json.loads(l) for l in open(args.questions, encoding='utf-8')]
     out = Path(args.out)

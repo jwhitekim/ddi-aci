@@ -65,7 +65,7 @@ def extract(cfg, q, answer):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument('--output-dir', default=str(REPO / 'eval_outputs' / 'ddi' / 'A'), help='공개한 v2 답: results/v2/raw/A')
+    p.add_argument('--output-dir', default=str(REPO / 'eval_outputs' / 'ddi' / 'A'), help='공개한 v2 답: eval_outputs/v2/raw/A')
     args = p.parse_args()
     out = Path(args.output_dir)
     out.mkdir(parents=True, exist_ok=True)

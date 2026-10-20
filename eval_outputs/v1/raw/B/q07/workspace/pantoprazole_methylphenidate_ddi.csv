@@ -1,0 +1,4 @@
+drug_a,drug_b,relation,prob,model_used,description
+Pantoprazole,Methylphenidate,18,1.0,DSN-DDI transductive (DrugBank),Pantoprazole can cause an increase in the absorption of Methylphenidate resulting in an increased serum concentration and potentially a worsening of adverse effects.
+Methylphenidate,Pantoprazole,47,0.9536,DSN-DDI transductive (DrugBank),The metabolism of Pantoprazole can be decreased when combined with Methylphenidate.
+Methylphenidate,Pantoprazole,75,0.6585,DSN-DDI transductive (DrugBank),The serum concentration of Pantoprazole can be decreased when it is combined with Methylphenidate.

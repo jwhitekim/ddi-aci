@@ -51,7 +51,7 @@ This is a pilot study: one model (DSN-DDI), ten queries, one seed, and one run p
 | `eval_outputs/` | Run outputs. Published evaluations `v1/` and `v2/` (report, scores, raw runs in `raw/`) are tracked by git; everything else, such as new runs in `eval_outputs/ddi/`, is not |
 | `third_party/DSN-DDI/` | Original DSN-DDI repository (submodule) |
 | `tests/` | Checks by target: `tools/` (`ddi` package, prediction server; run in containers), `runtime/` (OpenHands runtime), `layout/` (repository layout) |
-| `.claude/rules/` | Development rules for this project (layout, tool rules, conditions, evaluation, verification) |
+| `.claude/rules/` | Development rules for this project (overview, layout, tool rules, conditions, evaluation, verification) |
 
 ## The `ddi` skill
 

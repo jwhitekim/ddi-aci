@@ -64,7 +64,7 @@ check('git 이 third_party/DSN-DDI 를 submodule 로 앎',
       git('ls-files', '-s', 'third_party/DSN-DDI').startswith('160000'))
 
 # 3. README 구조 표
-for readme in ('README.md', 'README_KO.md'):
+for readme in ('README.md',):
     text = open(path(readme), encoding='utf-8').read()
     for d in TOP:
         check('%s 구조 표에 %s' % (readme, d), '| `%s` |' % d in text)

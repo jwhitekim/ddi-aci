@@ -15,4 +15,4 @@
 - 원 DSN-DDI 와 OpenHands 소스는 고치지 않는다. 동작을 바꿀 때는 감싸는 코드(`llm_main.py` 등)를 쓴다.
 - 새 실행의 출력은 `eval_outputs/ddi/` 에 쌓는다. 공개하기로 정한 평가만 `eval_outputs/v3/` 처럼 이름을 붙이고 `.gitignore` 예외에 추가한다.
 - 공개한 `eval_outputs/v*/raw/` 는 기록이므로 고치지 않는다.
-- 폴더나 파일 이름을 바꾸면 `tests/layout/` 의 기대 목록과 옛 이름 목록, README 두 개의 구조 표를 같이 고친다.
+- 폴더나 파일 이름을 바꾸면 `tests/layout/` 의 기대 목록과 옛 이름 목록, README 의 구조 표를 같이 고친다.

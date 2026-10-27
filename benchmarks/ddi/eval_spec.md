@@ -90,6 +90,25 @@
 - 예상 비용: 약 5~6달러 (B 약 0.5달러 × 10, C 약 0.05달러 × 10, A는 미미)
 - 기준을 결과 보기 전에 정했다는 기록을 위해, 실행 전에 이 문서를 커밋한다
 
+## 6-1. 실행 명령
+
+논문 이름과의 대응: A = LLM 단독, B = 기본 에이전트, C = 특화 에이전트.
+
+A 결과를 먼저 만든다. 채점은 그 시점에 있는 조건만 포함하므로, A가 없으면 점수에서 빠진다. A 채점에는 `GEMINI_API_KEY`도 필요하다.
+
+```bash
+# A 생성 → C·B 실행 → 채점 (저장소 루트에서)
+.venv-openhands/bin/python benchmarks/ddi/scripts/run_baseline_a.py --output-dir eval_outputs/ddi/A
+.venv-openhands/bin/python benchmarks/ddi/run_infer.py --condition C --workers 1
+.venv-openhands/bin/python benchmarks/ddi/run_infer.py --condition B --workers 2
+python3 benchmarks/ddi/eval_infer.py --runs-dir eval_outputs/ddi --out eval_outputs/ddi/scores
+
+# 공개한 v2 원자료(eval_outputs/v2/raw)를 다시 채점해 eval_outputs/v2에 쓴다
+python3 benchmarks/ddi/eval_infer.py
+```
+
+B·C만 돌릴 때는 `make eval`을 쓴다.
+
 ## 7. 참고한 벤치마크 (평가 방식만 참고)
 
 - **ScienceAgentBench** (Chen et al., ICLR 2025): 지표 구성 — 유효 실행률, 성공률, 비용

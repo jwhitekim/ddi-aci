@@ -1,116 +1,73 @@
 # DDI-ACI
 
-**An Agent-Computer Interface for LLM Agents Operating a Drug–Drug Interaction Prediction Model**
+**A Domain-Specific Agent-Computer Interface for LLM Agents Operating a Drug–Drug Interaction Prediction Model**
 
-DDI-ACI is a model-specific agent-computer interface (ACI) that lets an LLM agent operate [DSN-DDI](https://github.com/microsoft/Drug-Interaction-Research/tree/DSN-DDI-for-DDI-Prediction), a drug–drug interaction (DDI) prediction model, and report its output faithfully. Neither DSN-DDI nor the OpenHands CodeActAgent is modified.
+![Agent loop and three rules: ID mapping, drug roles, and per-pair scoring; in q04 both agents obtain ID 35, but only the specialized agent reports correct drug roles.](docs/images/figure1.png)
 
-Paper: *DDI-ACI: An Agent-Computer Interface for LLM Agents Operating a Drug–Drug Interaction Prediction Model*, Jun-Hee Kim and Sang-Woong Lee (School of Computing, Gachon University).
+DDI-ACI is a domain-specific agent-computer interface that specializes OpenHands CodeActAgent for DSN-DDI drug–drug interaction prediction. It supports faithful reporting: preserving the meaning of a model's output. This repository provides tools, runtime images, and evaluation artifacts without changing the LLM, agent, or prediction model.
 
-[한국어 README](README_KO.md)
+DDI-ACI encodes three rules:
 
-## Why
+- **ID mapping**: Map interaction type ID `t` to `Interaction type == t + 1` in SSI-DDI's interaction descriptions, not the `DDI type` column.
+- **Drug roles**: Reverse drug roles when `Subject == 2`, which applies to 42 of 86 interaction types.
+- **Per-pair scoring**: Score each pair separately because DSN-DDI batching can alter scores.
 
-An LLM agent can run DSN-DDI successfully and still report a wrong answer. DSN-DDI outputs only a relation number (0–85). Turning that number into a sentence depends on repository conventions that produce no error when ignored:
+On ten single-run tasks with Claude Sonnet 5.5, reporting success was 10% / 70% / 100% for LLM alone / base agent / specialized agent.
+Both agents matched all top-1 IDs (10/10); the difference arose during reporting and remains statistically inconclusive. [Details](eval_outputs/v2/RESULTS.md)
 
-- The description file (from SSI-DDI) has two numbering columns. DSN-DDI relation `t` maps to the row with `Interaction type == t + 1`, not to `DDI type N`.
-- For 42 of the 86 relations (`Subject == 2`), the drug order in the sentence template is the reverse of the input order.
-- Batching several pairs changes the predictions (the bipartite `GATConv` adds cross-pair edges), so pairs must be predicted one at a time.
+## Quick start
 
-DDI-ACI puts these rules inside the tool, so the agent gets a sentence with the correct direction and does not have to work them out from the files.
+Requirements: Linux, Docker with NVIDIA GPU support, and Python 3.12 for OpenHands.
 
-## Results (10 queries, Claude Sonnet 5.5)
+```bash
+make images
+make venv
+cp .env.example .env  # Set AI_GATEWAY_API_KEY before continuing.
+make try
+```
 
-All three conditions use the same LLM. Conditions B and C also share the same agent (OpenHands 0.62.0 CodeActAgent), task instruction, temperature 0.0 and default reasoning effort, with browsing and MCP tools disabled.
+Run from the repository root. `make try` runs the specialized agent by default.
 
-| | A. LLM only | B. Agent without ACI | C. Agent with DDI-ACI |
-|---|---|---|---|
-| **Success rate** | 10% | 70% | **100%** |
-| Reached a result file | — | 10/10 | 10/10 |
-| Avg. turns | — | 11.4 | 3.2 |
-| Avg. prompt tokens (incl. cache reads) | — | 384,776 | 42,419 |
-| Cost per query | $0.021 | $0.201 | $0.042 |
+## Documentation
 
-Success means the reported sentence has the same effect and the same drug direction as the model's top-1 prediction for the queried order. It measures agreement with the model output, not clinical validity. B obtained the right relation number in 10/10 queries but failed in three: in q01 and q02 it picked the preceding description row, and in q04 it reversed the drug roles.
+Most internal documentation is in Korean.
 
-Details: [`eval_outputs/v2/RESULTS.md`](eval_outputs/v2/RESULTS.md) · Evaluation spec: [`benchmarks/ddi/eval_spec.md`](benchmarks/ddi/eval_spec.md) · Answers side by side: [`eval_outputs/v2/ANSWER_COMPARISON.md`](eval_outputs/v2/ANSWER_COMPARISON.md)
+- [Results and limitations](eval_outputs/v2/RESULTS.md)
+- [Answers side by side](eval_outputs/v2/ANSWER_COMPARISON.md)
+- [Evaluation specification](benchmarks/ddi/eval_spec.md)
+- [DSN-DDI reproduction](ddi-runtime/REPRODUCTION.md)
+- [Tool usage](ddi-tools/microagent/ddi.md)
+- [Development rules](.claude/rules/)
+- [Agent evaluation and checks](Makefile)
+- [Full comparison of all three settings](benchmarks/ddi/eval_spec.md#6-1-실행-명령)
 
-### Limitations
-
-This is a pilot study: one model (DSN-DDI), ten queries, one seed, and one run per query. The B–C difference is not statistically significant (exact McNemar test p = 0.25; three discordant queries favor C, none favor B). We did not test the reverse drug order or the seven symmetric `Subject = 3` types, and we did not separate the effects of C's tools and instructions. The task instruction and success criterion were finalized after a preliminary round of agent runs that is excluded from the reported results.
-
-## Repository layout
+<details><summary>Repository layout</summary>
 
 | Path | Contents |
 |---|---|
-| `ddi-agent/` | Agent runner: launches OpenHands CodeActAgent for condition B or C (`run_agent.py`), config template |
+| `ddi-agent/` | Agent runner: launches OpenHands CodeActAgent for the base agent or specialized agent (`run_agent.py`), config template |
 | `ddi-tools/ddi/` | Tool interface the agent calls: the `ddi` Python package imported into the agent's IPython |
 | `ddi-tools/server/` | Tool back end: prediction server wrapping the original DSN-DDI model and weights (Python 3.7) |
-| `ddi-tools/microagent/` | Micro agent prompt copied into the workspace for C: how to use the `ddi` functions |
-| `ddi-runtime/` | Runtime images: `ddi-runtime` (B and C), `ddi-specialist` (C), reproduction notes |
+| `ddi-tools/microagent/` | Micro agent prompt copied into the workspace for the specialized agent: how to use the `ddi` functions |
+| `ddi-runtime/` | Runtime images: `ddi-runtime` (base and specialized agents), `ddi-specialist` (specialized agent), reproduction notes |
 | `benchmarks/ddi/` | Evaluation: `run_infer.py` (run), `eval_infer.py` (score), `prompts/` (task instruction appended to every query), `data/` (questions, ground truth, relation map), `scripts/` |
 | `eval_outputs/` | Run outputs. Published evaluations `v1/` and `v2/` (report, scores, raw runs in `raw/`) are tracked by git; everything else, such as new runs in `eval_outputs/ddi/`, is not |
 | `third_party/DSN-DDI/` | Original DSN-DDI repository (submodule) |
 | `tests/` | Checks by target: `tools/` (`ddi` package, prediction server; run in containers), `runtime/` (OpenHands runtime), `layout/` (repository layout) |
 | `.claude/rules/` | Development rules for this project (overview, layout, tool rules, conditions, evaluation, verification) |
 
-## The `ddi` skill
+</details>
 
-```python
-res = ddi.predict("Warfarin", "Aspirin")
-res["top"][0]["description"]
-# 'Acetylsalicylic acid may increase the anticoagulant activities of Warfarin.'
-```
+## Citation
 
-| Function | Purpose |
-|---|---|
-| `resolve_drug(x)` | Name, synonym, DrugBank ID or SMILES → canonical drug |
-| `predict(a, b, top_k=3)` | Top relations, per-relation probabilities, direction-aware sentences, warnings |
-| `predict_many(pairs, relation=None)` | Predict many pairs one at a time, with an optional relation filter |
-| `explain(rel, a, b)` | Relation number → direction-aware sentence |
-| `save_results(res, path)` | Save results as a CSV for scoring |
+Jun-Hee Kim and Sang-Woong Lee (School of Computing, Gachon University). *DDI-ACI: A Domain-Specific Agent-Computer Interface for LLM Agents Operating a Drug–Drug Interaction Prediction Model*.
 
-It uses the transductive weights when both drugs are in the training set and otherwise switches to the inductive weights with a warning. It rejects unknown drugs and warns about atom features the model treats as unknown. Probabilities are per-relation sigmoids, so they do not sum to 1.
+## Acknowledgments
 
-## Reproducing
-
-Requirements: Linux, Docker with an NVIDIA GPU (the weights are stored as CUDA tensors), Python 3.12 for OpenHands.
-
-```bash
-# 1. Images
-docker build -f ddi-runtime/Dockerfile -t ddi-runtime .                 # B and C
-docker build -f ddi-runtime/Dockerfile.specialist -t ddi-specialist .   # C only
-
-# 2. OpenHands environment
-python3.12 -m venv .venv-openhands
-.venv-openhands/bin/pip install -r ddi-agent/requirements.lock.txt
-cp .env.example .env               # then fill in AI_GATEWAY_API_KEY and GEMINI_API_KEY (grading A)
-
-# 3. One query
-.venv-openhands/bin/python ddi-agent/run_agent.py --condition C --task-suffix benchmarks/ddi/prompts/task_suffix.txt \
-    --task "Warfarin이랑 Aspirin 상호작용 예측해줘" --out eval_outputs/try_C
-
-# 4. Full evaluation
-.venv-openhands/bin/python benchmarks/ddi/run_infer.py --condition C --workers 1
-.venv-openhands/bin/python benchmarks/ddi/run_infer.py --condition B --workers 2
-.venv-openhands/bin/python benchmarks/ddi/scripts/run_baseline_a.py --output-dir eval_outputs/ddi/A
-python3 benchmarks/ddi/eval_infer.py --runs-dir eval_outputs/ddi --out eval_outputs/ddi/scores
-
-# Re-score the published v2 runs (eval_outputs/v2/raw) into eval_outputs/v2
-python3 benchmarks/ddi/eval_infer.py
-```
-
-- Ground truth comes from the original DSN-DDI code, independent of the prediction server: `benchmarks/ddi/scripts/make_ground_truth.py` (see its docstring for the `docker run` command).
-- The relation-number rule is checked against SSI-DDI pairs without using the rule itself: `benchmarks/ddi/scripts/verify_relation_map.py` (86/86 relations match, see [`benchmarks/ddi/data/relation_map/`](benchmarks/ddi/data/relation_map/README.md)).
-- DSN-DDI reproduction (fold0 transductive ACC 0.973 vs. 0.969 reported): [`ddi-runtime/REPRODUCTION.md`](ddi-runtime/REPRODUCTION.md).
-
-## Data and credits
-
-- **DSN-DDI** — Li et al., *Briefings in Bioinformatics* 24(1), 2023. Model, weights and data from `microsoft/Drug-Interaction-Research` (commit `6f23522`).
-- **SSI-DDI** — Nyamabo et al., *Briefings in Bioinformatics* 22(6), 2021. Relation descriptions (`Interaction_information.csv`).
-- **DrugBank Vocabulary** (CC0) — drug names, via the copy in `ferrangoeh/DrugLinker`.
-- **OpenHands** (0.62.0) and **CodeAct** — agent framework and action format.
-- **SWE-agent** — the ACI concept this work extends.
+Built on DSN-DDI (model and weights), SSI-DDI (interaction descriptions), DrugBank Vocabulary, OpenHands, CodeAct, and SWE-agent.
 
 This work was supported by the National Research Foundation of Korea (NRF) grant funded by the Korea government (MSIT) (RS-2025-00520064).
 
-Most internal notes (`benchmarks/ddi/*.md`, `eval_outputs/v*/*.md`, `ddi-agent/SMOKE_TEST.md`, `ddi-runtime/REPRODUCTION.md`, code comments) are in Korean.
+## License
+
+[MIT License](LICENSE) © 2026 jwhitekim.

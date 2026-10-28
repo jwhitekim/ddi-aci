@@ -17,7 +17,7 @@ Both agents matched all top-1 IDs (10/10); the difference arose during reporting
 
 ## Quick start
 
-Requirements: Linux, Docker with NVIDIA GPU support, and Python 3.12 for OpenHands.
+Requirements: x86_64 Linux, Docker with NVIDIA GPU support, and Python 3.12 for OpenHands.
 
 ```bash
 make images
@@ -34,12 +34,10 @@ Most internal documentation is in Korean.
 
 - [Results and limitations](eval_outputs/v2/RESULTS.md)
 - [Answers side by side](eval_outputs/v2/ANSWER_COMPARISON.md)
-- [Evaluation specification](benchmarks/ddi/eval_spec.md)
+- [Evaluation specification and full comparison commands](benchmarks/ddi/eval_spec.md)
 - [DSN-DDI reproduction](ddi-runtime/REPRODUCTION.md)
 - [Tool usage](ddi-tools/microagent/ddi.md)
 - [Development rules](.claude/rules/)
-- [Agent evaluation and checks](Makefile)
-- [Full comparison of all three settings](benchmarks/ddi/eval_spec.md#6-1-실행-명령)
 
 <details><summary>Repository layout</summary>
 

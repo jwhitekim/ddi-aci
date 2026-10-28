@@ -25,6 +25,8 @@ for fp in PY:
     names = '|'.join(BASES)
     for base, parts in re.findall(r"\b(" + names + r")((?:\s*/\s*'[^'%]+')+)", src):
         rel = os.path.join(BASES[base], *re.findall(r"'([^']+)'", parts))
+        if rel == '.env':  # 환경 변수로 대체할 수 있는 선택적 로컬 파일
+            continue
         if rel.startswith('eval_outputs') and not rel.startswith(('eval_outputs/v1', 'eval_outputs/v2')):
             continue
         check('%s → %s 있음' % (os.path.relpath(fp, REPO), rel), os.path.exists(path(rel)))

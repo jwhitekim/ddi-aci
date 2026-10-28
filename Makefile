@@ -48,7 +48,7 @@ test-score: rescore
 
 try:
 	$(PY) ddi-agent/run_agent.py --condition $(CONDITION) --task-suffix benchmarks/ddi/prompts/task_suffix.txt \
-	    --task "$(TASK)" --out eval_outputs/try_$(CONDITION)
+	    --task "$(TASK)" --out eval_outputs/try_$(CONDITION)_$$(date +%Y%m%d_%H%M%S_%N)
 
 eval:
 	bash benchmarks/ddi/scripts/run_eval.sh

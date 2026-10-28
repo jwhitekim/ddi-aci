@@ -23,7 +23,8 @@ for v in ('v1', 'v2'):
 rules = [l.strip() for l in open(path('.gitignore'), encoding='utf-8') if l.strip() and not l.startswith('#')]
 literal = [r for r in rules if '.' in r and not r.startswith('!') and not any(c in r for c in '*?[')
            and not r.endswith('/')]
-stale = [r for r in literal if not os.path.exists(path(r.lstrip('/')))]
+# .env 는 환경 변수로 대체할 수 있는 선택적 로컬 파일이다.
+stale = [r for r in literal if r.lstrip('/') != '.env' and not os.path.exists(path(r.lstrip('/')))]
 check('.gitignore 에 없는 파일을 가리키는 항목 없음', not stale, stale)
 check('규칙 중복 없음', len(rules) == len(set(rules)), rules)
 
